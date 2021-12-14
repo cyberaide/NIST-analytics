@@ -1,0 +1,597 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LaTeX source code to approximate a NIST Technical report
+%	  Instructions for authors: tinyurl.com/techpubsnist 
+%	DOI watermark will be added on final PDF
+% 	Developed by Gregor von Laszewski based on the 1200 template provided by K. Miller, kmm5@nist.gov 
+%	Last updated: 22-November-2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\input{format/format}
+\usepackage{titlesec}
+\setcounter{tocdepth}{10}  
+
+\setcounter{secnumdepth}{4}
+
+\usepackage{markdown}
+
+\newcommand{\pubnumber}{1500-XX}
+\newcommand{\DOI}{https://doi.org/10.6028/NIST.SP.1500-XX}
+\newcommand{\monthyear}{November 2021}
+\newcommand{\TITLE}{NIST Reusable Analytics Service Framework\\
+Volume 1, Overview}
+\newcommand{\AUTHORS}{
+\large Gregor von Laszewski\\
+\large Wo Chang\\
+\large Russell C. Reinsch\\
+\large Geoffrey C. Fox\\
+\vfill}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   	BEGIN DOCUMENT 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\urlstyle{rm} % Format style of \url   
+	\begin{titlepage}
+		\begin{flushright}
+        \LARGE{\textbf{NIST Special Publication \pubnumber}}\\
+        \vfill
+        \Huge{\textbf{\TITLE}}\\
+        \vfill
+        \AUTHORS
+        \normalsize This publication is available free of charge from:\\
+        \DOI\\
+        \vfill
+
+        \includegraphics[width=0.3\linewidth]{format/NIST-logo.eps}\\ 
+
+        \end{flushright}
+    \end{titlepage}
+
+\begin{titlepage}
+
+\begin{flushright}
+\LARGE{\textbf{NIST Special Publication \pubnumber}}\\
+\vfill 
+\Huge{\textbf{\TITLE}}\\
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Author Order and Grouping. Always identify the primary author/creator first (s/he does not have to be a NIST author). For publications with multiple authors, group authors by their organizational affiliation. The organizational groupings and the names within each grouping should generally be ordered by decreasing level of contribution.
+%	For non-NIST authors, list their city and state below their organization name.
+%	For NIST authors, include the Division and Laboratory names (but do not include their city and state).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize Gregor von Laszewski\\
+\textit{University of Virginia, Inidiana University, laszewski@gmail.com}\\
+\vspace{12pt}
+
+Wo Chang\\
+\textit{NIST ITL, wchang@nist.gov}\\
+\vspace{12pt}
+
+\normalsize Russell C. Reinsch \\
+\textit{MSI, russell@mcleansystemsintegration.com}\\
+\vspace{12pt}
+
+\normalsize Geoffrey C. Fox\\
+\textit{Indiana University, gcfexchange@gmail.com}
+\vspace{12pt}
+
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   DOI Statement - automated
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize This publication is available free of charge from:\\
+\DOI\\
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Date - Month and Year - automated
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\normalsize \monthyear
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Department of Commerce LOGO - leave as-is
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+\includegraphics[width=0.18\linewidth]{format/DoC-logo.eps}\\ 
+\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Department of Commerce & NIST Leadership 
+%	will be updated as changes occur
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\footnotesize U.S. Department of Commerce\\ 
+\textit{Gina M. Raimondo, Secretary}\\
+\vspace{10pt}
+National Institute of Standards and Technology\\ 
+\hspace*{-3cm}\textit{James K. Olthoff, Performing the Non-Exclusive Functions and Duties of the Under Secretary of Commerce \\
+for Standards and Technology \& Director, National Institute of Standards and Technology} 
+\end{flushright}
+\end{titlepage}
+
+\begin{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Disclaimer/CODEN page - required
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{flushright}
+\footnotesize  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   This section automated - do not change
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flushright}
+\normalsize \textbf{National Institute of Standards and Technology Special Publication \pubnumber\\ 
+Natl. Inst. Stand. Technol. Spec. Publ. \pubnumber, \pageref{LastPage} pages (\monthyear)} \\
+\textbf{CODEN: TBD}\\
+\vspace{12pt}
+\textbf{This publication is available free of charge from: \DOI}
+
+\end{flushright}
+
+
+Certain commercial entities, equipment, or materials may be identified in this document to describe an experimental procedure or concept adequately. Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose. 
+
+There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities. The information in this publication, including concepts and methodologies, may be used by federal agencies even before the completion of such companion publications. Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative. For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST. 
+
+Organizations are encouraged to review all publications during public comment periods and provide feedback to NIST. All NIST publications are available at http://www.nist.gov/publication-portal.cfm.
+
+
+
+\vspace{12pt}
+\vspace{12pt}
+NIST Special Publication series 1500 is intended to capture external perspectives related to NIST standards, measurement, and testing-related efforts. These external perspectives can come from industry, academia, government, and others. These reports are intended to document external perspectives and do not represent official NIST positions.
+
+\bigskip
+\bigskip
+\bigskip
+
+\begin{quote}
+Comments on this publication may be submitted to 
+
+National Institute of Standards and Technology \\
+Attn: Wo Chang, Information Technology Laboratory\\
+100 Bureau Drive (Mail Stop 8900)\\ Gaithersburg, MD 20899-8930\\
+Email: SP1500comments@nist.gov
+\end{quote}
+
+\vfill
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Start front matter - page number starts with "i"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Foreword}
+\pagenumbering{roman}
+\normalsize Delete if not applicable\\
+\section*{Preface}
+\normalsize Delete if not applicable\\
+
+\section*{Abstract}
+
+\normalsize This document summarizes the NIST Analytics Service Framework that targets to analytics functionalities to be hosted on computational resources including Clouds, Containers, and High Performance Computing (HPC). Although we use the RE presentational State Transfer (REST) to formulate some details of the architecture, it is independent from REST and can be formulated in other frameworks. While using REST we use a familiar pattern for architect, implementers, and strategists. Due to the many frameworks, programming languages and services supporting REST the architecture can easily be enhanced and implemented with various technical solutions. 
+The analytics framework also targets big data. Big data is a term used to describe extensive datasets, primarily in the characteristics of volume, variety, velocity, and veracity. While opportunities exist with Big Data analytics, the data characteristics can overwhelm traditional technical approaches, and the growth of data is outpacing scientific and technological advances in data analytics. To advance progress in Big Data analytics, the NIST Big Data Public Working Group (NBD-PWG) is working to develop consensus on important fundamental concepts related to Big Data. The results are reported in the NIST Big Data Interoperability Framework (NBDIF) series of volumes.\\
+
+\section*{Key words}
+\normalsize 
+Adoption; barriers; implementation; interfaces; market maturity; organizational maturity; project maturity; system modernization.\\
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Table of Contents is required
+% 	List of Tables & Figures required if more than 5 tables/figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+	\tableofcontents 
+	
+	\TODO{russell}{On the organization of the outline sections and sub sections: 7.2 In my domain, the concept behind the term 'Landscape' would not be related to Specification. Im interested to work on this sub section so Im looking forward to some clarification on how you see Landscape as a sub of Specification. Depending on the 'vision' of the topics / content for 7.2 and Appendix B, [which I am also interested to work on] they may have some overlap.}
+	
+	\listoftables
+	\listoffigures
+\end{center}
+\pagebreak
+\section*{Glossary}
+Delete if not applicable\\
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Start body of text - page number starts with "1"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{\arabic}
+
+\section{Executive Summary}
+\newpage
+
+\markdownInput{02-introduction.md}
+
+\section{Terms and Definitions (we could place this as Appendix as needed)}
+
+
+
+\section{Use Cases for Analytics Services}
+
+
+\subsection{Use Case Development Process}
+
+To specify use cases for our analytics framework, we encourage contributors to contact us and provide us with their high-level descriptions of their use cases. The use cases should be focusing on highlighting one or multiple aspects of the features related to analytics frameworks. While inspecting the various features we intend to collect and analyze them in various contexts that are relevant for analytics users. The lessons learned from this analysis are to be integrated into this document in order to formulate a comprehensive vendor neutral analytics framework.
+Use cases can be formulated in various format but should include diagrams that make them easy to comprehend as well as allowing the reader to extract the specific analytical aspects. Such diagrams can include functional cross diagrams, process diagrams and others.
+Use cases should especially address the use of metadata describing the functional and the data related properties. This includes metadata related to time, space, exchange/protocols, privacy, and security related aspects.
+A functional description of the use case is to be included as a subsection called Functionalities and Activities. This section is mirroring our experience with documenting use cases as part of the Big Data Application Provider of NBDIF Reference Architecture. Hence, we assume the following draft form for a use case:
+
+\begin{description}
+\item[Title:] 		Title of the use case
+\item[Contributor:] 	The list co contributors
+\item[Description:] 	One to two sentences about major functionalities and activities with respect to the sample cross-functional diagram
+	
+	\begin{description}
+	\item[Cross-Functional Diagram:]
+		Inclusion of a cross functional Diagram, alternatively other diagrams could be 			chosen.
+	\item[Functionality Activities:]
+	\begin{enumerate}
+        \item Activity \#1 – description…
+        \item ...
+        \item Activity \#n – description…
+    	\item Use Case Summaries
+    \end{enumerate}
+\end{description}
+\end{description}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/cross-functional-diagram.png}
+    \caption{Cross-functional Diagram}
+    \label{fig:cross-functional-diagram}
+\end{figure}
+
+
+Here we will list use case summaries and if available point to specific publications on the NBDIF Web page that include more details. The expectation of this section is to
+ 
+\begin{itemize}
+\item	Provide an overview of use cases that motivate this document
+\item	It will summarize requirements that we obtain from these use cases that influence how we proceed.
+\end{itemize}
+
+As a result, we identify how they fit into the workflow of data analytics. This includes the description of a subset of functionality that is used in general by data analytics.  In particular, it described the relationship between input and output of data analytics components and interfaces. 
+
+The use case summaries are expected to be available through the BigDataWG Web page at 
+
+
+This includes the following examples:
+
+\begin{enumerate}
+\item	\href{https://bigdatawg.nist.gov/_uploadfiles/M0701_v1_2020102001.docx}{M0701} – Use case template
+\item	\href{https://bigdatawg.nist.gov/_uploadfiles/M0702_v1_2020102002.pdf}{M0702} - Numeric weather prediction
+\item	\href{https://bigdatawg.nist.gov/_uploadfiles/M0703_v1_2020102003.pdf}{M0703} - HVAC Heat ventilation and air conditioning 
+\end{enumerate}
+
+
+
+\subsection{Use Case 1: Title}
+\subsection{Use Case 2: Title}
+
+
+\section{Technical Requirements}
+
+\section{Specification Paradigm}
+
+\subsection{Relevant Standards and Best Practices}
+\subsection{Standard Technology Gap Analysis}
+
+\section{Analytics Paradigms}
+
+\subsection{Introduction}
+
+\subsection{Paradigm Landscape}
+
+\subsection{Paradigms}
+\subsubsection{Realtime Analytics} 
+\subsubsection{Datalake Analytics} 
+\subsubsection{AI/ML/DL  Analytics} 
+\subsubsection{Legacy Analytics}
+\subsubsection{Cloud Service Analytics}
+
+\subsubsection{Edge Service Analytics}
+\subsubsection{Container Service Analytics}
+\subsubsection{Cluster Service Analytics}
+\subsubsubsection{Batch Analytics} 
+\subsubsection{Parameter Study Analytics}
+\subsubsection{Workflow and Combinations}
+
+
+
+
+
+
+\section{Specification}
+
+
+\subsection{AS-FAIR-DO: Analytics Service FAIR Principle}
+
+To project easy reusability, we strive towards the implementation of the AS-FAIR-DO principle for analytics services. The FAIR principle is typically applied to data and as such we can apply it the metadata associated with analytics services. The FAIR principal addresses who to be findable, be accessible, be interoperable, and be reusable. In Figure \ref{fig:as-fair-do} we explicitly augmented the general FAIR principle with terminology so it can apply to analytics services. The augmentations are colored in red.
+
+\begin{figure}[htb]
+\resizebox{1.0\textwidth}{!}{
+\tcbox{
+\begin{tabular}{p{1cm}p{15cm}}
+
+\multicolumn{2}{l}{To be Findable:} \\
+F1 & \textcolor{red}{analytics services metadata} are assigned a globally unique and persistent identifier \\ 
+F2 & \textcolor{red}{analytics services} data are described with rich metadata (defined by R1) \\
+F3 &  \textcolor{red}{analytics services metadata} clearly and explicitly include the identifier of the data related to the analytics services it describes \\ 
+F4 & \textcolor{red}{analytics services metadata} are registered or indexed in a searchable resource \\
+\multicolumn{2}{l}{To be Accessible:} \\
+A.1 &  \textcolor{red}{analytics services metadata} are retrievable by their identifier using a standardized communications protocol \\
+    A1.1 & \textcolor{red}{analytics services} the protocol is open, free, and universally implementable \\
+    A1.2 & the \textcolor{red}{analytics services} protocol allows for an authentication and authorization procedure, where necessary \\ 
+A.2 & \textcolor{red}{metadata} are accessible, even when the data are no longer available \\
+\multicolumn{2}{l}{To be Interoperable:}\\
+I1. & \textcolor{red}{analytics services metadata} use a formal, accessible, shared, and broadly applicable language for knowledge representation. \\
+I2. &  \textcolor{red}{analytics services metadata} use vocabularies that follow FAIR principles \\
+I3. &  \textcolor{red}{analytics services metadata} include qualified references to other metadata \\
+\multicolumn{2}{l}{To be Reusable:} \\
+R1. & \textcolor{red}{analytics services metadata} are richly described with a plurality of accurate and relevant attributes \\
+R1.1 & (meta)data are released with a clear and accessible data usage license \\
+R1.2 & (meta)data are associated with detailed provenance \\
+R1.3 & (meta)data meet domain-relevant community standards \\
+\multicolumn{2}{l}{To be Deployable:}\\
+D.1 & \textcolor{red}{analytics services metadata} ... \\
+\multicolumn{2}{l}{To be Operational:} \\ 
+O.1 & \textcolor{red}{analytics services metadata} ... \\ 
+\end{tabular}
+}
+}
+\caption{Fair guiding principles adapted to analytics services: Analytics Services - FAIR - Deployable and Operational
+(AS-FAIR-DO).}\label{fig:as-fair-do}
+\end{figure}
+
+
+ 
+
+
+
+
+\subsubsection{Support of Plug-In Analytic Services}
+\subsubsection{Orchestration of Infrastructure and Services}
+\subsubsection{Orchestration of Big Data Applications and Experiments}
+\subsubsection{Reusability}
+\subsubsection{Execution Workloads}
+\subsubsection{Security and Privacy Fabric Requirements}
+
+\subsection{Analytics Service Reusability}
+\subsubsection{Packaging}
+\subsubsection{Encapsulation}
+
+
+\subsubsection{Analytics Service Findability}
+
+\begin{figure}
+\begin{center}
+\begin{forest} for tree={
+    grow=east,
+    growth parent anchor=east,
+    parent anchor=east,
+    child anchor=west,
+    edge path={\noexpand\path[\forestoption{edge},->, >={latex}] 
+         (!u.parent anchor) -- +(5pt,0pt) |- (.child anchor)
+         \forestoption{edge label};}
+}
+[Analytics Services, root
+    [Search, onode
+        [Catalog, tnode]
+        [Registry, tnode]
+    [Reusability, onode
+        [API, tnode]
+    [Compute, onode
+        [HPC/batch, tnode]
+        [VM, tnode]
+        [Desktop, tnode] 
+        [Edge, tnode]
+        [Container, tnode] ] ]
+\end{forest}
+\end{center}
+\caption{Analytics Services Categories}
+\end{figure}
+
+\subsubsection{Analytics Service Catalogue}
+
+\paragraph{Motivation.} Cloud providers offered a considerable set of analytics services to their customers. There are many analytics services available. A user needs to be able to quickly obtain an overview of such available services. This helps identifying further actions in order to evaluate them and identify if further investigation is justified. The catalouge contains enough details to locate the service and evaluate if it is useful. However, it may not provide technical details which are captured by a service registry instead.
+
+\paragraph{Access Requirements.} The catalogue may be public or may be restricted while authorized entities may access it. As analytics services may evolve over time, time dependent versioned descriptions of the services must be able to be included. An organizational entity may manage their own catalogues. It is desirable to have the catalogues be uniform, so that they can be combined into a larger catalogue combining entries of multiple organizations. 
+
+
+\paragrap{Federation.} The offerings are typically limited to a particular vendor. Users can benefit from a federates service catalogue  to search and explore for needed services by the user. In contrast to a registry a catalogue may not include all technical details but could in contrast include services that lack such details and thus can be the basis of an exploratory process.  A Federated analytics service repository is planned to be hosted on GitHub (LINK TBD)
+The catalogue contains the following attributes, many of which are also used in an analytics service registry.
+
+The catalogue is organized as a list of entries, where each entry contains a number of attributes. These attributes may be required or optional. We list in Table \ref{tab:cat}. 
+
+
+\begin{table}[htb]
+\caption{Catalouge attributes}
+\label{tab:cat}
+\begin{tabular}{p{3cm}p{10cm}p{2cm}}
+Name	& Description	& Required \\
+\hline
+ID	& UUID, globally unique	& \OK \\
+Name	& Name of the service	& \OK \\
+Title	& Human readable title 	& \OK \\
+Public	& True if Public 
+(needs use case to delineate what pub private means) & 	\OK \\
+Description	& Human readable short Description of the Service	& \OK \\ 
+Version	& The version number or tag of the service	& \OK \\
+License	& The license description	& \OK \\
+Microservice & 	\OK/No/Mixed	& \OK \\
+Protocol	& REST	& \OK \\
+Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK \\
+Modified	& Modification Timestamp (when first same as created)	\OK \\
+Created	& Date on which the entry was first created	& \OK \\
+Documentation	& Link to a URL with detailed description of the service	& O \\
+Source	& Link to the source code if available	& O \\
+Tag(s)	& Human readable common tags that are used to identify the service that are associated with the service	& O \\
+Category(s)	& A category that this service belongs to (NLB, Finance, ...)	& O & 
+Specification/ Schema	& Pointer to where schema is located &	O \\
+Additional metadata	& Pointer to where additional is located including the one here.	& O \\
+Endpoint	& The endpoint of the service	& O \\
+SLA/Cost	&	& O \\
+Authors	& contact details of the people or organization responsible for the service (freeform string)	& O \\
+Data	& Description on how data is managed	& O \\
+\hline
+\end{tabular}
+\OK = Required; O = Optional
+\end{table}
+
+
+\subsubsubsection{Analytics Service Registry}
+
+\paragraph{Motivation.} 
+The goal of a federated analytics service registry is to establish federated registries to locate and consume analytics services with persistent identifiers across organizations. 
+
+A service registry can serve as a public, private, or federated registry. The first two properties define if the registry is public or private. In case of a private registry proper security measures need to be taken into account to govern access. Our framework does not make any recommendations about the security framework chosen and it is up to the implementer to specify it. In case of a federated registry, more than one registry can be joined, to provide the user the impression of a single registry.
+
+Within the analytics services we distinguish two classes. The first class are instantiated (running) services that are offered by a service provider and allow direct reuse. The second class are library providers that distribute analytics activity not as an instantiated service, but as a source code library which can be deployed as a service. 
+
+
+A user wants to find an analytics service and needs to identify a service based on its description and features. Users want The user want to find services quickly and therefor expects that keywords and taxonomies as well as descriptions help to identify the appropriate analytics service from the registry.
+
+The registry contains enough details to not only locate the service, but also how to use it.
+
+\paragraph{Access Requirements.} Public Analytics Service Registry. Public analytics services are intended to allow users to find publicly hosted services. The information provided includes the provider and makes it easy to locate such a service.
+
+\begin{description}
+
+\item[Private Analytics Service Registry.] The analytics service is stored in a private registry is only available to authenticated and authorized users. This allows to build virtual organizations that advertise specialized services to its user community. In contrast to a public analytics registry access is restricted. In addition, different group privileges may restrict the visible analytics service to the user.
+
+\item[Federated Analytics Service Registry.] A user wants to decide which service to use. An analytics service broker/provider therefore offers a federated analytics service in which multiple services from multiple providers are included. The user instead of visiting each providers registry can visit the registry of the analytics broker to find suitable services. It is expected that federated registries allow to  locate and consume analytics services with persistent identifiers across organizations.  The federated analytics service registry may be enhanced with information that the original service provider may not have available. This could include for example cost comparisons or ratings from its user community.
+
+\item[Enhanced Analytics Service Registry.] Both public and private registries my need to be enhanced by providing detailed information so the user has a better understanding of the offering and allows comparison to similar registry entries. This may include benchmark information, service level agreements and cost including carbon cost, as well as limitations such as storage access and availability for big data.
+\end{description}
+
+\paragraph{Registry Namespace.} To allow a uniform integration of entries into a unified namespace URLs are used to distinguish the services. This includes two different entities. First, an entity that defines the code base of a service. Such code base could be for example hosted on publicly accessible code repositories. Second, it could include instantiated analytics service endpoints that define a running instance of an analytics services.
+
+
+The attributes are listed in Table \ref{tab:reg}. Some attributes may be optional and may be dependent on if they are deployed services, or contain a library that may be deployed.
+
+TODO: Describe service provider, library provider infrastructure provider. Do a separate section for that ….
+todo: Lightening strike outage, server outage.
+
+\begin{table}[H]
+\caption{Registry attributes}\label{tab:reg}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{p{3cm}p{11cm}p{0.5cm}p{0.5cm}}
+Name	& Description	& \rot{\shortstack{Service\\ provider}}	& \rot{\shortstack{Library\\ provider}} \\
+\hline
+ID & 	UUID, globally unique &	\OK &	\OK \\
+Name & 	Name of the service	& \OK	& \OK \\ 
+Title & 	Human readable title &	\OK	& \OK \\
+Public	& True if Public
+(needs use case to delineate what pub private means) & 	\OK & \OK \\
+Description	& Human readable short Description of the Service	& \OK & 	\OK \\
+Endpoint &	The endpoint of the service	& \OK	&  N/A \\
+List of Input Parameters &
+	A list of parameters to the service. The parameters have each the form of name, function, type, value, access. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, event.
+The function responds to a different function in case multiple are provided by the service.	& \OK	& \OK \\ 
+List of Output Parameters 
+  style (event, stream, data)
+  value
+  timestamp & 
+	List of responses cast by the service. The responses have the form of function, name, type, value, access, timestamp. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, event.
+The function responds to a different function in case multiple are provided by the service. & 	\OK 	& \OK \\
+Version	& The version number or tag of the service	& \OK	& \OK \\
+License	& The license description	& \OK	& \OK \\
+Protocol & 	REST	& \OK	& \OK \\
+Modified & 	Modification Timestamp	& \OK& \OK \\
+Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK	& O \\
+Author &	Contact details of the people or organization responsible for the service	& O	& \OK \\
+Tags &	Human readable common tags that are used to identify the service that are associated with the service	& O & O \\
+Categories &	A category that this service belongs to (NLB, Finance, ...)	& O & O \\
+Created	& date and time on which the analytics service was instantiated or created	instantiated	& \OK & \OK \\
+Heartbeat &	State and timestamp of the last check when the service was active	& O & 	N/A \\
+Documentation &	Link to a URL with detailed description of the service
+Source	Link to the source code if available	& O & O \\
+Specification &	Pointer to where specification schema is located	& O &  O \\
+AdditionalMetadata	& Pointer to where additional is located including the one here.	& O &	O \\
+SLA	& Serves level agreement including cost	& O 	& O \\
+CachingInterval	&If a service is accessed a lot, the caching interval can be used to put a limitation on the Response with an LRU cache	& O &	N/A \\
+DataIntegration &	In case of big data the data cannot be provided as a parameter to the analysis function. Instead, we need to provide the data as endpoint. However, often tata may need to be uploaded or can be downloaded. In this case this field provides the upload and download endpoints and the protocol to access the data	& O &	O \\
+\hline
+\end{tabular}
+}
+\OK = Required; O = Optional
+\end{table}
+
+\subsubsection{Benefits of a federated analytics service registry}
+
+A service registry can publicize and improve end user access to data from different sources, by overcoming some of the challenges inherent in describing and surfacing document content and format. Publication, and discovery of information resources are enriched with metadata enabling the findability and reusability of a service supporting the FAIR principle. While describing the interfaces and allow for the instantiation or the reuse of already instantiated services we address the accessibility and interoperability. With respect to analytics as a service, end users should be able to find various analytic services and similar services without having to individually search multiple ‘locations’ or databases, each built to operate on its own, unique storage and retrieval constructs. Through these descriptions automated service integration can be provisioned while targeting not only the functionality involved, but also allowing service level considerations to be addressed. Furthermore, such analytics services could provide significant security implications such as the protection of a database while only exposing a subsect of approved analytics functions that are executed on the data sets. This includes partial and controlled sharing of data mashup that can be made available to the community and registered to make reuse easier without everyone having to replicate the service.
+
+
+
+
+\subsubsection{Analytics Service Pipelines}
+
+\paragraph{Motivation.} In many cases a big data analysis is split up in multiple subtasks. These subtasks may be reusable in other analytics pipelines. Hence it is desirable to be able to specify and use them in a coordinated fashion allowing reuse of the logic represented by the analysis. Users must have a clear understanding on what the analysis is doing and how it can be invoked and integrated. 
+
+\paragraph{Access Requirements.} The analysis must include a clear and easy to understand specification that encourages reuse and provides sufficient details about its functionality, data dependency and performance. Analytics services may have authentication, autorotation and access controls build in that enable access buy users controlled by the service providers.
+
+\subsubsection{Federated Analytics Service Catalogue}
+\subsubsection{Catalogue Attributes}
+\subsubsection{Federated analytics service Registries}
+\subsubsection{Registry Attributes}
+
+\subsection{Resource Accessibility}
+\subsubsection{Resource Management}
+\subsubsection{Security}
+
+
+
+
+\section*{References}
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{format/techpubs}
+\bibliography{References}
+
+
+\section*{Appendix A: Acronyms and Terms}
+\addcontentsline{toc}{section}{Appendix A: Acronyms and Terms}
+
+A list of acronyms and terms to allow uniform discussions and descriptions about topics used in this document.
+
+\begin{quote}
+    \input{dictionary}
+\end{quote}
+
+
+
+\section*{Appendix B – Implementation Examples}
+\addcontentsline{toc}{section}{Appendix B: Implementation Examples}
+
+This section contains a number of implementation examples that follow the document specifications.
+
+\subsection*{Appendix B.1 – Analytics Catalog}
+\addcontentsline{toc}{subsection}{Appendix B.1: Anlaytics Catalog}
+
+TBD
+
+\subsection*{Appendix B.2 – Analytics Registry}
+\addcontentsline{toc}{subsection}{Appendix B.1: Anlaytics Regisstry}
+
+TBD
+\section*{Appendix C: Change Log}
+\addcontentsline{toc}{section}{Appendix B: Change Log}
+
+If updating document with errata, detail changes made to document.
+The updates are recorded in reverse chronological order with the most recent change first.\\
+
+
+\begin{tabular}{ p{3cm}p{1cm}p{9cm}}
+Date            & Initials & Comment \\
+\hline
+September 2021  & GvL & Spelling corrections \\
+August 2021     & Gvl & 	Add dictionary \\
+                & GvL & Add executive summary \\
+                & GvL & Fix introduction \\
+                & GvL & Add catalogue \\
+                & GvL & Add registry \\
+July 2021       & GvL & Notes on Metadata Russell \\
+March 20, 2021  & GvL & First Draft \\
+\hline
+\end{tabular}
+
+
+\end{document}
