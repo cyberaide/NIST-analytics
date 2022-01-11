@@ -242,19 +242,14 @@ A functional description of the use case is to be included as a subsection calle
 \end{figure}
 
 
-Here we will list use case summaries and if available point to specific publications on the NBDIF Web page that include more details. The expectation of this section is to
+Next, we will list use case summaries and if available point to specific publications on the NBDIF Web page that include more details. The expectation of this section is to
  
 \begin{itemize}
 \item	Provide an overview of use cases that motivate this document
 \item	It will summarize requirements that we obtain from these use cases that influence how we proceed.
 \end{itemize}
 
-As a result, we identify how they fit into the workflow of data analytics. This includes the description of a subset of functionality that is used in general by data analytics.  In particular, it described the relationship between input and output of data analytics components and interfaces. 
-
-The use case summaries are expected to be available through the BigDataWG Web page at 
-
-
-This includes the following examples:
+As a result, we identify how they fit into the workflow of data analytics. This includes the description of a subset of functionality that is used in general by data analytics.  In particular, it described the relationship between input and output of data analytics components and interfaces.  The use case summaries are expected to be available through the BigDataWG Web page and includes currently the following examples:
 
 \begin{enumerate}
 \item	\href{https://bigdatawg.nist.gov/_uploadfiles/M0701_v1_2020102001.docx}{M0701} – Use case template
@@ -264,8 +259,11 @@ This includes the following examples:
 
 
 
-\subsection{Use Case 1: Title}
-\subsection{Use Case 2: Title}
+\input{usecase/weather}
+\input{usecase/hvac}
+
+
+\subsection{Use Case: Heat Ventilation and Air Conditioning (HVAC)}
 
 
 \section{Technical Requirements}
@@ -362,33 +360,7 @@ O.1 & \textcolor{red}{analytics services metadata} ... \\
 
 \subsubsection{Analytics Service Findability}
 
-\begin{figure}
-\begin{center}
-\begin{forest} for tree={
-    grow=east,
-    growth parent anchor=east,
-    parent anchor=east,
-    child anchor=west,
-    edge path={\noexpand\path[\forestoption{edge},->, >={latex}] 
-         (!u.parent anchor) -- +(5pt,0pt) |- (.child anchor)
-         \forestoption{edge label};}
-}
-[Analytics Services, root
-    [Search, onode
-        [Catalog, tnode]
-        [Registry, tnode]
-    [Reusability, onode
-        [API, tnode]
-    [Compute, onode
-        [HPC/batch, tnode]
-        [VM, tnode]
-        [Desktop, tnode] 
-        [Edge, tnode]
-        [Container, tnode] ] ]
-\end{forest}
-\end{center}
-\caption{Analytics Services Categories}
-\end{figure}
+\input{tree-findability}
 
 \subsubsection{Analytics Service Catalogue}
 
@@ -612,6 +584,7 @@ A service registry can publicize and improve end user access to data from differ
 \subsubsection{Security}
 
 
+\input{outreach}
 
 
 \section*{References}

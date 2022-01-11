@@ -1,0 +1,50 @@
+\begin{figure}[!h]
+\begin{center}
+\begin{forest}
+for tree={
+        calign=center,
+        grow'=east, % tree direction
+        parent anchor=east, child anchor=west, % edge anchors
+        rounded corners, draw,
+        }
+[Analytics Services, root
+   [Modality, tnode
+      [Location
+        [On-Premise]
+        [Cloud]
+        [Edge]
+      ]
+      [Time
+        [Batch]    
+        [Realtime]
+        [(Ad-Hoc)]
+      ]
+   ]
+   [Findability, tnode
+      [Catalog]
+      [Registry]
+   ]
+   [Reusability, tnode
+      [API]
+      [Commandline]
+      [Service]
+    ]
+    [Compute, tnode
+        [Service]
+        [Batch]
+        [VM]
+        [Desktop] 
+        [Edge]
+        [Container]
+    ]
+    [Data, tnode
+        [Database]
+        [File]
+        [Stream]
+        [Lake]
+    ]
+]]
+\end{forest}
+\end{center}
+\caption{Analytics Services Categories}
+\end{figure}

@@ -22,7 +22,8 @@
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand\cftbeforesecskip{\setlength{4pt}{}}
+%\renewcommand\cftbeforesecskip{\setlength{4pt}{}}
+
 \addtolength{\cftfignumwidth}{1em}
 \renewcommand{\cftfigpresnum}{\figurename\ }
 \addtolength{\cfttabnumwidth}{1em}
@@ -74,16 +75,15 @@ pdfkeywords={} %%put keywords here
 \newcommand{\OK}{\ding{51}}
 \usepackage{todonotes}
 \usepackage[table]{xcolor}
-%\usepackage{forest}
-%\usetikzlibrary{arrows.meta,shapes,positioning,shadows,trees}
-%
-%\tikzset{
-%    basic/.style  = {draw, text width=2cm, drop shadow, font=\sffamily, rectangle},
-%    root/.style   = {basic, rounded corners=2pt, thin, align=center,
-%                     fill=green!10},
-%    onode/.style = {basic, thin, rounded corners=2pt, align=center, fill=green!30,text width=3cm,},
-%    tnode/.style = {basic, thin, align=left, fill=pink!20, text width=6.5em},
-%    edge from parent/.style={draw=black, edge from parent fork right}
-%}
+\usepackage{forest}
+\usetikzlibrary{arrows.meta,shapes,positioning,shadows,trees}
+\tikzset{
+    basic/.style  = {draw, text width=2cm, drop shadow, font=\sffamily, rectangle},
+    root/.style   = {basic, rounded corners=2pt, thin, align=center,
+                     fill=green!10},
+    onode/.style = {basic, thin, rounded corners=2pt, align=center, fill=green!30,text width=3cm,},
+    tnode/.style = {basic, thin, align=left, fill=pink!20, text width=6.5em},
+    edge from parent/.style={draw=black, edge from parent fork right}
+}
 
 \newcommand{\TODO}[2]{\todo[inline]{#1: #2}}
