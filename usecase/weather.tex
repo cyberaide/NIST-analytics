@@ -15,17 +15,24 @@ and graupel and requires complex floating-point operations needing to be perform
 amounts of data for accurate simulations. As computer performanceimproves, so does the Numerical
 Weather Prediction (NWP) models' resolution and accuracy. However, there is still much progress to
 be made, as simulation accuracy still falls off sign ificantly for predictions more than 36 hours in
-advance. Figure 1 shows the general WRF modeling system flow chat.
+advance. Figure \ref{fig:weather-1} shows the general WRF modeling system flow chat.
+
+\begin{figure}[htb]
+\includegraphics[width=1.0\textwidth]{usecase/nwp-arch.png}
+\label{fig:weather-1}
+\caption{WRF Modeling System Flow Chart with Various Configuration.}
+\end{figure}
+
 
 \paragraph*{Functionalities and Activities} (based on Big Data Application Provider of NBDIF Ref. Architecture).
 In this case study, we only focus on two main functionalities, namely WPS and WRF, and their activities.
-Figure \ref{fig:weather} shows the cross-functional diagram for their actions.
+Figure \ref{fig:weather-2} shows the cross-functional diagram for their actions.
 
 WPS Activities:
 
 \begin{figure}[htb]
 \includegraphics[width=1.0\textwidth]{usecase/weather.png}
-\label{fig:weather}
+\label{fig:weather-2}
 \caption{Cross-Functional Diagram Numerical Weather Prediction.}
 \end{figure}
 
