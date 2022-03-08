@@ -42,37 +42,9 @@ and operational, regardless of the underlying computing environment.
 \TODO{russell}{note that the 'string' reusable, deployable, and
   operational was also used in the previous ppg.}
 
-The initial focus of this document will address several key areas:
-
-\begin{enumerate}
-  
-   \item[a.2.] Package analytic algorithms with well-defined input and
-     output parameters as service payloads that can be reusable,
-     deployable, and operational across multi-cores, CPUs, and GPU
-     computing platforms.
-
-   \item[a.3.] Encapsulate service payload with a well-defined format,
-     interface, and end-to-end access control for the open and secure
-     computing environment.
-
-   \item[a.4.] Establish federated registries to locate and consume
-     analytics services with persistent identifiers across
-     organizations.
-
-   \item[a.5.] Provide resource management for application
-     orchestration and workflow between processes.
-
-\end{enumerate}
-
-
-
-
-
 The document is organized as follows and motivated by the tasks
 identified in the previous section. Each section is augmented with the
 key area it contributes to.
-
-\TODO{Gregor} the following will be reworked based on the new outline.
 
 \begin{itemize}
   
@@ -87,13 +59,16 @@ key area it contributes to.
   analytics application domains. It will help identifying the meta-
   and technical requirements.
 
-\item Section \ref{sec:fair}: Defining and Finding Reusable Analytics
+\item Section \ref{sec:defining}: Defining and Finding Reusable Analytics
   Services. This section 
   will include the definition and conceptual architecture of reusable
   analytics services. This includes the following concerns that are
   organized as subsections.
 
  \begin{itemize}
+ 
+    \item Section \ref{sec:fair}: Adaptation of the FAIR principle to
+       supprt an Analytics Service FAIR Principle.
 
     \item Section \ref{sec:catalog}: Service Catalog: To communicate
       the existence of the services to others service registries can
