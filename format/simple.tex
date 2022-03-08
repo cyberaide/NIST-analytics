@@ -1,0 +1,22 @@
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks = true,
+urlcolor ={blue},
+citecolor = {.},
+linkcolor = {.},
+anchorcolor = {.},
+filecolor = {.},
+menucolor = {.},
+runcolor = {.}
+pdftitle={},%%put title here to auto-fill properties of the PDF
+pdfsubject={},%%put abstract here
+pdfauthor={}, %%put author list here
+pdfkeywords={} %%put keywords here
+}
+\usepackage{todonotes}
+\usepackage{pifont}
+\newcommand*\rot{\rotatebox{90}}
+\newcommand{\TODO}[2]{\todo[inline]{#1: #2}}
+\newcommand{\FILE}[1]{\todo[inline,backgroundcolor=blue!20!white]{\href{#1}{File: #1, $\Rightarrow$}}}
+\newcommand{\OK}{\ding{51}}
