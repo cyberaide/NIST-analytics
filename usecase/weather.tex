@@ -1,21 +1,26 @@
 \subsection{Use Case: Numeric Weather Prediction}
 
-\TODO{??}{move to authors:
-Wo Chang, Daniel Keirouz (former summer intern), NIST, US
-}
+\TODO{??}{move to authors: Wo Chang, Daniel Keirouz (former summer
+  intern), NIST, US }
 
 \paragraph*{Background.}
-Large amounts of weather data ar e produced continually and stored in many different databases.
-Accurate weather predictions require large amount s of processing power to accurately simulate
-conditions worldwide at a high resolution and fre quent intervals. One of the most computationally
-consuming parts of a reliable weather model is th e microphysics scheme. The current microphysics
-scheme, Weather Research and Forecasting (WRF) Single Moment 6-class Microphysics (WSM6),
-simulates the processes in the atmosphere that leadto the formation and precipitation of rain, snow,
-and graupel and requires complex floating-point operations needing to be performed on vast
-amounts of data for accurate simulations. As computer performanceimproves, so does the Numerical
-Weather Prediction (NWP) models' resolution and accuracy. However, there is still much progress to
-be made, as simulation accuracy still falls off sign ificantly for predictions more than 36 hours in
-advance. Figure \ref{fig:weather-1} shows the general WRF modeling system flow chat.
+
+Large amounts of weather data ar e produced continually and stored in
+many different databases.  Accurate weather predictions require large
+amount s of processing power to accurately simulate conditions
+worldwide at a high resolution and fre quent intervals. One of the
+most computationally consuming parts of a reliable weather model is th
+e microphysics scheme. The current microphysics scheme, Weather
+Research and Forecasting (WRF) Single Moment 6-class Microphysics
+(WSM6), simulates the processes in the atmosphere that leadto the
+formation and precipitation of rain, snow, and graupel and requires
+complex floating-point operations needing to be performed on vast
+amounts of data for accurate simulations. As computer
+performanceimproves, so does the Numerical Weather Prediction (NWP)
+models' resolution and accuracy. However, there is still much progress
+to be made, as simulation accuracy still falls off sign ificantly for
+predictions more than 36 hours in advance. Figure \ref{fig:weather-1}
+shows the general WRF modeling system flow chat.
 
 \begin{figure}[htb]
 \includegraphics[width=1.0\textwidth]{usecase/nwp-arch.png}
@@ -25,8 +30,9 @@ advance. Figure \ref{fig:weather-1} shows the general WRF modeling system flow c
 
 
 \paragraph*{Functionalities and Activities} (based on Big Data Application Provider of NBDIF Ref. Architecture).
-In this case study, we only focus on two main functionalities, namely WPS and WRF, and their activities.
-Figure \ref{fig:weather-2} shows the cross-functional diagram for their actions.
+In this case study, we only focus on two main functionalities, namely
+WPS and WRF, and their activities.  Figure \ref{fig:weather-2} shows
+the cross-functional diagram for their actions.
 
 WPS Activities:
 
@@ -37,25 +43,36 @@ WPS Activities:
 \end{figure}
 
 \begin{enumerate}
+  
 \item geogrid – defines simulation domains and interpolate various terrestrial data sets to the
 model grids. Input data available at [1].
+
 \item ungrib – extracts needed meteorological data and packs it into an intermediate file format.
 Input data available at [2]
+
 \item medgrid – prepares horizontally interpolate the meteorological data onto the model domain.
-Input data from the output of geogrid and ungrib.
+  Input data from the output of geogrid and ungrib.
+
 \end{enumerate}
 
 WRF Activities:
 
 \begin{enumerate}
+
 \item real – prepares vertically interpolates the output from metgrid, and creates a boundary and initial
 condition files with some consistency checks.
+
 \item wrf – generates a model forecast.
 
 \end{enumerate}
 
-\paragrap{Datasets.}
+\paragraph{Datasets.}
 
-1. \url{http://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html}
+\begin{enumerate}
+  
+\item WRF Users Page, WPS V4 Geographical Static Data Downloads Page \cite{wrf-data}
 
-2. \url{https://rda.ucar.edu/datasets/ds083.2/#!access}
+\item NCEP FNL Operational Model Global Tropospheric Analyses, continuing
+from July 1999 \cite{cisl_rda_ds083.2}
+
+\end{enumerate}
