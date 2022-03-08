@@ -15,10 +15,10 @@ pdfsubject={},%%put abstract here
 pdfauthor={}, %%put author list here
 pdfkeywords={} %%put keywords here
 }
-\usepackage{todonotes}
+\usepackage[color=red!10,textsize=footnotesize,shadow]{todonotes}
 \usepackage{pifont}
 \newcommand*\rot{\rotatebox{90}}
-\newcommand{\TODO}[2]{\todo[inline]{#1: #2}}
+\newcommand{\TODO}[2]{\todo{#1: #2}}
 \newcommand{\FILE}[1]{\todo[inline,backgroundcolor=blue!20!white]{\href{https://github.com/cyberaide/NIST-analytics/blob/main/#1}{Edit $\Rightarrow$  #1}}}
 \newcommand{\OK}{\ding{51}}
 \newcommand{\URL}[1]{\begin{itemize}\item \url{#1} \end{itemize}}
