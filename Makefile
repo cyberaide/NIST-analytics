@@ -6,6 +6,11 @@ all:
 	make clean
 	make -f Makefile watch
 
+export:
+	pandoc -s word.tex -o fixed-NIST-analytics.md
+	pandoc -s word.tex -o fixed-NIST-analytics.docx
+
+
 publish:
 	git add --force ${FILE}.pdf
 	git commit -m "add new pdf document" ${FILE}.pdf

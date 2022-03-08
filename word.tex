@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LaTeX source code to approximate a NIST Technical report
+%	  Instructions for authors: tinyurl.com/techpubsnist 
+%	DOI watermark will be added on final PDF
+% 	Developed by Gregor von Laszewski based on the 1200 template provided by K. Miller, kmm5@nist.gov 
+%	Last updated: 22-November-2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,fullpage]{article}
+\input{format/simple}
+\usepackage{easyReview}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   	BEGIN DOCUMENT 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\input{section-abstract}
+
+\section*{Key words}
+\normalsize 
+
+Adoption; barriers; implementation; interfaces; market maturity;
+organizational maturity; project maturity; system modernization.\\
+
+
+\input{section-summary}
+
+\input{section-introduction}
+
+\clearpage
+
+\input{section-definitions}
+
+\input{section-usecases}
+
+\clearpage
+
+\input{section-defining}
+
+\input{section-fair}
+
+\input{section-catalog}
+
+\input{section-registry}
+
+\input{section-federation}
+
+
+\input{section-data}
+
+\input{section-package}
+
+\input{section-interfaces}
+
+\input{section-resources}
+
+\input{section-security}
+
+\clearpage
+
+
+\input{section-outreach}
+
+
+
+\section*{References}
+
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{format/techpubs}
+\bibliography{NIST-analytics}
+
+\appendix
+
+
+\input{section-glossary}
+
+\input{changelog-donotchange}
+
+\listoftodos
+
+
+\end{document}
