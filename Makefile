@@ -1,6 +1,6 @@
 FILE=main
 
-O{TIONS=--shell-escape
+OPTIONS=--shell-escape
 
 all: ${FILE}.pdf
 

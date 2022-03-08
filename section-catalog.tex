@@ -1,0 +1,74 @@
+\subsubsection{Analytics Service Catalogue}
+\label{sec:catalog}
+
+\paragraph{Motivation.}
+Cloud providers offered a considerable set of analytics services to
+their customers. There are many analytics services available. A user
+needs to be able to quickly obtain an overview of such available
+services. This helps identifying further actions in order to evaluate
+them and identify if further investigation is justified. The catalouge
+contains enough details to locate the service and evaluate if it is
+useful. However, it may not provide technical details which are
+captured by a service registry instead.
+
+\paragraph{Access Requirements.}
+The catalogue may be public or may be restricted while authorized
+entities may access it. As analytics services may evolve over time,
+time dependent versioned descriptions of the services must be able to
+be included. An organizational entity may manage their own
+catalogues. It is desirable to have the catalogues be uniform, so that
+they can be combined into a larger catalogue combining entries of
+multiple organizations.
+
+\TODO{}{8.2.4.2 and 8.2.4.4 and 8.2.6.2 are all labelled Access
+  Requirements. perhaps we should be more specific}
+
+\paragrap{Federation.}
+The offerings are typically limited to a particular vendor. Users can
+benefit from a federates service catalogue to search and explore for
+needed services by the user. In contrast to a registry a catalogue may
+not include all technical details but could in contrast include
+services that lack such details and thus can be the basis of an
+exploratory process.  A Federated analytics service repository is
+planned to be hosted on GitHub (LINK TBD) The catalogue contains the
+following attributes, many of which are also used in an analytics
+service registry.
+
+The catalogue is organized as a list of entries, where each entry
+contains a number of attributes. These attributes may be required or
+optional. We list in Table \ref{tab:cat}.
+
+
+\begin{table}[htb]
+\caption{Catalouge attributes}
+\label{tab:cat}
+\begin{tabular}{p{3cm}p{10cm}p{2cm}}
+Name	& Description	& Required \\
+\hline
+ID	& UUID, globally unique	& \OK \\
+Name	& Name of the service	& \OK \\
+Title	& Human readable title 	& \OK \\
+Public	& True if Public 
+(needs use case to delineate what pub private means) & 	\OK \\
+Description	& Human readable short Description of the Service	& \OK \\ 
+Version	& The version number or tag of the service	& \OK \\
+License	& The license description	& \OK \\
+Microservice & 	\OK/No/Mixed	& \OK \\
+Protocol	& REST	& \OK \\
+Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK \\
+Modified	& Modification Timestamp (when first same as created)	\OK \\
+Created	& Date on which the entry was first created	& \OK \\
+Documentation	& Link to a URL with detailed description of the service	& O \\
+Source	& Link to the source code if available	& O \\
+Tag(s)	& Human readable common tags that are used to identify the service that are associated with the service	& O \\
+Category(s)	& A category that this service belongs to (NLB, Finance, ...)	& O & 
+Specification/ Schema	& Pointer to where schema is located &	O \\
+Additional metadata	& Pointer to where additional is located including the one here.	& O \\
+Endpoint	& The endpoint of the service	& O \\
+SLA/Cost	&	& O \\
+Authors	& contact details of the people or organization responsible for the service (freeform string)	& O \\
+Data	& Description on how data is managed	& O \\
+\hline
+\end{tabular}
+\OK = Required; O = Optional
+\end{table}
