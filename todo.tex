@@ -1,0 +1,208 @@
+\section{TODO}
+
+\TODO{}{Describe service provider, library provider infrastructure
+  provider... Move this sub section to its own 'concept' section, or
+  to some other separate section, perhaps the {\em Landscape}.}
+
+\TODO{}{potential text for describe service provider, infra provider:
+  describing federated services and infrastructure providers but
+  likely better for a Federated Access Landscape section:}
+
+Two essential parts of a ‘federation’ infrastructure are: the
+definition, advertising, and discovery of services; and the secure
+access to the services (via federated identity).  Infrastructure
+capabilities for ‘unified service discovery’ in federated service
+registries are not mature. Service / infrastructure providers
+especially, face many challenges. For example, various registry
+infrastructures provide support for different user access methods /
+technologies, but too often are not compatible with the heterogeneous
+access methods of other (xyz) which desire to interoperate with the
+federation.  The following technology review briefly outlines existing
+projects that have implemented bindings or integrations of service
+discovery (SD) and federated identity management and user
+authentication technologies, as they may relate to the federated
+access.
+
+Sub section 1: 	Notable Implementations and Related Technologies
+
+Sub section 2:	Identity Federation
+
+Sub section 3: 	Terms, Definitions, Acronyms ({gregor} move to appropriate location)
+
+Section 1a: Notable federated access infrastructures 
+
+Type A: 
+
+Infrastructures which provide resources to a broad audience with a
+wide range of user requirements. Oriented more toward sharing, and
+potentially supportive of ‘open science;’ but also requiring more
+attention to AAI.
+
+XSEDE.
+The extreme science and engineering discovery environment is an
+HPC and grid based information system. Supports a number of identity
+capabilities, and credential translation; and supports several
+integrations and provides a wide range of resources.
+
+LHC. The Large Hadron Collider Computing Grid.
+
+EOSC-Hub, a super federation of the EGI, EUDAT, and INDIGO projects,
+also serving a broad audience of users.
+
+EGI and EUDAT. Both the European Data Infrastructure and the European
+Grid Infrastructure are federated environments / collaborative
+infrastructures providing functionality for: (AAI requirements (in the
+    form of:)) SSO, delegation, non-web federated access, multiple
+authentication protocols, LoAs, and distributed authorization; and (SD
+  requirements (in the form of:)) service discovery, unified API,
+replication, hierarchies, service ingo lifecycle mgmt., and common
+information model. Both EGI and EUDAT provide a command line interface
+option for user access. EGI is X.509 based.
+
+Type B: Infrastructures which provide resources of a domain specific
+nature to smaller communities.
+
+CLARIN (Common Language Resources and Technology Infrastructure)
+research infrastructure. A SAML based federation of repositories,
+supporting SSO for members, and utilizing a registry discovery service
+(driven by the Language Resource Switchboard (a text analysis
+    application). Unlike EGI and EUDAT, CLARIN provides a user
+  workflow engine. CLARIN does not provide a command line interface as
+  a user access method; and does not support multiple authentication
+  protocols or LoAs.
+
+Section 1b: Related technologies / middleware(s), and projects: 
+
+AARC Blueprint architecture (BPA) project. Active in harmonization.
+Argus. An authorization service based on SAML 2.0, VOMS, and X.509
+specifications. No GUI. Limited scalability.
+
+B2ACCESS: a suite of AAI proxy services including identity management,
+FIM, and credential translation. Deployed by notable research
+infrastructures including CLARIN, EOSC-Hub, and EPOS.
+
+BDII. An information service infrastructure service discovery
+technology deployed by EGI. BDII presents several challenges, in part
+due to its reliance on LDAP.  Distributed UDDI Deployment Engine
+(DUDE) improves on UDDI, a service discovery technology. Limited
+scalability.  eduGAIN; and the Research and education identity
+federations (REFEDS). eduGAIN is a SAML based federation interconnect
+/ federated AAI, integrated with ELIXIR. REFEDS is an ongoing project
+to develop attribute harmonization across national federations.
+
+ELIXIR. A large research infrastructure. Provides federated
+authentication / AAI technology for web browser style access but does
+not support non web style access. Supports low LoA social network
+identities. No support for credential translation. Integrates with
+eduGAIN.
+
+European Middleware Initiative (EMI) Registry. An open source client –
+server federated registry that enables federated authentication,
+service discovery, and other cross infrastructure services. EMIR
+relies on JSON, GLUE, and X.509; and integrates with B2ACCESS for
+AAI. European Plate Observing System (EPOS). Very large research
+infrastructure with thousands of users.
+
+FIWARE. An initiative providing an authorizations API, exposing an
+HTTP interface, ergo it has no GUI. Does not support delegation of
+policies.
+
+GOCDB. An information service infrastructure service registry
+technology deployed by EGI and EUDAT.  GLUE (2.0). Grid Lab Uniform
+Environment information model. Standards-based / “open standard.”
+
+IGTF. Interop global trust federation. An infrastructure
+authentication technology used by CLARIN, EGI, and EUDAT.  Helmholtz
+data federation project. Development of an AAI proxy that provides
+credential translation and interoperability between different
+providers with incompatible protocols, resulting in federated identity
+management.
+
+Metacomputing directory service (MDS); and ISIS. Peer to peer service
+discovery technologies.
+
+Moonshot. Federated authentication / AAI project, offering ‘non web’
+browser access. Developed by IETF. Several shortcomings include lack
+of support for OIDC or X.509.
+
+MWSDI. Groups registries into domains, and groups domains into
+federations. Limited scalability.  ORCHID. A commercial, author
+oriented identity service provider with limited integration capability
+and low levels of assurance. SCOPUS is another author oriented
+identity service provider.
+
+PRACE. A large European HPC infrastructure based on PKI AAI. Limited
+to X.509 services; does not offer OIDC or SAML based identity
+federation.
+
+SIRTFI. Security incident response trust framework for federated
+identify. Part of REFEDS.
+
+UNICORE. Centralized HPC service registry middleware. The UNICORE FTP
+is not accessible through web browser interfaces. ckre CIM / CIS.
+
+VOMS. Virtual organization management service. A user authorization
+technology deployed by EGI.
+
+WSO2 Identity Server. An authorization service with Active Directory,
+JDBC, and LDAP integration. Not suitable for distributed management of
+access control policies. Tightly bound to FIM, which creates
+challenges for other systems which have established authentication
+schemes.
+
+AT&T XACML. Xacml is an RA. NDG XACML
+
+OpenAZ 
+
+Axiomatics policy server (commercial) The incomplete parts of the
+listing can be supplemented by russell.  Research and education
+federations group assurance frame (RAF) Section 2: Identity Federation
+Architectures Simplistically stated, user identity is the first step
+in federated authentication, and connection to target infrastructure /
+service provider endpoints. Generally speaking, there are three types
+of architectures.
+
+Type 1: ‘Mesh:’ the most widely adopted model (74), however
+substantially more complex than the others.
+
+Type 2: Hub and spoke with distributed login: AARC’s Blueprint
+Architecture (BPA), and B2ACCESS are adopters of this architecture.
+
+Type 3: Hub and spoke with central login: this model is not suitable
+for large scale management of access policies.
+
+Credential translation. SAML identities are not compatible with OIDC
+identities. 2nd, service (provider) federations and identity
+(provider) federations have incompatible attribute dictionaries and
+authentication protocols. In a sample 107 / 131 EUDAT implementation,
+the credential translator consists of an OAuth2 authorization server,
+and a certificate authority and federation database both part of 108 /
+132. The user first authenticates with an identity provider, and then
+may request a token from the translation OAuth2 server, which responds
+by allowing the user to retrieve a token. The user then asks the
+translation CA for a credential. The CA then retrieves user attributes
+from the federation database, and provides the user with a short lived
+x.509 credential. All of this has taken place in a security
+environment. The user may now use her certificate to access services,
+in a service area.
+
+Section 3: Terms, Definitions, Acronyms (acronyms are on doc 2)
+Authentication: a credential. Common authentication refers to the use
+of a single credential to access multiple infrastructures, resources,
+services, etc. (1)
+
+Authorization: dealing with “what level of service is allowed to be
+accessed, rather than who is accessing. (1) Service discovery: (53)
+
+Web service: “software processes that enable fetching, adding,
+editing, or deleting data.” (2)
+
+Additional concepts to be added to this section – 
+LoA calculation
+(memon 99). Attribute provenance
+(memon 71). Metadata schema
+(memon 27 / 51) guest identity
+
+
+
+\TODO{}{Lightening strike outage, server outage.}
