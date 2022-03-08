@@ -6,6 +6,11 @@ all:
 	make clean
 	make -f Makefile watch
 
+publish:
+	git add --force ${FILE}.pdf
+	git commit -m "add new pdf document" ${FILE}.pdf
+	git push
+
 pdf: ${FILE}.pdf
 
 d: clean

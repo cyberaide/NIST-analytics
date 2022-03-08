@@ -26,10 +26,11 @@ focus on a service oriented framework.
 
 \subsection{Scope and Objectives}
 
-NBD-PWG\footnote{\TODO{}{introduce in the background section}} is exploring how
-to extend NBDIF \footnote{\TODO{}{introduce in the background section}} for packaging scalable analytics as services to meet
-the challenges of today’s information analytics. These services are
-intended to be reusable, deployable, and operational for Big Data,
+NBD-PWG\footnote{\TODO{}{introduce in the background section}} is
+exploring how to extend NBDIF \footnote{\TODO{}{introduce in the
+background section}} for packaging scalable analytics as services to
+meet the challenges of today’s information analytics. These services
+are intended to be reusable, deployable, and operational for Big Data,
 High Performance Computing, AI machine learning (ML), and deep
 learning (DL) applications, regardless of the underlying computing
 environment.
@@ -41,43 +42,26 @@ and operational, regardless of the underlying computing environment.
 \TODO{russell}{note that the 'string' reusable, deployable, and
   operational was also used in the previous ppg.}
 
-
-
+The initial focus of this document will address several key areas:
 
 \begin{enumerate}
   
-\item[a.] Exploration: Determine and document the level of interest
-  from industry, government, and academia in extending the NBDIF to
-  develop scalable analytics as services that are reusable,
-  deployable, and operational, regardless of the underlying computing
-  environment.
-
-\item[b.] Key Focus Areas
-
-  \begin{enumerate}
-
-  \item[b.1.] Compile and organize use cases, analytic services from
-    traditional statistical, AI/ML/DL, and emerging analytics
-    application domains; identify and document technical requirements.
-
-   \item[b.2.] Package analytic algorithms with well-defined input and
+   \item[a.2.] Package analytic algorithms with well-defined input and
      output parameters as service payloads that can be reusable,
      deployable, and operational across multi-cores, CPUs, and GPU
      computing platforms.
 
-   \item[b.3.] Encapsulate service payload with a well-defined format,
+   \item[a.3.] Encapsulate service payload with a well-defined format,
      interface, and end-to-end access control for the open and secure
      computing environment.
 
-   \item[b.4.] Establish federated registries to locate and consume
+   \item[a.4.] Establish federated registries to locate and consume
      analytics services with persistent identifiers across
      organizations.
 
-   \item[b.5.] Provide resource management for application
+   \item[a.5.] Provide resource management for application
      orchestration and workflow between processes.
 
-  \end{enumerate}
-  
 \end{enumerate}
 
 
@@ -85,7 +69,8 @@ and operational, regardless of the underlying computing environment.
 
 
 The document is organized as follows and motivated by the tasks
-identified in the previous section.
+identified in the previous section. Each section is augmented with the
+key area it contributes to.
 
 \TODO{Gregor} the following will be reworked based on the new outline.
 
@@ -96,24 +81,32 @@ identified in the previous section.
   communication between different interdisciplinary groups while
   allowing them to use the same language.
 
-\item Section \ref{sec:usecases}: Use Cases for Analytic Services: We plan to
-  compile and organize use cases focusing on analytic services
-  including traditional statistical, AI/ML/DL, and emerging analytics
-  application domains. It will help identifying the meta- and
-  technical requirements.
+\item Section \ref{sec:usecases}: Use Cases for Analytic Services:
+  A compilation and organization of use cases focusing on analytic
+  services including traditional statistical, AI/ML/DL, and emerging
+  analytics application domains. It will help identifying the meta-
+  and technical requirements.
 
-\item Section \ref{sec:fair}: Reusable Analytics Services. The main section
+\item Section \ref{sec:fair}: Defining and Finding Reusable Analytics
+  Services. This section 
   will include the definition and conceptual architecture of reusable
   analytics services. This includes the following concerns that are
-  organized as subsections:
-  
-\item Section \ref{sec:catalog}: Service Catalog: To communicate the
-  existence of the services to others service
-  registries can be used.
+  organized as subsections.
 
-\item Section \ref{sec:registry}: Service Registry: To communicate the
-  the features of the services to others service
-  registries can be used.
+ \begin{itemize}
+
+    \item Section \ref{sec:catalog}: Service Catalog: To communicate
+      the existence of the services to others service registries can
+      be used.
+
+    \item Section \ref{sec:registry}: Service Registry: To communicate
+      the the features of the services to others service registries
+      can be used.
+
+\end{itemize}
+
+\item Section \ref{sec:federation} Service Analytics Federation: To leverage multiple
+existing services federated services can be used to integarte them.
 
 \item Section \ref{sec:data}: Data in Reusable Analytics Services:
   Here we explore a number of important issues related to data that is
