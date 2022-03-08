@@ -1,8 +1,12 @@
-FILE=main
+FILE=NIST-analytics
 
 OPTIONS=--shell-escape
 
-all: ${FILE}.pdf
+all:
+	make clean
+	make -f Makefile watch
+
+pdf: ${FILE}.pdf
 
 d: clean
 	pdflatex  ${FILE}
