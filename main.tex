@@ -5,14 +5,16 @@
 % 	Developed by Gregor von Laszewski based on the 1200 template provided by K. Miller, kmm5@nist.gov 
 %	Last updated: 22-November-2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt,fullpage]{article}
-\input{format/format}
+\documentclass[11pt,fullpage]{article}
+\input{format/simple}
+\usepackage[margin=1in]{geometry}
+%\input{format/format}
 \usepackage{titlesec}
 \setcounter{tocdepth}{10}  
 
 \setcounter{secnumdepth}{10}
 
-\usepackage{markdown}
+%\usepackage{markdown}
 
 %\newcommand{\pubnumber}{1500-XX}
 %\newcommand{\DOI}{https://doi.org/10.6028/NIST.SP.1500-XX}
@@ -52,7 +54,7 @@ Volume 1, Overview}
 %\section*{Preface}
 %\normalsize Delete if not applicable
 
-\input{abstract}
+\input{section-abstract}
 
 \section*{Key words}
 \normalsize 
@@ -92,95 +94,49 @@ organizational maturity; project maturity; system modernization.\\
 
 \TODO{}{TBD}
 
-\input{introduction}
+\input{section-introduction}
 
 
 \newpage
 
-\input{definitions}
+\input{section-definitions}
 
-\input{usecases}
+\input{section-usecases}
 
-\end{document}
+
+% \input{section-fair}
+
+\input{section-catalog}
+
+\input{section-registry}
+
+
+\input{section-data}
+
+\input{section-package}
+
+\input{section-interfaces}
+
+\input{section-resources}
+
+\input{section-security}
 
 \clearpage
 
 
-\begin{comment}
-\section{Technical Requirements}
+\input{section-outreach}
 
-\section{Specification Paradigm}
-
-\subsection{Relevant Standards and Best Practices}
-\subsection{Standard Technology Gap Analysis}
-
-\section{Analytics Paradigms}
-
-\subsection{Introduction}
-
-\subsection{Paradigm Landscape}
-
-\subsection{Paradigms}
-\subsubsection{Realtime Analytics} 
-\subsubsection{Datalake Analytics} 
-\subsubsection{AI/ML/DL  Analytics} 
-\subsubsection{Legacy Analytics}
-\subsubsection{Cloud Service Analytics}
-
-\subsubsection{Edge Service Analytics}
-\subsubsection{Container Service Analytics}
-\subsubsection{Cluster Service Analytics}
-\subsubsubsection{Batch Analytics} 
-\subsubsection{Parameter Study Analytics}
-\subsubsection{Workflow and Combinations}
-
-
-\section{Specification}
-
-
-
- 
-
-
-
-
-\subsubsection{Support of Plug-In Analytic Services}
-\subsubsection{Orchestration of Infrastructure and Services}
-\subsubsection{Orchestration of Big Data Applications and Experiments}
-\subsubsection{Reusability}
-\subsubsection{Execution Workloads}
-\subsubsection{Security and Privacy Fabric Requirements}
-
-\subsection{Analytics Service Reusability}
-\subsubsection{Packaging}
-\subsubsection{Encapsulation}
-
-
-\subsubsection{Analytics Service Findability}
-
-\input{tree-findability}
-
-\end{commnet}
-
-
-
-
-
-
-
-
-
-\input{outreach}
 
 
 \section*{References}
+
 \addcontentsline{toc}{section}{References}
 \bibliographystyle{format/techpubs}
-\bibliography{References}
+\bibliography{references}
 
 \appendix
 
 
-
+\input{changelog-donotchange}
 
 \end{document}

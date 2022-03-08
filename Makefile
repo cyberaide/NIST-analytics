@@ -44,3 +44,12 @@ info:
 manual:
 	wget -O rivanna-manual.md  https://raw.githubusercontent.com/laszewsk/mlcommons/main/www/content/en/docs/tutorials/rivanna.md
 	pandoc -o rivanna-manual-DONT.md  rivanna-manual.md   
+
+changelog:
+	rm -rf changelog-donotchange.tex
+	@echo "\\\\section{Changelog}" >> changelog-donotchange.tex
+	@echo "\\\\begin{enumerate}" >> changelog-donotchange.tex
+	@echo "\\\\itemsep0em" >> changelog-donotchange.tex
+	git log --pretty=format:'\item  \href{http://github.com/cyberaide/NIST-analytics/commit/%H}{%s}' >> changelog-donotchange.tex
+	@echo "\n\\\\end{enumerate}" >> changelog-donotchange.tex
+	cat changelog-donotchange.tex
