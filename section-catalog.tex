@@ -22,7 +22,7 @@ catalogues. It is desirable to have the catalogues be uniform, so that
 they can be combined into a larger catalogue combining entries of
 multiple organizations.
 
-\TODO{}{8.2.4.2 and 8.2.4.4 and 8.2.6.2 are all labelled Access
+\TODO{8.2.4.2 and 8.2.4.4 and 8.2.6.2 are all labelled Access
   Requirements. perhaps we should be more specific}
 
 \paragraph*{Federation.}
@@ -44,7 +44,8 @@ optional. We list in Table \ref{tab:cat}.
 \begin{table}[htb]
 \caption{Catalouge attributes}
 \label{tab:cat}
-\begin{tabular}{p{3cm}p{10cm}p{2cm}}
+\resizebox{1.0\columnwidth}{!}{%
+\begin{tabular}{p{3cm}p{6cm}p{2cm}}
 Name	& Description	& Required \\
 \hline
 ID	& UUID, globally unique	& \OK \\
@@ -60,19 +61,20 @@ Protocol	& REST	& \OK \\
 Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK \\
 Modified	& Modification Timestamp (when first same as created)	\OK \\
 Created	& Date on which the entry was first created	& \OK \\
-Documentation	& Link to a URL with detailed description of the service	& O \\
-Source	& Link to the source code if available	& O \\
-Tag(s)	& Human readable common tags that are used to identify the service that are associated with the service	& O \\
-Category(s)	& A category that this service belongs to (NLB, Finance, ...)	& O \\ 
+Documentation	& Link to a URL with detailed description of the service	& \OP \\
+Source	& Link to the source code if available	& \OP \\
+Tag(s)	& Human readable common tags that are used to identify the service that are associated with the service	& \OP \\
+Category(s)	& A category that this service belongs to (NLB, Finance, ...)	& \OP \\ 
 Specification/ Schema	& Pointer to where schema is located &	O \\
-Additional metadata	& Pointer to where additional is located including the one here.	& O \\
-Endpoint	& The endpoint of the service	& O \\
-SLA/Cost	&	& O \\
-Authors	& contact details of the people or organization responsible for the service (freeform string)	& O \\
-Data	& Description on how data is managed	& O \\
+Additional metadata	& Pointer to where additional is located including the one here.	& \OP \\
+Endpoint	& The endpoint of the service	& \OP \\
+SLA/Cost	&	& \OP \\
+Authors	& contact details of the people or organization responsible for the service (freeform string)	& \OP \\
+Data	& Description on how data is managed	& \OP \\
 \hline
 \end{tabular}
-\OK = Required; O = Optional
+\OK = Required; \OP = Optional
+}
 \end{table}
 
 \clearppage
