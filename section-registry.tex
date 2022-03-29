@@ -63,7 +63,7 @@ services. The information provided includes the provider, [x], and
 
 \item[Multi factor Authentication in User Identity.] A means for
   authenticating users via two or more types of
-  authentication. An MFA instrument can elevate a user’s level of
+  authentication. An MFA instrument can elevate a user's level of
   assurance profile. RAF and IGTF are examples of such assurance
   framework standards.  OpenID Connect, SAML, and X.509 are examples
   of services that expose interfaces for multiple authentication.
@@ -121,9 +121,9 @@ contain a library that may be deployed.
 
 \begin{table}[htb]
 \caption{Registry attributes \TODO{Somehow the width is wrong}}\label{tab:reg}
-\resizebox{1.0\columnwidth}{!}{%
+% \resizebox{1.0\columnwidth}{!}{%
 \begin{tabular}{p{3cm}p{6cm}p{0.5cm}p{0.5cm}}
-Name	& Description	& \rot{\shortstack{Service\\ provider}}	& \rot{\shortstack{Library\\ provider}} \\
+Name & Description & \rotatebox{90}{Service provider} & \rotatebox{90}{Library provider} \\
 \hline
 ID & 	UUID, globally unique &	\OK &	\OK \\
 Name & 	Name of the service	& \OK	& \OK \\ 
@@ -160,7 +160,7 @@ CachingInterval	&If a service is accessed a lot, the caching interval can be use
 DataIntegration &	In case of big data the data cannot be provided as a parameter to the analysis function. Instead, we need to provide the data as endpoint. However, often tata may need to be uploaded or can be downloaded. In this case this field provides the upload and download endpoints and the protocol to access the data	& O &	O \\
 \hline
 \end{tabular}
-}
+%}
 \OK = Required; O = Optional
 \end{table}
 
@@ -176,7 +176,7 @@ instantiation or the reuse of already instantiated services we address
 the accessibility and interoperability. With respect to analytics as a
 service, end users should be able to find various analytic services
 and similar services without having to individually search multiple
-‘locations’ or databases, each built to operate on its own, unique
+locations or databases, each built to operate on its own, unique
 storage and retrieval constructs. Through these descriptions automated
 service integration can be provisioned while targeting not only the
 functionality involved, but also allowing service level considerations
@@ -188,4 +188,3 @@ sharing of data mashup that can be made available to the community and
 registered to make reuse easier without everyone having to replicate
 the service.
 
-\clearpage
