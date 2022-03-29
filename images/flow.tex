@@ -1,0 +1,57 @@
+\begin{figure}[htb]
+\begin{center}
+\begin{adjustbox}{width=1.0\textwidth}
+\begin{footnotesize}
+\forestset{
+  skan tree/.style={
+    for tree={
+      drop shadow,
+      text width=3cm,
+      grow'=0,
+      rounded corners,
+      draw,
+      top color=white,
+      bottom color=blue!20,
+      edge={Latex-},
+      child anchor=parent,
+      %parent anchor=children,
+      anchor=parent,
+      tier/.wrap pgfmath arg={tier ##1}{level()},
+      s sep+=2.5pt,
+      l sep+=2.5pt,
+      edge path'={
+        (.child anchor) -- ++(-10pt,0) -- (!u.parent anchor)
+      },
+      node options={ align=center },
+    },
+    before typesetting nodes={
+      for tree={
+        content/.wrap value={\strut ##1},
+      },
+    },
+  },
+}
+\begin{forest}
+  skan tree
+  [Usecase, \nwhite
+    [Schema, \ngreen
+       [Code Generator (31 Languages), \ngreen
+          [Implementation, \nred
+             [Deployment, \nred
+               [Verification, \nred
+                  [Hosting, \nwhite
+                  ]
+               ]
+            ]
+         ]
+      ]
+    ]
+  ]
+\end{forest}
+\end{footnotesize}
+\end{adjustbox}
+\end{center}
+\vspace{-0.8cm}
+\caption{Component flow to specify an analytics service.}
+\label{F:flow}
+\end{figure}

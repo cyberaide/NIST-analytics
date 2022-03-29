@@ -1,0 +1,98 @@
+\begin{figure}[!h]
+\begin{center}
+\begin{adjustbox}{width=0.9\textwidth}
+\begin{footnotesize}
+\forestset{
+  skan tree/.style={
+    for tree={
+      drop shadow,
+      text width=3cm,
+      grow'=0,
+      rounded corners,
+      draw,
+      top color=white,
+      bottom color=blue!20,
+      edge={Latex-},
+      child anchor=parent,
+      %parent anchor=children,
+      anchor=parent,
+      tier/.wrap pgfmath arg={tier ##1}{level()},
+      s sep+=2.5pt,
+      l sep+=2.5pt,
+      edge path'={
+        (.child anchor) -- ++(-10pt,0) -- (!u.parent anchor)
+      },
+      node options={ align=center },
+    },
+    before typesetting nodes={
+      for tree={
+        content/.wrap value={\strut ##1},
+      },
+    },
+  },
+}
+\begin{forest}
+  skan tree
+  [Big Data Services
+    [IaaS for Big Data
+       [VM
+           [Virtual Box -
+           Openstack -
+           QEMU -
+           KVM, \nred]
+       ]
+       [Container 
+           [Docker -
+            Docker Swarm -
+            Kubernetes, \nred]
+       ]
+       [HPC
+          [SLURM, \nred]
+       ]
+       [localhost
+           [ssh -
+            docker -
+            qemu -
+            kvm, \nred]
+       ]
+    ]
+    [PaaS for Big Data
+      [MapReduce
+         [Hadoop -
+          Spark, \ngrey]
+      ]
+      [Messaging
+           [MQTT, \ngrey]
+           [Filter, \ngrey]
+      ]
+      [Micro Services
+           [AWS Lambda, \ngrey]
+           [OpenWhisk, \ngrey]
+      ]
+    ]
+    [SaaS for Big Data
+       [AI for Big Data
+          [Supervised - 
+           Unsupervised Learning, \ngreen]
+       ]
+       [Applications
+          [Face Detection, \nwhite]         
+          [Fingerprint Detection, \nwhite]         
+          [Sentiment Analysis, \nwhite]         
+          [Others ..., \nwhite]         
+       ]
+       [General Purpose Services
+          [Filters, \nwhite]         
+          [Virtual Data Store, \nwhite]         
+          [Virtual Object Store, \nwhite]         
+          [Others ... , \nwhite]         
+       ]
+    ]
+  ]
+\end{forest}
+\end{footnotesize}
+\end{adjustbox}
+\end{center}
+\caption{Selected REST Services in support of the Big Data Refernce Architecture.}
+\label{F:graph-e616}
+\end{figure}
