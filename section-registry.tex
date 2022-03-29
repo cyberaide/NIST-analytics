@@ -26,7 +26,7 @@ service, but as a source code library which can be deployed as a
 service.
 
 
-\TODO{}{use case} A user wants to find an analytics service and needs to
+\TODO{use case} A user wants to find an analytics service and needs to
 identify candidate services based on their descriptions and
 features. A user wants to find services quickly and therefor expects
 modern keyword search and taxonomy, faceted search, query
@@ -39,7 +39,7 @@ but also how to use it.
 
 \paragraph*{Access Requirements.} 
 
-\TODO{}{possibly change section to privacy requirements so that LoA
+\TODO{possibly change section to privacy requirements so that LoA
   and Authentication can be moved to separate section ?}
 
 Public Analytics Service Registry. Public analytics discovery
@@ -49,7 +49,7 @@ services. The information provided includes the provider, [x], and
 
 \begin{description}
 
-\item[Levels of Assurance (LoA) in User Identity] Most readers should
+\item[Levels of Assurance (LoA) in User Identity.] Most readers should
   be familiar with functionality to {\em sign in with ORCHID, or
     Facebook} or something known to the user. In general identity
   management scenarios, this provision enables what is referred to as
@@ -61,14 +61,14 @@ services. The information provided includes the provider, [x], and
   permissions to perform to privileged activities or gain access to
   more sensitive xyz.
 
-\item[Multi factor Authentication in User Identity] A means for
+\item[Multi factor Authentication in User Identity.] A means for
   authenticating users via two or more types of
   authentication. An MFA instrument can elevate a user’s level of
   assurance profile. RAF and IGTF are examples of such assurance
   framework standards.  OpenID Connect, SAML, and X.509 are examples
   of services that expose interfaces for multiple authentication.
 
-\item[Private Analytics Service Registry. Analytics Services stored
+\item[Private Analytics Service Registry.] Analytics Services stored
   in private registries are only available to authenticated and
   authorized / member users. Private registries allow providers to
   build virtual organizations [/ VOMS] that advertise specialized
@@ -120,9 +120,9 @@ contain a library that may be deployed.
 
 
 \begin{table}[htb]
-\caption{Registry attributes}\label{tab:reg}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{p{3cm}p{11cm}p{0.5cm}p{0.5cm}}
+\caption{Registry attributes \TODO{Somehow the width is wrong}}\label{tab:reg}
+\resizebox{1.0\columnwidth}{!}{%
+\begin{tabular}{p{3cm}p{6cm}p{0.5cm}p{0.5cm}}
 Name	& Description	& \rot{\shortstack{Service\\ provider}}	& \rot{\shortstack{Library\\ provider}} \\
 \hline
 ID & 	UUID, globally unique &	\OK &	\OK \\
@@ -131,7 +131,7 @@ Title & 	Human readable title &	\OK	& \OK \\
 Public	& True if Public
 (needs use case to delineate what pub private means) & 	\OK & \OK \\
 Description	& Human readable short Description of the Service	& \OK & 	\OK \\
-Endpoint &	The endpoint of the service	& \OK	&  N/A \\
+Endpoint &	The endpoint of the service	& \OK	&  \NA \\
 List of Input Parameters &
 	A list of parameters to the service. The parameters have each the form of name, function, type, value, access. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, event.
 The function responds to a different function in case multiple are provided by the service.	& \OK	& \OK \\ 
@@ -150,13 +150,13 @@ Author &	Contact details of the people or organization responsible for the servi
 Tags &	Human readable common tags that are used to identify the service that are associated with the service	& O & O \\
 Categories &	A category that this service belongs to (NLB, Finance, ...)	& O & O \\
 Created	& date and time on which the analytics service was instantiated or created	instantiated	& \OK & \OK \\
-Heartbeat &	State and timestamp of the last check when the service was active	& O & 	N/A \\
+Heartbeat &	State and timestamp of the last check when the service was active	& O & 	\NA \\
 Documentation &	Link to a URL with detailed description of the service
 Source	Link to the source code if available	& O & O \\
 Specification &	Pointer to where specification schema is located	& O &  O \\
 AdditionalMetadata	& Pointer to where additional is located including the one here.	& O &	O \\
 SLA	& Serves level agreement including cost	& O 	& O \\
-CachingInterval	&If a service is accessed a lot, the caching interval can be used to put a limitation on the Response with an LRU cache	& O &	N/A \\
+CachingInterval	&If a service is accessed a lot, the caching interval can be used to put a limitation on the Response with an LRU cache	& O &	\NA \\
 DataIntegration &	In case of big data the data cannot be provided as a parameter to the analysis function. Instead, we need to provide the data as endpoint. However, often tata may need to be uploaded or can be downloaded. In this case this field provides the upload and download endpoints and the protocol to access the data	& O &	O \\
 \hline
 \end{tabular}

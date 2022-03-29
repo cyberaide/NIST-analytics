@@ -1,114 +1,190 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     LaTeX source code to approximate a NIST Technical report
-%	  Instructions for authors: tinyurl.com/techpubsnist 
-%	DOI watermark will be added on final PDF
-% 	Developed by Gregor von Laszewski based on the 1200 template provided by K. Miller, kmm5@nist.gov 
-%	Last updated: 22-November-2021
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[11pt,fullpage]{article}
-\input{format/simple}
-\usepackage[margin=1in]{geometry}
-\setlength{\marginparwidth}{100pt}
-\setlength{\hoffset}{-1.5cm}
-%\input{format/format}
-\usepackage{titlesec}
-\usepackage{easyReview}
-\setcounter{tocdepth}{10}  
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[sigconf]{acmart}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{subcaption}
+\usepackage{todonotes}
+\newcommand{\TODO}[1]{\todo[inline]{#1}}
+\newcommand{\FILE}[1]{\todo[inline,color=green!20]{File: #1}}
 
-\setcounter{secnumdepth}{10}
+\newcommand{\OK}{+}
+\newcommand{\OP}{o}
+\newcommand{\NA}{N/A}
 
-%\usepackage{markdown}
+\definecolor{lightgray}{gray}{0.94}
+\let\oldtabular\tabular
+\let\endoldtabular\endtabular
+\renewenvironment{tabular}{\rowcolors{2}{lightgray}{white}\oldtabular}{\endoldtabular}
 
-%\newcommand{\pubnumber}{1500-XX}
-%\newcommand{\DOI}{https://doi.org/10.6028/NIST.SP.1500-XX}
-%\newcommand{\monthyear}{November 2021}
-\newcommand{\TITLE}{NIST Reusable Analytics Service Framework\\
-Volume 1, Overview}
-\newcommand{\AUTHORS}{
-\large Gregor von Laszewski\\
-\large Wo Chang\\
-\large Russell C. Reinsch\\
-\large Geoffrey C. Fox\\
-%\vfill
-}
-\usepackage{lineno}
-\setlength\parindent{0pt}
-\setlength{\parskip}{0.2\baselineskip}%
+\setcopyright{none}
+\copyrightyear{2022}
+\acmYear{2022}
+\acmDOI{}
 
+\acmConference[White Paper]{White paper produced by the NIST Public Working Group on Big Data}{White paper produced by the NIST Public Working Group on Big Data}{Washington, D.C.}
+\acmBooktitle{White paper produced by the NIST Public Working Group on Big Data, Washington, D.C.}
+\acmPrice{}
+\acmISBN{}
+%%\citestyle{acmauthoryear}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   	BEGIN DOCUMENT 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
 \begin{document}
 
+\title{Reusable Hybrid and Multi-Cloud Analytics Service Framework}
 
-% \input{tite}
+\author{Gregor von Laszewski}
+\email{laszewski@gmail.com}
+\orcid{0000-0001-9558-179X}
+\affiliation{%
+  \institution{University of Virginia}
+  \streetaddress{Biocomplexity Institute\\
+                Town Center Four\\
+                994 Research Park Boulevard}
+  \city{Charlottesville}
+  \state{VA}
+  \postalcode{22911}
+  \country{USA}
+}
 
-\title{\TITLE}
-\author{\AUTHORS}
+\author{Wo Chang}
+\email{wchang@nist.gov}
+\affiliation{%
+  \institution{NIST}
+  \streetaddress{100 Bureau Drive}
+  \city{Gaithersburg}
+  \state{MD}
+  \postalcode{20899}
+  \country{USA}
+}
+
+\author{Russell Reinsch}
+\email{russell@mcleansystemsintegration}
+% \orchid{idk}
+\affiliation{%
+  \institution{McLean Systems Integration}
+  \streetaddress{6102 Franklin Park}
+  \city{McLean}
+  \state{VA}
+  \postalcode{22101}
+  \country{USA}
+}
+
+\author{Geoffrey C. Fox}
+\email{gcfexchange@gmail.com}
+\affiliation{%
+  \institution{University of Virginia}
+  \streetaddress{Biocomplexity Institute\\
+                Town Center Four\\
+                994 Research Park Boulevard}
+  \city{Charlottesville}
+  \state{VA}
+  \postalcode{22911}
+  \country{USA}
+}
+
+
+\author{Ali ...}
+\email{laszewski@gmail.com}
+\orcid{0000-0001-9558-179X}
+\affiliation{%
+  \institution{University of Virginia}
+  \streetaddress{Biocomplexity Institute\\
+                Town Center Four\\
+                994 Research Park Boulevard}
+  \city{Charlottesville}
+  \state{VA}
+  \postalcode{TBD}
+  \country{USA}
+}
+
+\author{Olivera Kotevska}
+\email{kotevskao@ornl.gov}
+%\orcid{0000-0001-9558-179X}
+\affiliation{%
+  \institution{Oak Ridge National Laboratory}
+  %\streetaddress{Biocomplexity Institute\\
+                %Town Center Four\\
+                %994 Research Park Boulevard}
+  \city{Oak Ridge}
+  \state{TN}
+  \postalcode{37830}
+  \country{USA}
+}
+
+\author{Gary ...}
+\email{laszewski@gmail.com}
+%\orcid{0000-0001-9558-179X}
+\affiliation{%
+  \institution{Oak Ridge National Laboratory}
+  %\streetaddress{Biocomplexity Institute\\
+  %              Town Center Four\\
+  %              994 Research Park Boulevard}
+  \city{Charlottesville}
+  \state{VA}
+  \postalcode{TBD}
+  \country{USA}
+}
+
+
+\author{PW ...}
+\email{laszewski@gmail.com}
+%\orcid{0000-0001-9558-179X}
+\affiliation{%
+  \institution{Oak Ridge National Laboratory}
+  %\streetaddress{Biocomplexity Institute\\
+  %              Town Center Four\\
+  %              994 Research Park Boulevard}
+  \city{Charlottesville}
+  \state{VA}
+  \country{USA}
+}
+
+\renewcommand{\shortauthors}{G. von Laszewski, et al.}
+
+%\input{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10002951.10003227.10003241.10003244</concept_id>
+       <concept_desc>Information systems~Data analytics</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10010520.10010521.10010537.10003100</concept_id>
+       <concept_desc>Computer systems organization~Cloud computing</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10011007.10011006.10011072</concept_id>
+       <concept_desc>Software and its engineering~Software libraries and repositories</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Information systems~Data analytics}
+\ccsdesc[500]{Computer systems organization~Cloud computing}
+\ccsdesc[500]{Software and its engineering~Software libraries and repositories}
+
+
+\keywords{Analytics, hybrid cloud analytics services, heterogeneous cloud analytics services, service catalog}
+
 \maketitle
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   Start front matter - page number starts with "i"
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\section*{Foreword}
-%\pagenumbering{roman}
-%\normalsize Delete if not applicable
-
-%\section*{Preface}
-%\normalsize Delete if not applicable
-
-\input{section-abstract}
-
-\section*{Key words}
-\normalsize 
-
-Adoption; barriers; implementation; interfaces; market maturity;
-organizational maturity; project maturity; system modernization.\\
-
-\pagebreak
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   Table of Contents is required
-% 	List of Tables & Figures required if more than 5 tables/figures
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tableofcontents 
-	
-\listoftables
-
-\listoffigures
-
-\pagebreak
-
-% \section*{Glossary}
-%
-% Delete if not applicable
-%
-% \pagebreak
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   Start body of text - page number starts with "1"
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \pagenumbering{\arabic}
-
-
-\input{section-production}
+% \input{section-production}
 
 \input{section-summary}
 
 \input{section-introduction}
 
-
-\newpage
-
 \input{section-definitions}
 
 \input{section-usecases}
-
-\clearpage
 
 \input{section-defining}
 
@@ -120,6 +196,7 @@ organizational maturity; project maturity; system modernization.\\
 
 \input{section-federation}
 
+\input{section-workflow}
 
 \input{section-data}
 
@@ -131,27 +208,15 @@ organizational maturity; project maturity; system modernization.\\
 
 \input{section-security}
 
-\clearpage
 
-
-\input{section-outreach}
-
-
-
-\section*{References}
-
-\addcontentsline{toc}{section}{References}
-\bibliographystyle{format/techpubs}
+\bibliographystyle{ACM-Reference-Format}
 \bibliography{NIST-analytics}
 
 \appendix
 
-
 \input{section-glossary}
 
-\input{changelog-donotchange}
-
-\listoftodos
-
-
 \end{document}
+\endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
