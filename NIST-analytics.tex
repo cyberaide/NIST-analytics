@@ -5,12 +5,13 @@
 \usepackage[latin1]{inputenc}
 \usepackage{subcaption}
 \usepackage{todonotes}
+\usepackage{graphicx}
 \newcommand{\TODO}[1]{\todo[inline]{#1}}
 \newcommand{\FILE}[1]{\todo[inline,color=green!20]{File: #1}}
 
 \newcommand{\OK}{+}
 \newcommand{\OP}{o}
-\newcommand{\NA}{N/A}
+\newcommand{\NA}{n/a}
 
 \definecolor{lightgray}{gray}{0.94}
 \let\oldtabular\tabular
@@ -46,7 +47,7 @@
                 994 Research Park Boulevard}
   \city{Charlottesville}
   \state{VA}
-  \postalcode{22911}
+  \postcode{22911}
   \country{USA}
 }
 
@@ -57,7 +58,7 @@
   \streetaddress{100 Bureau Drive}
   \city{Gaithersburg}
   \state{MD}
-  \postalcode{20899}
+  \postcode{20899}
   \country{USA}
 }
 
@@ -69,7 +70,7 @@
   \streetaddress{6102 Franklin Park}
   \city{McLean}
   \state{VA}
-  \postalcode{22101}
+  \postcode{22101}
   \country{USA}
 }
 
@@ -82,10 +83,20 @@
                 994 Research Park Boulevard}
   \city{Charlottesville}
   \state{VA}
-  \postalcode{22911}
+  \postcode{22911}
   \country{USA}
 }
 
+\author{Olivera Kotevska}
+\email{kotevskao@ornl.gov}
+%\orcid{0000-0001-9558-179X}
+\affiliation{%
+  \institution{Oak Ridge National Laboratory}
+  \city{Oak Ridge}
+  \state{TN}
+  \postcode{37830}
+  \country{USA}
+}
 
 \author{Ali ...}
 \email{laszewski@gmail.com}
@@ -97,21 +108,7 @@
                 994 Research Park Boulevard}
   \city{Charlottesville}
   \state{VA}
-  \postalcode{TBD}
-  \country{USA}
-}
-
-\author{Olivera Kotevska}
-\email{kotevskao@ornl.gov}
-%\orcid{0000-0001-9558-179X}
-\affiliation{%
-  \institution{Oak Ridge National Laboratory}
-  %\streetaddress{Biocomplexity Institute\\
-                %Town Center Four\\
-                %994 Research Park Boulevard}
-  \city{Oak Ridge}
-  \state{TN}
-  \postalcode{37830}
+  \postcode{TBD}
   \country{USA}
 }
 
@@ -125,7 +122,7 @@
   %              994 Research Park Boulevard}
   \city{Charlottesville}
   \state{VA}
-  \postalcode{TBD}
+  \postcode{TBD}
   \country{USA}
 }
 
@@ -174,17 +171,25 @@
 
 \keywords{Analytics, hybrid cloud analytics services, heterogeneous cloud analytics services, service catalog}
 
+\input{section-abstract}
+
 \maketitle
 
-% \input{section-production}
+%%%%% \input{section-production}
+
+
 
 \input{section-summary}
+
+\input{section-background}
 
 \input{section-introduction}
 
 \input{section-definitions}
 
 \input{section-usecases}
+
+\input{section-architecture}
 
 \input{section-defining}
 
@@ -212,9 +217,9 @@
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{NIST-analytics}
 
-\appendix
+% \appendix
 
-\input{section-glossary}
+%\input{section-glossary}
 
 \end{document}
 \endinput

@@ -1,0 +1,92 @@
+\begin{figure}[!h]
+  \begin{center}
+\begin{adjustbox}{rotate=-90,width=1.0\textwidth}
+  \begin{footnotesize}
+\forestset{
+  skan tree/.style={
+    for tree={
+      drop shadow,
+      text width=3cm,
+      grow'=0,
+      rounded corners,
+      draw,
+      top color=white,
+      bottom color=blue!20,
+      edge={Latex-},
+      child anchor=parent,
+      %parent anchor=children,
+      anchor=parent,
+      tier/.wrap pgfmath arg={tier ##1}{level()},
+      s sep+=2.5pt,
+      l sep+=2.5pt,
+      edge path'={
+        (.child anchor) -- ++(-10pt,0) -- (!u.parent anchor)
+      },
+      node options={ align=center },
+    },
+    before typesetting nodes={
+      for tree={
+        content/.wrap value={\strut ##1},
+      },
+    },
+  },
+}
+\begin{forest}
+  skan tree
+  [Analytics Services
+     [Analytics Compute Types
+         [Hardware]
+         [Software]
+         [Services]
+      ]
+  [Analytics Compute Providers
+       [Commercial
+           [Google]
+           [AWS]
+           [Azure]
+           [Oracle]
+           [IBM]
+           [...]
+           ]
+      [Government
+         [DOE]
+         [...]
+      ] 
+      [University
+         [XSEDE]
+         [...]
+      ] 
+    ]
+    [Analytics Platforms]
+    [Analytics Service Types
+       [Registry]
+       [AI]
+       [Machine Learning]
+       [Deep Learning]
+       [Natural Language Processing]
+       [Visualization]
+       ]
+    [Analytics Applications
+       [Advertising and Media]
+       [Automotive and Transportation]
+       [Agriculture]
+       [Banking \, financial services and insurance]
+       [Commercial Applications]
+       [Home Automation]
+       [Healthcare]
+       [Law]
+       [Manufacturing]
+       [Retail]
+       [...]
+       ]
+ ]
+\end{forest}
+\end{footnotesize}
+\end{adjustbox}
+\end{center}
+\caption{Towards a Taxonomy of Analytics Services. Shown is only a
+  very small portion of the taxonomy. For example Amazon provides at
+  least 37 different serviices diecttly related to data analytics.}
+\label{F:graph-analytics}
+\end{figure}
+

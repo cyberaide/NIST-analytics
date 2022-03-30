@@ -1,0 +1,108 @@
+\FILE{section-background.tex}
+
+
+
+find parameter for single case
+
+now we have services
+
+now how do we deploy this to many millions - use registry to implement that
+
+
+
+
+\section{Motivation}\label{s:background}
+
+In this section, we explain the motivation  while summarizing
+briefly, the different concepts constituting our work.
+
+\subsection{Hybrid Analytics Services}
+
+A {\em hybrid analytics service} combines the strength of analytics
+services that are offered by providers in public, private, or
+on-premise. It leverages them in order to provide ideally optimized
+orchestration across them. This is not just limited to reducing cost,
+but also to address security and privacy concerns when the data
+analytics or the data to perform the analytics can not be hosted in
+public clouds. Many of the major cloud providers such as AWS, Azure,
+Google, IBM, Oracle, and others have made hybrid clouds a cornerstone
+of their business model, with each of them mainly pushing their own
+solutions. Recently, however, we see that the focus is no longer
+offering just infrastructure but instead to provide services hiding the
+cloud infrastructure entirely from the users.  This leads to vendors
+also start providing hybrid analytics solutions that may integrate
+multiple services offered by various providers resulting in solutions
+with heterogenous service offerings. The integration of such services
+provides challanges as each vendor may conform to different
+integration solutions adressing public, private and on-premise
+analytics services. In general, customers will benefit from a more
+integrated approach to ease deployment and management concerns.
+
+\subsection{Multi-Analytics Services}
+
+Over the last two years, we have seen an explosion of analytics
+services, mainly through the integration of AI and deep learning
+services. High-level analytics services are being developed that hide the
+complex infrastructure needed to embed not only services from one
+vendor but multiple vendors. Hence we speak of {\em multi-analytics
+  services}. These services can then be used in cooperation or
+competition. We cooperate if services enhance each other, we compete
+if a service is chosen over another service due to better service
+level agreements. Through this interplay of the services, it is
+beneficial to formalize this interoperability. In the case of competition,
+we also need to be able to formulate a competing service that then
+calls out other services to implement the desired analytics task.
+
+\subsection{Enhancing the Big Data Reference Architecture}
+\label{s:arch}
+
+NIST has developed a Big Data Reference Architecture as part of
+NBDIF\cite{nist-v6} and identified a number of use cases that motivate
+it \cite{nist-v3}. We can leverage the effort
+~\cite{nist-v1,nist-v2,nist-v3,nist-v4,nist-v5,nist-v6,nist-v7,nist-v8,nist-v9}
+while formulating novel interoperability specifications that arise in
+our effort that has not been addressed. While we previously focused
+mostly on virtual machine management, this effort will enhance the
+activities to include high-level coordinated service deployments and
+utilization while leveraging containers.
+
+\subsection{Identification of State-of-the-Art Data Analytics Patterns}
+
+We have to ask why this opportunity can be addressed now to enable
+this interplay?  It is clearly motivated by state-of-the-art data
+analytics capabilities that only recently have become available.
+Although government agencies have provided some of the most capable
+high-end computing systems over the last years, they have integrated
+specialized GPUs as well as container technologies to bring forward
+new data analytics capabilities in these on-premise services. Industry
+has provided advanced analysis capabilities for some time but only
+recently they have achieved the maturity allowing reuse and
+cooperation opportunities among all of them.
+
+We like to provide a scenario that motivates our work. A health care
+technician in the hospital uses voice commands to control an MRI
+machine to take tomographic images. The images will be automatically
+sent to a private analytics service to identify if the images contain
+signs of COVID-19. Not only is one service consulted, but multiple to
+assure that the best available algorithms are chosen. Once identified,
+the image sare sent to a public analytics service (if the patient consents) in
+order to improve the available images to improve the deep learning data
+analysis. Previous images that have tested negative may be reanalyzed
+with the newly improved models. If new cases are found based on
+the improved analysis, health care providers are notified, and further
+actions regarding the treatment plan by the supervising physician is
+cast. As we can see, this example has all the ingredients that we need
+to create a new generation of services that integrates on-premise
+infrastructure, public and private services. The orchestration of the
+services as well as a convenient interface. Automation of the workflow
+of this use case example is explicitly stated.
+
+Analyzing this example, we identify a mixture of services that utilize
+on-premise infrastructure (the MRI), private and public services. A
+variety of service patterns are used in concert to establish an analysis
+pipeline targeted explicitly for this application use case. 
+
+The goal of this work is to analyze the interoperability of such
+service scenarios and identify such patterns motivating a vendor
+neutral architecture that promotes reusable implementations to 
+support aspects of similar use cases addressed by them.

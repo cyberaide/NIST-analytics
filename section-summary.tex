@@ -1,6 +1,64 @@
 \FILE{section-summary}
 
-\section{Executive Summary}
+\section{Introduction}
 \label{sec:summary}
 
-\TODO{TBD}
+
+Analytics as a service has become a multi-billion dollar opportunity
+for the industry. Companies and research institutions offer a number
+of competing but also collaborating services. While in the past
+emphasize was placed on the hybrid multi-cloud infrastructures, the
+focus is significantly shifting to offering {\em analytics services}
+and not just infrastructure to customers and researchers. As such, it
+is important to identify how researchers can interoperate with
+services offered by various service providers. Analog to the
+terminology in cloud computing, we introduce the terms {\em hybrid}
+analytics services that include services run by remote service
+providers or by the organization on local resources. In addition, we
+use the term {\em multi} analytics services to indicate that multiple
+services from potentially multiple service providers work in concert
+to offer a new capability released to users as analytics
+services. While applying such services to data, we term the
+combination of such services as {\em hybrid multi-services data
+  analytics} services. If properly put in place, the resulting service
+accelerates new solutions offered by industry and research as new
+services with a combined new functionality.
+
+To achieve this, it does require a level of platform-independent
+interoperability.  To assure that the pathway to
+leverage these hybrid and multi-analytics services is kept at a high level
+while at the same time exposing enough details, we need to support
+intelligent decision-making as part of the service
+orchestration. Services must be chosen to fulfill a set of {\em
+  analytics service} level requirements posed by the users. It is of particular
+interest how we can formulate hybrid analytics services and
+multi-analytics services offered by different providers that provide
+other features. The user needs to specify this via a simple analytics
+service provider independent specification.
+
+Our data analysis intends to be able to determine which service is
+suitable or chosen based on its requirements and to what degree
+reusability is offered while replicating the analysis across different
+services. Hence we will work towards a {\em ``Reusable Hybrid
+Multi-Services Data Analytics Framework''}. This results in a research
+platform that allows the creation of of integrated application
+platform benefitting fromreusable hybrid analytics services.
+
+
+By integrating such services, we will be able to significantly impact
+data analytics while leveraging not only one vendor's implementation
+but by promoting the reuse services via a {\em many-vendors}
+approach. Not only that, but we will also allow the interplay between
+different approaches while offering a uniform specification platform.
+Because we target the topic of this interplay, the effort has been
+done in collaboration with the NIST Information Access Division (IAD).
+
+The paper is structured as follows. First we present initially the
+motivation leading up to this work (Section~\ref{s:background}),
+followed by a discussion about Reuirments that we derived by analysing
+a number of complex usecases. Next we present our architectural
+approach, which is based on lessons learned from the reuirements we
+have gathered and lessons learned during our implementation
+(Section~\ref{s:arch}. We present an architectural design capable of
+supporting the needs we have identified.  Finally, we present our
+conclusions (Section~\ref{sec:conlcusion}).

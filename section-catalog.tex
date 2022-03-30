@@ -45,8 +45,8 @@ optional. We list in Table \ref{tab:cat}.
 \caption{Catalouge attributes}
 \label{tab:cat}
 \resizebox{1.0\columnwidth}{!}{%
-\begin{tabular}{p{3cm}p{6cm}p{2cm}}
-Name	& Description	& Required \\
+\begin{tabular}{p{3cm}p{6cm}p{0.2cm}}
+Name	& Description	& \rotatebox{90}{Required} \\
 \hline
 ID	& UUID, globally unique	& \OK \\
 Name	& Name of the service	& \OK \\
@@ -65,16 +65,17 @@ Documentation	& Link to a URL with detailed description of the service	& \OP \\
 Source	& Link to the source code if available	& \OP \\
 Tag(s)	& Human readable common tags that are used to identify the service that are associated with the service	& \OP \\
 Category(s)	& A category that this service belongs to (NLB, Finance, ...)	& \OP \\ 
-Specification/ Schema	& Pointer to where schema is located &	O \\
+Specification/ Schema	& Pointer to where schema is located &	\OP \\
 Additional metadata	& Pointer to where additional is located including the one here.	& \OP \\
 Endpoint	& The endpoint of the service	& \OP \\
 SLA/Cost	&	& \OP \\
 Authors	& contact details of the people or organization responsible for the service (freeform string)	& \OP \\
 Data	& Description on how data is managed	& \OP \\
 \hline
+& \OK = required; \OP = optional, \NA = not applicable
 \end{tabular}
-\OK = Required; \OP = Optional
+
 }
+
 \end{table}
 
-\clearppage

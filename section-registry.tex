@@ -63,7 +63,7 @@ services. The information provided includes the provider, [x], and
 
 \item[Multi factor Authentication in User Identity.] A means for
   authenticating users via two or more types of
-  authentication. An MFA instrument can elevate a user’s level of
+  authentication. An MFA instrument can elevate a user's level of
   assurance profile. RAF and IGTF are examples of such assurance
   framework standards.  OpenID Connect, SAML, and X.509 are examples
   of services that expose interfaces for multiple authentication.
@@ -120,10 +120,10 @@ contain a library that may be deployed.
 
 
 \begin{table}[htb]
-\caption{Registry attributes \TODO{Somehow the width is wrong}}\label{tab:reg}
+\caption{Registry attributes}\label{tab:reg}
 \resizebox{1.0\columnwidth}{!}{%
-\begin{tabular}{p{3cm}p{6cm}p{0.5cm}p{0.5cm}}
-Name	& Description	& \rot{\shortstack{Service\\ provider}}	& \rot{\shortstack{Library\\ provider}} \\
+\begin{tabular}{p{3cm}p{6cm}p{0.2cm}p{0.2cm}}
+Name & Description & \rotatebox{90}{Service provider} & \rotatebox{90}{Library provider} \\
 \hline
 ID & 	UUID, globally unique &	\OK &	\OK \\
 Name & 	Name of the service	& \OK	& \OK \\ 
@@ -145,23 +145,24 @@ Version	& The version number or tag of the service	& \OK	& \OK \\
 License	& The license description	& \OK	& \OK \\
 Protocol & 	REST	& \OK	& \OK \\
 Modified & 	Modification Timestamp	& \OK& \OK \\
-Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK	& O \\
-Author &	Contact details of the people or organization responsible for the service	& O	& \OK \\
-Tags &	Human readable common tags that are used to identify the service that are associated with the service	& O & O \\
-Categories &	A category that this service belongs to (NLB, Finance, ...)	& O & O \\
+Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK	& \OP \\
+Author &	Contact details of the people or organization responsible for the service	& \OP	& \OK \\
+Tags &	Human readable common tags that are used to identify the service that are associated with the service	& \OP & \OP \\
+Categories &	A category that this service belongs to (NLB, Finance, ...)	& \OP & \OP \\
 Created	& date and time on which the analytics service was instantiated or created	instantiated	& \OK & \OK \\
-Heartbeat &	State and timestamp of the last check when the service was active	& O & 	\NA \\
+Heartbeat &	State and timestamp of the last check when the service was active	& \OP & 	\NA \\
 Documentation &	Link to a URL with detailed description of the service
-Source	Link to the source code if available	& O & O \\
-Specification &	Pointer to where specification schema is located	& O &  O \\
-AdditionalMetadata	& Pointer to where additional is located including the one here.	& O &	O \\
-SLA	& Serves level agreement including cost	& O 	& O \\
-CachingInterval	&If a service is accessed a lot, the caching interval can be used to put a limitation on the Response with an LRU cache	& O &	\NA \\
-DataIntegration &	In case of big data the data cannot be provided as a parameter to the analysis function. Instead, we need to provide the data as endpoint. However, often tata may need to be uploaded or can be downloaded. In this case this field provides the upload and download endpoints and the protocol to access the data	& O &	O \\
-\hline
+Source	Link to the source code if available	& \OP & \OP \\
+Specification &	Pointer to where specification schema is located	& \OP &  \OP \\
+AdditionalMetadata	& Pointer to where additional is located including the one here.	& \OP &	\OP \\
+SLA	& Serves level agreement including cost	& \OP 	& \OP \\
+CachingInterval	&If a service is accessed a lot, the caching interval can be used to put a limitation on the Response with an LRU cache	& \OP &	\NA \\
+DataIntegration &	In case of big data the data cannot be provided as a parameter to the analysis function. Instead, we need to provide the data as endpoint. However, often tata may need to be uploaded or can be downloaded. In this case this field provides the upload and download endpoints and the protocol to access the data	& \OP &	\OP \\
+\hline 
+& \OK = required; \OP = optional, \NA = not applicable\\
 \end{tabular}
 }
-\OK = Required; O = Optional
+
 \end{table}
 
 \paragraph*{Benefits of a federated analytics service registry}
@@ -176,7 +177,7 @@ instantiation or the reuse of already instantiated services we address
 the accessibility and interoperability. With respect to analytics as a
 service, end users should be able to find various analytic services
 and similar services without having to individually search multiple
-‘locations’ or databases, each built to operate on its own, unique
+locations or databases, each built to operate on its own, unique
 storage and retrieval constructs. Through these descriptions automated
 service integration can be provisioned while targeting not only the
 functionality involved, but also allowing service level considerations
@@ -188,4 +189,3 @@ sharing of data mashup that can be made available to the community and
 registered to make reuse easier without everyone having to replicate
 the service.
 
-\clearpage

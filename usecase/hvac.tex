@@ -1,7 +1,20 @@
 \FILE{usecase/hvac.tex}
 \subsection{Use Case: HVAC Recommendation}
+
 \paragraph*{Background.}
-The heat ventilation and air conditioning (HVAC) systems regulate the temperature in houses and buildings. The desired temperature can be predetermined by a technician or controlled by the user. The chosen setpoint is automatically sent to the HVAC, so it will start to work to meet the desired temperature in the house or building. However, this way of HVAC control only considers user preference as a criterion. But, to improve the HVAC efficiency over time, other inputs can enrich the decision-making. Those inputs are weather forecast, utility prices, past user preferences, period of the day, etc. Once we have this list of inputs, we develop an algorithm that can calculate the optimal schedule of HVAC concerning user comfort level preferences. In this way, the technician or homeowner does not need to change the setpoint constantly. Still, the algorithm will make the right decision within the desired user comfort level while reducing energy consumption and cost. The algorithm deployment is on the cloud as a service, and every time it makes a new setpoint decision, the command is sent to the local thermostat (see Figure \ref{fig:hvac_general}). Various service frequencies were used to establish the proper pipeline for this application use case. This work aims to analyze the scalability and adaptability of such service scenarios and identify best practices that promote reusable implementations to support aspects of similar use cases addressed by them.
+The heat ventilation and air conditioning (HVAC) systems regulate the temperature in houses and buildings. 
+The desired temperature can be predetermined by a technician or controlled by the user. The chosen setpoint 
+is automatically sent to the HVAC, so it will start to work to meet the desired temperature in the house or 
+building. However, this way of HVAC control only considers user preference as a criterion. But, to improve the 
+HVAC efficiency over time, other inputs can enrich the decision-making. Those inputs are weather forecast, utility prices, 
+past user preferences, period of the day, etc. Once we have this list of inputs, we develop an algorithm that can calculate 
+the optimal schedule of HVAC concerning user comfort level preferences. In this way, the technician or homeowner does not 
+need to change the setpoint constantly. Still, the algorithm will make the right decision within the desired user comfort 
+level while reducing energy consumption and cost. The algorithm deployment is on the cloud as a service, and every time it makes a new 
+setpoint decision, the command is sent to the local thermostat (see Figure \ref{fig:hvac_general}). Various service 
+frequencies were used to establish the proper pipeline for this application use case. This work aims to analyze the scalability 
+and adaptability of such service scenarios and identify best practices that promote reusable implementations to support aspects of 
+similar use cases addressed by them.
 
 \paragraph*{System model.}
 User comfort level is defined as the allowed temperature range in the house, which is dictated by user’s personal preferences; the range can remain constant during the entire 24 hour cycle, or it can vary based on the time of the day or the day of the week (e.g. a some what higher temperature may be allowed when the occupants will be at work and away from the home). Since the temperature in the house is affected by the outdoor temperature our goal is to keep the internal temperature within the user comfort level range $Comfort = [Tmin, Tmax]$. 
@@ -30,25 +43,25 @@ In this case study, we only focus on three main functionalities, namely EF, LP a
 EF Activities:
 
 \begin{enumerate}
-\item weatherD – Collects current weather temperature and predicted temperature for timestamp X.
-\item priceD – Collects current electricity price and predicted price for timestamp X.
-\item pred – Extract needed data fields and packs it into an intermediate file format. Input data from the output of weatherD and priceD.
+\item weatherD -- Collects current weather temperature and predicted temperature for timestamp X.
+\item priceD -- Collects current electricity price and predicted price for timestamp X.
+\item pred -- Extract needed data fields and packs it into an intermediate file format. Input data from the output of weatherD and priceD.
 \end{enumerate}
 
 
 LP Activities:
 
 \begin{enumerate}
-\item hist – Prepares history data points and creates initial condition weights.
-\item reward – Generates reward based on the current weatherD and priceD.
-\item learn – Collects data from current weatherD, priced, reward.
+\item hist -- Prepares history data points and creates initial condition weights.
+\item reward -- Generates reward based on the current weatherD and priceD.
+\item learn -- Collects data from current weatherD, priced, reward.
 \end{enumerate}
 
 SPR Activities:
 
 \begin{enumerate}
-\item rules – Creates rules based on user preferences and conversion preferences.
-\item rlmodel – Interpolates the output from learn, rules and generates set point recommendation
+\item rules -- Creates rules based on user preferences and conversion preferences.
+\item rlmodel --  Interpolates the output from learn, rules and generates set point recommendation
 \end{enumerate}
 
 \paragraph*{Algorithm}
