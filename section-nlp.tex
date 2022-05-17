@@ -1,0 +1,25 @@
+\FILE{section-nlp.tex}
+
+\section{NLP}
+
+From here you will install the source packages for this command line reference:
+```commandline
+pip install -r requirements.txt
+```
+
+```commandline
+cms help
+cms nlp translate --provider=google --from=en --to=de --region=eu-west-1 hello world
+```
+
+The output to this command should look like:
+```
+{'date': '05/02/2022 14:45:45',
+ 'input': 'hello world',
+ 'input_language': 'en',
+ 'output': 'Hallo Welt',
+ 'output_language': 'de',
+ 'provider': 'aws',
+ 'time': 0.2641}
+Timer: 0.3864s Load: 0.0004s nlp translate --provider=aws --from=en --to=de --region=eu-west-1 hello world
+```
