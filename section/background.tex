@@ -4,34 +4,36 @@
 
 \section{Motivation}\label{s:background}
 
-In this section, we explain the motivation  while summarizing
-briefly, the different concepts constituting our work.
+In this section, we explain the motivation while summarizing briefly,
+the different concepts constituting our work.
 
 With Big Data's compound annual growth rate at 61 percent and its
 ever-increasing deluge of information in the mainstream, the
 collective sum of world data will grow from 33 zettabytes (ZB, 1021)
-in 2018 to 175 ZB by 2025 \NOTE{likely outdated by now. find out
-current trends and numbers}. The presence of such a rich source of
-information requires a massive analysis that can effectively bring
-about much insight and knowledge discovery. While our previous work
-focused on developing a Big Data Reference
-Architecture [or standards roadmap] \cite{??}. This work specifically focused on the
-definition of {\bf\em Analytics Services}.  This work is a logical
-enhancement to the earlier work and can leverage activities conducted
-as part of the NIST Big Data Reference Architecture (NBD-RA) and
-NBD-RA Interfaces.  However, the work here targets explicitly {\bf\em
-Data Analytics} as a pathway to integrate the data anlaytics ecosystem. This includes not on;y forward looking efforts, but also the integration of legacy analytics,
-as well as machine learning and deep learning analytics within the auspice to
-create a service oriented framework integrating all of them, so they can easily be reused by others.
-
+in 2018 to 175 ZB by 2025 \TODO{Who?: likely outdated by now. find out
+current trends and numbers we also need proper refernces in that
+section}. The presence of such a rich source of information requires a
+massive analysis that can effectively bring about much insight and
+knowledge discovery. While our previous work focused on developing a
+Big Data Reference Architecture [or standards roadmap] \cite{??}. This
+work specifically focused on the definition of {\bf\em Analytics
+Services}.  This work is a logical enhancement to the earlier work and
+can leverage activities conducted as part of the NIST Big Data
+Reference Architecture (NBD-RA) and NBD-RA Interfaces.  However, the
+work here targets explicitly {\bf\em Data Analytics} as a pathway to
+integrate the data anlaytics ecosystem. This includes not on;y forward
+looking efforts, but also the integration of legacy analytics, as well
+as machine learning and deep learning analytics within the auspice to
+create a service oriented framework integrating all of them, so they
+can easily be reused by others.
 
 
 \subsection{Hybrid Analytics Services}
 
 A {\em hybrid analytics service} (HAS) combines the strength of analytics
 services that are offered by providers in public, private, or
-on-premise usage scenarios. It / A \NOTE{[HAS]} leverages them \NOTE{[x]} in order to provide ideally optimized
-orchestration across them \NOTE{[x]}. Benefits are not limited to reducing cost,
+on-premise usage scenarios. It / A \TODO{[HAS]} leverages them \TODO{[x]} in order to provide ideally optimized
+orchestration across them \TODO{[x]}. Benefits are not limited to reducing cost,
 but also to address security and privacy concerns when the data
 analytics or the data to perform the analytics can not be hosted in
 public clouds. Many of the major cloud providers such as AWS, Azure,
@@ -53,16 +55,17 @@ integrated approach to ease deployment and management concerns.
 
 Over the last two years, we have seen an explosion of analytics
 services, mainly through the integration of AI and deep learning
-services. High-level analytics services are being developed that \NOTE{hide / abstract} the
-complex infrastructure needed to embed not only services from one
-vendor but multiple vendors. Hence we speak of {\em multi-analytics
-  services}. These services can then be used in cooperation or
-competition. We cooperate if services enhance each other, we compete
-if a service is chosen over another service due to better service
-level agreements. Through this interplay of the services, it is
-beneficial to formalize \NOTE{this / any / all} interoperability. In cases of competition,
-we also need to be able to formulate a competing service that then
-calls out other services to implement desired analytics tasks.
+services. High-level analytics services are being developed that hide
+and abstract the complex infrastructure needed to embed not only
+services from one vendor but multiple vendors. Hence we speak of {\em
+multi-analytics services}. These services can then be used in
+cooperation or competition. We cooperate if services enhance each
+other, we compete if a service is chosen over another service due to
+better service level agreements. Through this interplay of the
+services, it is beneficial to formalize interoperability between
+them. In cases of competition, we also need to be able to formulate a
+competing service that then calls out other services to implement
+desired analytics tasks.
 
 \subsection{Enhancing the Big Data Reference Architecture}
 \label{s:arch}
@@ -79,50 +82,20 @@ utilization while leveraging containers.
 
 \subsection{Identification of State-of-the-Art Data Analytics Patterns}
 
-Concerned analytics services consumers have to ask why and how now, 
-this opportunity can be addressed to enable this interplay? \NOTE{[? what interplay?]} 
-analytics as a service needs are clearly motivated by state-of-the-art data
-analytics capabilities that have only recently become available.
-while government agencies have provided some of the most capable
-high-end computing systems over the last years, they have \NOTE{[tightly?]} integrated
-specialized GPUs as well as container technologies to bring forward
-new data analytics capabilities in these on-premise services. \NOTE{[commercial]} Industry
-has provided advanced analysis capabilities for some time but have only
-recently reached a maturity supporting reuse and
-cooperation opportunities between them. 
+Concerned analytics services consumers have to ask why and how now,
+this opportunity can be addressed to enable this interplay utilizing
+htbrid multi-service based analytics as a service needs are clearly
+motivated by state-of-the-art data analytics capabilities that have
+only recently become available.  while government agencies have
+provided some of the most capable high-end computing systems over the
+last years, they have tightly integrated specialized GPUs as well as
+container technologies to bring forward new data analytics
+capabilities in these on-premise services. Industry has provided
+advanced analysis capabilities for some time but have only recently
+reached a maturity supporting reuse and cooperation opportunities
+between them.
 
 With respect to all of the aforementioned challenges, we articulate 
 the motivation behind our work. 
 
-example usecases. 
 
-1. health care
-
-A technician in the hospital uses voice commands to control an MRI
-machine to take tomographic images. The images will be automatically
-sent to a private analytics service to identify if the images contain
-signs of COVID-19. In this case. multiple services are consulted to 
-assure that the best \NOTE{available / appropriate} algorithms are chosen. 
-Once identified, an image can be sent to a public analytics service (given patient consent).
-\NOTE{[hey the following ppg needs more than editing.]}
-in
-order to improve the available images to improve the deep learning data
-analysis. Previous images that have tested negative may be reanalyzed
-with the newly improved models. If new cases are found based on
-the improved analysis, health care providers are notified, and further
-actions regarding the treatment plan by the supervising physician is
-cast. As we can see, this example has all the ingredients that we need
-to create a new generation of services that integrates on-premise
-infrastructure, public and private services. The orchestration of the
-services as well as a convenient interface. Automation of the workflow
-of this use case example is explicitly stated.
-
-Analyzing this example, we identify a mixture of services that utilize
-on-premise infrastructure (the MRI), private and public services. A
-variety of service patterns are used in concert to establish an analysis
-pipeline targeted explicitly for this application use case. 
-
-The goal of this work is to analyze the interoperability of such
-service scenarios and identify such patterns motivating a vendor
-neutral architecture that promotes reusable implementations to 
-support aspects of similar use cases addressed by them.
