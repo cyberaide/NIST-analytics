@@ -7,57 +7,62 @@ In this section, we explain the motivation while summarizing briefly,
 the different concepts constituting our work.
 
 While our previous work focused on developing a Big Data Reference
-Architecture [or standards roadmap] \cite{vol8}. This work
+Architecture and  standards roadmap \cite{nist-v8}. This work
 specifically focused on the definition of {\bf\em Analytics Services}.
 This work is a logical enhancement to the earlier work and can
 leverage activities conducted as part of the NIST Big Data Reference
 Architecture (NBD-RA) and NBD-RA Interfaces.  However, the work here
 targets explicitly {\bf\em Data Analytics} as a pathway to integrate
-the data anlaytics ecosystem. This includes not on;y forward looking
-efforts, but also the integration of legacy analytics, as well as
-machine learning and deep learning analytics within the auspice to
-create a service oriented framework integrating all of them, so they
-can easily be reused by others.
+the data anlaytics ecosystem. This includes not only existing of
+legacy analytics services and tools, but also the integration of
+stat-of-the-art AI services including machine learning and deep
+learning analytics within the auspice to create a service oriented
+framework integrating all of them. Hence, they can easily be reused by
+others.
+
+Next we define som of the terminology and concepts we use.
 
 
 \subsection{Hybrid Analytics Services}
 
-A {\em hybrid analytics service} (HAS) combines the strength of analytics
+A {\em hybrid analytics service} combines the strength of analytics
 services that are offered by providers in public, private, or
-on-premise usage scenarios. It / A \TODO{[HAS]} leverages them \TODO{[x]} in order to provide ideally optimized
-orchestration across them \TODO{[x]}. Benefits are not limited to reducing cost,
-but also to address security and privacy concerns when the data
-analytics or the data to perform the analytics can not be hosted in
-public clouds. Many of the major cloud providers such as AWS, Azure,
-Google, IBM, Oracle, and others have made hybrid clouds a cornerstone
-of their business model, with each of them essentially promoting their own
-solutions. Recently, however, we see that the cloud provider's focus is no longer
-offering just infrastructure but instead to provide services hiding /abstracting the
-cloud infrastructure entirely from the users. 
-This has lead to vendors
-also providing hybrid analytics solutions that may integrate
+on-premise usage scenarios. It leverages them in order to provide
+optimized orchestration across private public, and on-premise
+analytics. Optimization benefits are not limited to reducing cost, but
+also to address security and privacy concerns when the data analytics
+or the data to perform the analytics can not be hosted in public
+clouds. Many of the major cloud providers such as AWS, Azure, Google,
+IBM, Oracle, and others have made hybrid clouds a cornerstone of their
+business model, with each of them essentially promoting their own
+solutions. Recently, however, we see that the cloud provider's focus
+is no longer offering just infrastructure but instead to provide
+services hiding and abstracting the cloud infrastructure entirely from
+the users while placing focus on offering services.  This has lead to
+vendors also providing hybrid analytics solutions that may integrate
 multiple services offered by various providers, resulting in solutions
 with heterogeneous service offerings. The integration of such services
-involves significant challenges, as each vendor may conform to and or require different
-integration solutions for addressing various public, private and on-premise
-analytics services. In general, customers will benefit from a more
-integrated approach to ease deployment and management concerns.
+involves significant challenges, as each vendor may conform to and or
+require different integration solutions for addressing various public,
+private and on-premise analytics services. In general, customers will
+benefit from a more integrated approach to ease deployment and
+management concerns.
 
-\subsection{Multi-Analytics Services}
+\subsection{Multi-Analytics Services to Cooperate and Compete}
 
-Over the last two years, we have seen an explosion of analytics
+Over the last several years, we have seen an explosion of analytics
 services, mainly through the integration of AI and deep learning
 services. High-level analytics services are being developed that hide
 and abstract the complex infrastructure needed to embed not only
 services from one vendor but multiple vendors. Hence we speak of {\em
-multi-analytics services}. These services can then be used in
-cooperation or competition. We cooperate if services enhance each
-other, we compete if a service is chosen over another service due to
-better service level agreements. Through this interplay of the
-services, it is beneficial to formalize interoperability between
-them. In cases of competition, we also need to be able to formulate a
-competing service that then calls out other services to implement
-desired analytics tasks.
+multi-analytics services}. These services can then be used in {\em
+cooperation} and/or {\em competition}. We cooperate if services
+enhance each other, we compete if a service is chosen over another
+service due to better service level agreements. Through this interplay
+of the services, it is beneficial to formalize interoperability
+between them. In cases of competition, we also need to be able to
+formulate a competing service that then calls out other services to
+implement desired analytics tasks.
 
 \subsection{Enhancing the Big Data Reference Architecture}
 \label{s:arch}
