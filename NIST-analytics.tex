@@ -1,12 +1,41 @@
 \PassOptionsToPackage{table}{xcolor}
+
 \documentclass[sigconf]{acmart}
+
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=blue]{hyperref}
+
+\usepackage{tikz}
+
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+    
 \usepackage{caption}
 \usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
 \usepackage{fancyvrb}
 \usepackage{subcaption}
 \usepackage{graphicx}
-\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
 
 %enumeration subnumbers
 
