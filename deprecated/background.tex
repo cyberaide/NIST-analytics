@@ -23,24 +23,6 @@ others.
 Next we define som of the terminology and concepts we use.
 
 
-\subsection{From Big Data Reference Architecture to Analytics Services}
-\label{s:arch}
-
-NIST has developed a Big Data Reference Architecture as part of
-NBDIF\cite{nist-v6} and identified a number of use cases that motivate
-it \cite{nist-v3}. We leverage this effort
-~\cite{nist-v1,nist-v2,nist-v3,nist-v4,nist-v5,nist-v6,nist-v7,nist-v8,nist-v9}
-while formulating service interoperability specifications that we
-focus on in this effort and has not been previously addressed in
-detail. While we previously focused mostly on infrastructure
-management, this effort enhances the activities to include high-level
-coordinated service deployments and utilization while leveraging
-containers. The concepts that we introduce next are specifically
-targeting analytics services and not just infrastructure services.
-However the lessons learned from the earlier work significanly
-influsences this activity.
-
-
 \subsection{Hybrid Analytics Services}
 
 A {\em hybrid analytics service} combines the strength of analytics
@@ -82,13 +64,26 @@ between them. In cases of competition, we also need to be able to
 formulate a competing service that then calls out other services to
 implement desired analytics tasks.
 
+\subsection{Enhancing the Big Data Reference Architecture}
+\label{s:arch}
+
+NIST has developed a Big Data Reference Architecture as part of
+NBDIF\cite{nist-v6} and identified a number of use cases that motivate
+it \cite{nist-v3}. We can leverage the effort
+~\cite{nist-v1,nist-v2,nist-v3,nist-v4,nist-v5,nist-v6,nist-v7,nist-v8,nist-v9}
+while formulating novel interoperability specifications that arise in
+our effort that has not been previously addressed. While we previously focused
+mostly on virtual machine management, this effort will enhance the
+activities to include high-level coordinated service deployments and
+utilization while leveraging containers.
+
 \subsection{Identification of State-of-the-Art Data Analytics Patterns}
 
-Analytics services consumers have to ask why and how now,
+Concerned analytics services consumers have to ask why and how now,
 this opportunity can be addressed to enable this interplay utilizing
 htbrid multi-service based analytics as a service needs are clearly
 motivated by state-of-the-art data analytics capabilities that have
-only recently become available.  In addition, government agencies have
+only recently become available.  while government agencies have
 provided some of the most capable high-end computing systems over the
 last years, they have tightly integrated specialized GPUs as well as
 container technologies to bring forward new data analytics
@@ -96,4 +91,8 @@ capabilities in these on-premise services. Industry has provided
 advanced analysis capabilities for some time but have only recently
 reached a maturity supporting reuse and cooperation opportunities
 between them.
+
+With respect to all of the aforementioned challenges, we articulate 
+the motivation behind our work. 
+
 
