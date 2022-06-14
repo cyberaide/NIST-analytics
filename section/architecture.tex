@@ -2,8 +2,12 @@
 
 \section{Architecture}
 
+
+\TODO{Focus on wht is to be in te architecture removing lots of wills}
+\TODO{In the implementation section we then can say what has implemented}
+
 To support our goal to enable the use of hybrid and multi-analytics
-services, we will explore architectural patterns
+services, we are exploring architectural patterns
 that are conducive to use cases such as the one we outlined
 previously. These patterns will be of general use as they can
 be applied to other use cases. In our case, we will work towards an
@@ -29,7 +33,7 @@ application pipeline.
 Today's analytics is invoked through a multitude of interfaces, making
 it possible to invoke them in different languages, but also high level
 frameworks. This is often achieved by an interface layer using REST
-to communicate with the other layers. For our work, we will focus on
+to communicate with the other layers. For our work, we focus on
 the command line interface promoting reuse in shells, Jupyter notebooks
 showcasing the reuse in an interactive analysis capable framework, and
 our previous work to generate REST services (see Section \ref{s:gas}).
@@ -37,11 +41,11 @@ our previous work to generate REST services (see Section \ref{s:gas}).
 \subsubsection{Command Line Interface}
 
 To provide reusability within the DevOps application of data analytics
-pipelines, we will provide an enhanced command-line interface that
+pipelines, we provide an enhanced command-line interface that
 specifically targets hybrid and multi-analytics environments. This is
 facilitated by adding command options, shell variables, and
 configuration files that can be passed into the commands.
-Most importantly, we will be analyzing which specific parameters we
+Most importantly, we analyze which specific parameters we
 need to make available when investigating cooperative and competitive
 services. The parameters can be directly translated to REST service invocations.
 
@@ -88,11 +92,11 @@ of the generator expands usability.
 \subsubsection{Hybrid Multi-Analytics Service Registry}
 
 While we have previously developed a simplified generalized service
-registry, we will explore significant extensions to integrate (a)
+registry, we are exploring significant extensions to integrate (a)
 container images, (b) container services, and (c) analytics 
 services offered by service providers. This registry is specially
 designed to support cooperating and competing for analytics services.
-We will add the ability to leverage existing repositories such as
+We intend to add the ability to leverage existing repositories such as
 GitHub and DockerHub to register suitable analytics services as source
 code. We will then also add features to provide endpoints to
 instantiated services so they can be advertised to a large group of
@@ -125,7 +129,7 @@ integration of analytics services that rely on on-premise
 infrastructure. An example would be access to a supercomputer in the
 TOP500 list that is used to conduct a complex data analytics task
 reusing GPUs to conduct deep learning for COVID-19 analysis.  This
-will result in two specifications. A general specification that can be
+results in two specifications. A general specification that can be
 reused on other similar on-premise computers, and a second that is
 specifically targeted to the targeted on-premise infrastructure. This
 could include the integration of hosted data services or specific
