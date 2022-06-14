@@ -5,8 +5,17 @@
 \usepackage[latin1]{inputenc}
 \usepackage{fancyvrb}
 \usepackage{subcaption}
-\usepackage{todonotes}
 \usepackage{graphicx}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+
+%enumeration subnumbers
+
+
+\renewcommand{\labelenumi}{\arabic{enumi}.} 
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+
+
+\usepackage{todonotes}
 \newcommand{\TODO}[1]{\todo[inline]{#1}}
 \newcommand{\NOTE}[1]{\textcolor{red}{[NOTE: #1]}}
 \newcommand{\FILE}[1]{\todo[inline,color=green!20]{File: #1}}
