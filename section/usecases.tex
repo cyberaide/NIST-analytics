@@ -1,23 +1,74 @@
 \FILE{section-usecases.tex}
 
+
 \section{Use Cases for Analytics Services}
 \label{sec:usecases}
+
+
+\TODO{We need s single use case that uses the word analystics services (AS) and showcases:}
+
+
+\TODO{The usecase should motivate the use of an AS catalog/registry,
+AS workflow, AS security, AS vendor neutral interfaces, AS vendor
+neutral cloud service integration, AS orchestrator. Motivation for AS
+layers, such as interface, service layer, and provider layer.}
+
+
+\TODO{Reminder: The reason we initially picked WRF and HVAC is that they seem initially
+disconnected services, but if you look closer HVAC could integarte WRF to
+increase forcast .... so this is example for cooperation and workflow integration).}
+
+HERE STARTS OLD TEXT:
 
 Our work is motivated by a number of uses cases. The use cases were
 contributed by community members that were interested in this work.
 
 
-
 It includes healthcare, security, numerical weather prediction and
-HVAC optimization. We describe thes use cases and their requirements
-for our work next.
+HVAC optimization. The use cases are explained in more detail at:
+
+\begin{itemize}
+\item wrf: \url{https://github.com/cyberaide/NIST-analytics/blob/main/usecase/wrf.tex}
+\item HVAC: \url{https://github.com/cyberaide/NIST-analytics/blob/main/usecase/hvac.tex}
+\item Security: \url{https://github.com/cyberaide/NIST-analytics/blob/main/usecase/security.tex}
+\item Health: \url{https://github.com/cyberaide/NIST-analytics/blob/main/usecase/health.tex}
+\end{itemize}
+
+Each usecase includes a general explanation about the problem that the
+uses case adresses and also explicitly comments on requirements needed
+for an alanytics service derived form the individual use case
+perspective.
+
+\TODO{Gregor will enable PDF versions of the documents and make them available in github.}
+
+We are explaining form these usecases one of them in order to keep the paper short. 
+
+\TODO{explanation of the use case}
 
 
-\input{usecase/security}
+This use case has the implict requirements needing the following
+aspects to be addressed by the framework we develop. Other use cases
+may not need all of these requirements, but benefit from a framework
+that can address a subset of them.
 
-\input{usecase/health}
+\begin{description}
+\item[AS cooperation.]
+\item[AS competition.]
+\item[AS in cloud.]
+\item[AS in LCCF.]
+\item[AS vendor neutral cloud and computer service integration.]
+\item[AS with DL.]
+\item[AS REST.]
+\item[AS in microservices.]
+\item[AS data analytics.}
+\item{AS catalog/registry.]
+\item[AS workflow.]
+\item[AS security.]
+\item[AS vendor neutral interfaces.]
+\item[AS orchestrator.]
+\item[AS lyers such as interface, service layer, and provider layer.}
 
-\input{usecase/weather}
 
-\input{usecase/hvac}
+\end{description}
+
 
