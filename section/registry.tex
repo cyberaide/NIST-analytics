@@ -120,46 +120,50 @@ contain a library that may be deployed.
 
 
 \begin{table}[htb]
-\caption{Registry attributes}\label{tab:reg}
+\caption{AS services Catalog and Registry attributes}\label{tab:reg}
 \resizebox{1.0\columnwidth}{!}{%
-\begin{tabular}{p{3cm}p{6cm}p{0.2cm}p{0.2cm}}
-Name & Description & \rotatebox{90}{Service provider} & \rotatebox{90}{Library provider} \\
+\begin{tabular}{|p{3cm}|p{5cm}|p{0.25cm}|p{0.25cm}p{0.25}|}
 \hline
-ID & 	UUID, globally unique &	\OK &	\OK \\
-Name & 	Name of the service	& \OK	& \OK \\ 
-Title & 	Human readable title &	\OK	& \OK \\
+&             & \rotatebox{90}{Catalog provider~} & \rotatebox{90}{Service provider} & \rotatebox{90}{Library provider} \\
+Name & Description & & \multicolumn{2}{l}{Register} \\
+\hline
+ID & 	UUID, globally unique &	\OK & \OK &	\OK \\
+Name & 	Name of the service	& \OK & \OK	& \OK \\ 
+Title & 	Human readable title & \OK &	\OK	& \OK \\
 Public	& True if Public
-(needs use case to delineate what pub private means) & 	\OK & \OK \\
-Description	& Human readable short Description of the Service	& \OK & 	\OK \\
-Endpoint &	The endpoint of the service	& \OK	&  \NA \\
+(needs use case to delineate what pub private means) &  \OK &	\OK & \OK \\
+Description	& Human readable short Description of the Service	& \OK & \OK & 	\OK \\
+Endpoint &	The endpoint of the service	& \OK & \OK	&  \NA \\
 List of Input Parameters &
 	A list of parameters to the service. The parameters have each the form of name, function, type, value, access. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, event.
-The function responds to a different function in case multiple are provided by the service.	& \OK	& \OK \\ 
+The function responds to a different function in case multiple are provided by the service.	& \OP & \OK	& \OK \\ 
 List of Output Parameters 
   style (event, stream, data)
   value
   timestamp & 
 	List of responses cast by the service. The responses have the form of function, name, type, value, access, timestamp. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, event.
-The function responds to a different function in case multiple are provided by the service. & 	\OK 	& \OK \\
-Version	& The version number or tag of the service	& \OK	& \OK \\
-License	& The license description	& \OK	& \OK \\
-Protocol & 	REST	& \OK	& \OK \\
-Modified & 	Modification Timestamp	& \OK& \OK \\
-Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK	& \OP \\
-Author &	Contact details of the people or organization responsible for the service	& \OP	& \OK \\
-Tags &	Human readable common tags that are used to identify the service that are associated with the service	& \OP & \OP \\
-Categories &	A category that this service belongs to (NLB, Finance, ...)	& \OP & \OP \\
-Created	& date and time on which the analytics service was instantiated or created	instantiated	& \OK & \OK \\
-Heartbeat &	State and timestamp of the last check when the service was active	& \OP & 	\NA \\
+The function responds to a different function in case multiple are provided by the service. &  \OP &  	\OK  & \OK \\
+Version	& The version number or tag of the service	& \OK & \OK	& \OK \\
+License	& The license description	& \OK & \OK	& \OK \\
+Protocol & 	Example: REST	& \OK & \OK	& \OK \\
+Microservice & 	True if microservices used & \OK & \OK	& \OK \\
+Modified & 	Modification Timestamp	& \OK & \OK& \OK \\
+Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK & \OK	& \OP \\
+Author &	Contact details of the people or organization responsible for the service	& \OK & \OP	& \OK \\
+Tags &	Human readable common tags that are used to identify the service that are associated with the service	& \OK & \OP & \OP \\
+Categories &	A category that this service belongs to (NLB, Finance, ...)	& \OK & \OP & \OP \\
+Created	& date and time on which the analytics service was instantiated or created	instantiated	& \OK & \OK & \OK \\
+Heartbeat &	State and timestamp of the last check when the service was active	& \NA & \OP & 	\NA \\
 Documentation &	Link to a URL with detailed description of the service
-Source	Link to the source code if available	& \OP & \OP \\
-Specification &	Pointer to where specification schema is located	& \OP &  \OP \\
-AdditionalMetadata	& Pointer to where additional is located including the one here.	& \OP &	\OP \\
-SLA	& Serves level agreement including cost	& \OP 	& \OP \\
-CachingInterval	&If a service is accessed a lot, the caching interval can be used to put a limitation on the Response with an LRU cache	& \OP &	\NA \\
-DataIntegration &	In case of big data the data cannot be provided as a parameter to the analysis function. Instead, we need to provide the data as endpoint. However, often tata may need to be uploaded or can be downloaded. In this case this field provides the upload and download endpoints and the protocol to access the data	& \OP &	\OP \\
+Source	Link to the source code if available	& \OK & \OP & \OP \\
+Specification/Schema &	Pointer to where specification schema is located	& o & \OK &  \OK \\
+AdditionalMetadata	& Pointer to where additional is located including the one here.	& \OP & \OP &	\OP \\
+SLA	& Serves level agreement including cost	& \OP & \OP 	& \OP \\
+CachingInterval	&If a service is accessed a lot, the caching interval can be used to put a limitation on the Response with an LRU cache	& ? & \OP &	\NA \\
+DataIntegration &	In case of big data the data cannot be provided as a parameter to the analysis function. Instead, we need to provide the data as endpoint. However, often tata may need to be uploaded or can be downloaded. In this case this field provides the upload and download endpoints and the protocol to access the data	& \OP & \OP &	\OP \\
+Authors	& contact details of the people or organization responsible for the service (freeform string)	& \OK & \OK & \OK \\
 \hline 
-& \OK = required; \OP = optional, \NA = not applicable\\
+\multicolumn{5}{l}{\OK = required; \OP = optional, \NA = not applicable}\\
 \end{tabular}
 }
 

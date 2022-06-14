@@ -38,44 +38,6 @@ service registry.
 
 The catalogue is organized as a list of entries, where each entry
 contains a number of attributes. These attributes may be required or
-optional. We list in Table \ref{tab:cat}.
+optional. We list in Table \ref{tab:reg} in teh column Catalog.
 
-
-\begin{table}[htb]
-\caption{Catalouge attributes}
-\label{tab:cat}
-\resizebox{1.0\columnwidth}{!}{%
-\begin{tabular}{p{3cm}p{6cm}p{0.2cm}}
-Name	& Description	& \rotatebox{90}{Required} \\
-\hline
-ID	& UUID, globally unique	& \OK \\
-Name	& Name of the service	& \OK \\
-Title	& Human readable title 	& \OK \\
-Public	& True if Public 
-(needs use case to delineate what pub private means) & 	\OK \\
-Description	& Human readable short Description of the Service	& \OK \\ 
-Version	& The version number or tag of the service	& \OK \\
-License	& The license description	& \OK \\
-Microservice & 	\OK/No/Mixed	& \OK \\
-Protocol	& REST	& \OK \\
-Owner	& Name of the distributing entity, organization or individual. It could be a vendor.	& \OK \\
-Modified	& Modification Timestamp (when first same as created)	\OK \\
-Created	& Date on which the entry was first created	& \OK \\
-Documentation	& Link to a URL with detailed description of the service	& \OP \\
-Source	& Link to the source code if available	& \OP \\
-Tag(s)	& Human readable common tags that are used to identify the service that are associated with the service	& \OP \\
-Category(s)	& A category that this service belongs to (NLB, Finance, ...)	& \OP \\ 
-Specification/ Schema	& Pointer to where schema is located &	\OP \\
-Additional metadata	& Pointer to where additional is located including the one here.	& \OP \\
-Endpoint	& The endpoint of the service	& \OP \\
-SLA/Cost	&	& \OP \\
-Authors	& contact details of the people or organization responsible for the service (freeform string)	& \OP \\
-Data	& Description on how data is managed	& \OP \\
-\hline
-& \OK = required; \OP = optional, \NA = not applicable
-\end{tabular}
-
-}
-
-\end{table}
 
