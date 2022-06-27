@@ -94,4 +94,57 @@ advanced analysis capabilities for some time but have only recently
 reached a maturity supporting reuse and cooperation opportunities
 between them.
 
+\FILE{section-fair.tex}
+
+\item{Reusability}
+\label{sec:fair}
+
+Reusability is an essential part for adaptation. To make it explicily
+clear we adopt he well known FAIR principal \cite{??} but enhance them
+first by focussing on analytics services, deployability and
+operations. Togther we use the tern Analytics Service FAIR Principle (AS-FAIR-DO)}
+
+To project easy reusability, we strive towards the implementation of
+the AS-FAIR-DO principle for analytics services. The FAIR principle is
+typically applied to data and as such we can apply it the metadata
+associated with analytics services. The FAIR principal addresses who
+to be findable, be accessible, be interoperable, and be reusable. In
+Figure \ref{fig:as-fair-do} we explicitly augmented the general FAIR
+principle with terminology so it can apply to analytics services. The
+augmentations are colored in red.
+
 \end{description}
+
+\begin{figure}[htb]
+\centering\resizebox{1.0\columnwidth}{!}{
+\begin{tabular}{p{1cm}p{8cm}}
+\multicolumn{2}{l}{To be Findable:} \\
+F1 & \textcolor{red}{analytics services metadata} are assigned a globally unique and persistent identifier \\ 
+F2 & \textcolor{red}{analytics services} data are described with rich metadata (defined by R1) \\
+F3 &  \textcolor{red}{analytics services metadata} clearly and explicitly include the identifier of the data related to the analytics services it describes \\ 
+F4 & \textcolor{red}{analytics services metadata} are registered or indexed in a searchable resource \\
+\multicolumn{2}{l}{To be Accessible:} \\
+A.1 &  \textcolor{red}{analytics services metadata} are retrievable by their identifier using a standardized communications protocol \\
+    A1.1 & \textcolor{red}{analytics services} the protocol is open, free, and universally implementable \\
+    A1.2 & the \textcolor{red}{analytics services} protocol allows for an authentication and authorization procedure, where necessary \\ 
+A.2 & \textcolor{red}{metadata} are accessible, even when the data are no longer available \\
+\multicolumn{2}{l}{To be Interoperable:}\\
+I1. & \textcolor{red}{analytics services metadata} use a formal, accessible, shared, and broadly applicable language for knowledge representation. \\
+I2. &  \textcolor{red}{analytics services metadata} use vocabularies that follow FAIR principles \\
+I3. &  \textcolor{red}{analytics services metadata} include qualified references to other metadata \\
+\multicolumn{2}{l}{To be Reusable:} \\
+R1. & \textcolor{red}{analytics services metadata} are richly described with a plurality of accurate and relevant attributes \\
+R1.1 & (meta)data are released with a clear and accessible data usage license \\
+R1.2 & (meta)data are associated with detailed provenance \\
+R1.3 & (meta)data meet domain-relevant community standards \\
+\multicolumn{2}{l}{To be Deployable:}\\
+D.1 & \textcolor{red}{analytics services metadata describing deployability aspects} \\
+\multicolumn{2}{l}{To be Operational:} \\ 
+O.1 & \textcolor{red}{analytics services metadata describing operational aspects} \\ 
+\end{tabular}
+}
+\caption{Fair guiding principles adapted to analytics services:
+  Analytics Services - FAIR - Deployable and Operational
+  (AS-FAIR-DO).}\label{fig:as-fair-do}
+\end{figure}
+
