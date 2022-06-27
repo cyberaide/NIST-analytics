@@ -3,8 +3,8 @@
 \section{Architecture}
 
 
-\TODO{Focus on wht is to be in te architecture removing lots of wills}
-\TODO{In the implementation section we then can say what has implemented}
+\TODO{Focus on what is to be in the architecture removing lots of wills}
+\TODO{In the implementation section, we then can say what has been implemented}
 
 To support our goal to enable the use of hybrid and multi-analytics
 services, we are exploring architectural patterns
@@ -53,7 +53,7 @@ services. The parameters can be directly translated to REST service invocations.
 
 Although it is important to provide a command-line interface that can
 easily be used to generate computing activities for solving data
-analytics tasks, it is even more important that the framework can be
+analytics tasks, it is even more critical that the framework can be
 integrated into interactive steering tasks conducted directly by the
 data scientists. For this, we leverage Jupyter notebooks and integrate
 service calls to the backend system into the notebooks just as we can
@@ -73,7 +73,7 @@ the service pipeline. We will showcase full integration.
 
 While we have focussed previously on the automated generation of
 services using REST, we need to consider the other aspects of this
-architecture that is needed to support the data analyst.  We have
+architecture that is needed to support the data analyst. We have
 shown that it is possible to create rest services from Python
 functions and classes while augmenting them with helper services such
 as data uploads. The development of such services is out of the
@@ -81,7 +81,7 @@ capability of many data scientists as they focus on developing
 transformative data analysis functions and not on the infrastructure
 service generation. Our work is lowering the bar for such
 implementation and allowing even data analysts to generate reusable
-REST services \cite{las21openapi}. The effort to learn about how to
+REST services \cite{las21openapi}. The effort to learn how to
 create vendor-independent and computer language-independent services
 has been reduced from months to days. We can leverage this effort to
 generate application-specific services quickly. The services generated
@@ -96,11 +96,11 @@ registry, we are exploring significant extensions to integrate (a)
 container images, (b) container services, and (c) analytics 
 services offered by service providers. This registry is specially
 designed to support cooperating and competing for analytics services.
-We intend to add the ability to leverage existing repositories such as
+We intend to add the ability to leverage existing repositories, such as
 GitHub and DockerHub to register suitable analytics services as source
 code. We will then also add features to provide endpoints to
 instantiated services so they can be advertised to a large group of
-users.  A neutral vendor specification is used as part of the
+users. A neutral vendor specification is used as part of the
 registry. Such a registry can be hosted by a user or an
 organization. We will identify if it is possible to leverage GitHub
 for hosting such a registry. This will require a special set of tools
@@ -109,8 +109,8 @@ integrate such a registry into their analytics pipeline. New analytics
 service specifications can then be either integrated through direct
 specifications added to the hosted registry or through the use of
 GitHub submodules. Using submodules offers the ability to keep up to
-date with analytics services developed by others and allowing updates
-through automated DevOps controlled pull requests. This registry
+date with analytics services developed by others and allows updates
+through automated DevOps-controlled pull requests. This registry
 technology would completely replace our earlier registry work if
 successful. It would also allow the integration of private services as
 private analytics services can be integrated while using private
@@ -124,11 +124,11 @@ entries. To increase privacy, git can also be hosted on-premise.
 An application may require the availability of very specific
 application-oriented analytics services. Our architecture allows us to
 integrate them while reusing the same vendor-neutral specification
-format. This includes not only cloud services, but also the
+format. This includes not only cloud services but also the
 integration of analytics services that rely on on-premise
 infrastructure. An example would be access to a supercomputer in the
 TOP500 list that is used to conduct a complex data analytics task
-reusing GPUs to conduct deep learning for COVID-19 analysis.  This
+reusing GPUs to conduct deep learning for COVID-19 analysis. This
 results in two specifications. A general specification that can be
 reused on other similar on-premise computers, and a second that is
 specifically targeted to the targeted on-premise infrastructure. This
@@ -148,7 +148,7 @@ A good example may be natural language processing to analyze a text
 with either a local service, a loud hosted service by different
 vendors. Here, based on input parameters, we create an overarching
 language analytics service that chooses the various services with the
-help of service level requirements and agreements.
+the help of service level requirements and agreements.
 
 \subsection{Cooperation and Competition Services}
 
@@ -164,18 +164,18 @@ more services from hybrid multi-analytics services. They are
 cooperating together to address the solution to a formidable data
 analytics problem. Thus the resources form a "team" of services that
 work together. This includes the integration of specialized services
-that may not be unique to a particular provider, but it also could
+that may not be unique to a particular provider. Still, it also could
 mean that computational analytics processes could be performed in
-parallel and results could be gathered to accelerate the analytics
+parallel, and results could be gathered to accelerate the analytics
 task. A parameter study is a very good example of one kind of
 cooperating services
 
-\paragraph{Competition.} Here the available hybrid multi-analytics services
+\paragraph{Competition.} Here, the available hybrid multi-analytics services
 directly compete with each other. This can be done by direct selection
 of services that are more suitable than others. This selection could
 be based on resource requirements such as time, availability, cost,
 and feature. However, the framework could take "observations" and
-propose automated conclusions which services to choose from. A
+propose automated conclusions about which services to choose from. A
 possibility would even be to integrate deep-learning strategies into
 the selection process.
   
@@ -188,7 +188,7 @@ have shown in our previous work that we can specify vendor-neutral
 specifications to access, for example, virtual machines. We will expand
 this concept while using the concept of containers. However, we also
 need to identify services that are offered by
-multiple vendors such as language processing services. Although they
+multiple vendors, such as language processing services. Although they
 can be directly accessed via vendor-specific interfaces. It will
 be important to identify if they can be generalized so the users
 can benefit from a uniform vendor-neutral service interoperability
