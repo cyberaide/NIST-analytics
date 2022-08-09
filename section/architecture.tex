@@ -2,15 +2,14 @@
 
 \section{Architecture}
 
+TO support the usecases we briefly described and analyzed their requirements, 
+we have developed a general architecture that can benefit most analytics services while leveraging and integrating hybrid and multi-cloud  analytics services.
 
-\TODO{Focus on what is to be in the architecture removing lots of wills}
-\TODO{In the implementation section, we then can say what has been implemented}
-
-To support our goal to enable the use of hybrid and multi-analytics
+To support our goal to enable the use of hybrid and multi-cloud analytics
 services, we are exploring architectural patterns
 that are conducive to use cases such as the one we outlined
-previously. These patterns will be of general use as they can
-be applied to other use cases. In our case, we will work towards an
+previously. These patterns are be of general use as they can
+be applied to other use cases. In our case, we define an
 architecture as depicted in Figure~\ref{fig:arch}.
 
 \begin{figure}[htb]
@@ -22,7 +21,7 @@ architecture as depicted in Figure~\ref{fig:arch}.
   \label{fig:arch}
 \end{figure}
 
-The architecture is organized as a layered architecture and contains
+The architecture is organized in layers  and contains
 multiple components in each layer. We distinguish the interface,
 service, and provider layer. Security and an orchestration service
 enable the integration of the various components into a coordinated
@@ -60,18 +59,18 @@ service calls to the backend system into the notebooks just as we can
 in regular python programs. The difference here is that Jupyter
 provides a rich set of interactive components and widgets that can be
 leveraged to prototype interactive services but also parameter
-studies. We will provide such notebooks as examples. While our
+studies. While our
 previous work has been integrated into notebooks, the capabilities of
 notebooks were not yet fully utilized as the integration was done on
 the service level but not on a level where Jupyter was used to enhance
-the service pipeline. We will showcase full integration.
+the service pipeline. 
 
 \subsection {Service Layer}
 
 \subsubsection{Generalized Analytics Services}
 \label{s:gas}
 
-While we have focussed previously on the automated generation of
+While we have focused previously on the automated generation of
 services using REST, we need to consider the other aspects of this
 architecture that is needed to support the data analyst. We have
 shown that it is possible to create rest services from Python
@@ -85,11 +84,13 @@ REST services \cite{las21openapi}. The effort to learn how to
 create vendor-independent and computer language-independent services
 has been reduced from months to days. We can leverage this effort to
 generate application-specific services quickly. The services generated
-are integrated into a user-managed service registry. We will leverage
-this service and explore if Flask and FastAPI as part
-of the generator expands usability.
+are integrated into a user-managed service registry. We leverage
+this service and enabled its exposure via REST through FastAPI as part
+of the generator.
 
 \subsubsection{Hybrid Multi-Analytics Service Registry}
+
+\TODO{Gregor: rewrite}
 
 While we have previously developed a simplified generalized service
 registry, we are exploring significant extensions to integrate (a)
