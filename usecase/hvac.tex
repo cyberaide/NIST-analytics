@@ -8,17 +8,40 @@ Desired room temperatures can be predetermined [/ fixed] by a technician, or reg
 The algorithm deployment is on the cloud as a service, and every time it makes a new setpoint decision, the command is sent to the local thermostat (see Figure \ref{fig:hvac_general}). Various service frequencies were used to establish the proper pipeline for this application use case. This work aims to analyze the scalability and adaptability of such service scenarios and identify best practices that promote reusable implementations to support aspects of similar use cases addressed by them.
 
 \begin{figure}[htb]
-\centering\includegraphics[width=1.0\columnwidth]{usecase/hvac-new-arch.png}
+%\centering\includegraphics[width=1.0\columnwidth]{usecase/images/hvac-new-arch.png}
+\centering\includegraphics[width=1.0\columnwidth]{usecase/images/nist-hvac-layer.pdf}
 \caption{General view of HVAC-to-Cloud system}
 \label{fig:hvac_general}
 \end{figure}
 
 \paragraph*{System model.}
 User comfort level is defined as the allowed temperature range in the house, the range can remain constant during the entire 24 hour cycle, or it can vary based on the time of the day or the day of the week. Since the temperature in the house is affected by the outdoor temperature our goal is to keep the internal temperature within the desired user comfort level. 
-Energy prices fluctuate through out the day, driven by market dynamics. We describe the pricing function as a sequence of values $Price = {P_1, P_2, . . . , P_m}$ where $P_i$ corresponds to the price at time slot $i$. At each time slot, the service provider determines the electricity price and charges the customer at the given rate. We determine the user cost based on the price and energy consumption during the time slot. At time $t_{k-1}$, we observe the set of all variables of the system which includes information about the outdoor temperature, the indoor temperature, and the pricing. Based on all this information, the  algorithm makes a dynamic decision to set the HVAC set point. This represents the HVAC state in the next time-interval $t_k$. After executing the HVAC setpoint action, we observe the system during time step $t_k$. These steps are executed in periodic intervals, as presented in Figure \ref{fig:hvac_general} and the setpoint recommendation process require advanced machine learning algorithm (e.g, reinforcement learning) \cite{kotevska2020rl}. %Accurate recommendations can save energy and reduce cost \TODO{3rd time mentioned}. 
+Energy prices fluctuate through out the day, driven by market dynamics. We describe the pricing function as a sequence of values $Price = {P_{t_1}, P_{t_2}, . . . , P_{t_m}}$ where $P_{t_i}$ corresponds to the price at time slot ${t_i}$. At each time slot, the service provider determines the electricity price and charges the customer at the given rate. We determine the user cost based on the price and energy consumption during the time slot. At time $t_{k-1}$, we observe the set of all variables of the system which includes information about the outdoor temperature, the indoor temperature, and the pricing. Based on all this information, the  algorithm makes a dynamic decision to set the HVAC set point. This represents the HVAC state in the next time-interval $t_k$. After executing the HVAC setpoint action, we observe the system during time step $t_k$. These steps are executed in periodic intervals, as presented in Figure \ref{fig:hvac_general} and the setpoint recommendation process require advanced machine learning algorithm (e.g, reinforcement learning) \cite{kotevska2020rl}. %Accurate recommendations can save energy and reduce cost \TODO{3rd time mentioned}. 
 
 
-We organized this functionality in three parts Environmental Forecasting (EF), Learning from the past, (LP), and Set-Point Recommendation (SPR). EF calculates weather temperature and price predictions. LP learns from the behavior in the past. SPR model calculates next set-point based on past experience and EF predictions. Figure \ref{fig:hvac_general} shows the general modeling system flow chart. 
+We organized this functionality in three parts: Data input (DI), Functionality parts (FP), and RL agent (RLA). DI collects the data needed for the calculation, such as the following: %weather temperature, price, and historical data. 
+\begin{itemize}
+    \item Temperature -- Collects current weather temperature.
+    \item Price -- Collects current electricity price.
+    \item Historical data -- Extract needed data fields and packs it into an intermediate file format. Input data from the output of temperature and price.
+\end{itemize}
+
+%FP learns from the past and makes environmental forecasting, such as the following: 
+FP prepares the inputs for RLA, they are the following:
+\begin{itemize}
+%\item hist -- Prepares history data points and creates initial condition weights.
+    \item Learning from the past -- Learns from previous user and system activities.
+    \item Environment forecasting -- Incorporates future price and temperature forecasting for timestamp ${t_{i+1}}$.
+    \item Reward -- Generates reward based on the current temperature, price, and user input.
+    \item User preferences -- Creates rules based on user temperature preferences.
+\end{itemize}
+
+RLA model estimates the next set-point ${t_{i+1}}$ using the inputs from FP, such as: 
+\begin{itemize}
+    \item RL agent --  Interpolates the output from DI, FP, reward, and user preferences and generates action recommendation for the temperature.
+\end{itemize}
+
+Figure \ref{fig:hvac_general} shows the general modeling system flow chart. 
 
 %\begin{figure}[htb]
 %\centering\includegraphics[width=1.0\columnwidth]{usecase/hvac_flowchart.png}
@@ -37,30 +60,10 @@ We organized this functionality in three parts Environmental Forecasting (EF), L
 %\label{fig:hvac_func_diagram}
 %\end{figure}
 
+%\TODO{evaluate this section}
 
-EF Activities:
-
-\begin{enumerate}
-\item weatherD -- Collects current weather temperature and predicted temperature for timestamp X.
-\item priceD -- Collects current electricity price and predicted price for timestamp X.
-\item pred -- Extract needed data fields and packs it into an intermediate file format. Input data from the output of weatherD and priceD.
-\end{enumerate}
-
-
-LP Activities:
-
-\begin{enumerate}
-\item hist -- Prepares history data points and creates initial condition weights.
-\item reward -- Generates reward based on the current weatherD and priceD.
-\item learn -- Collects data from current weatherD, priced, reward.
-\end{enumerate}
-
-SPR Activities:
-
-\begin{enumerate}
-\item rules -- Creates rules based on user preferences and conversion preferences.
-\item rlmodel --  Interpolates the output from learn, rules and generates set point recommendation.
-\end{enumerate}
+%FP Activities:
+%RLA Activities:
 
 Reward is a function of temperature violation and cost. This function is specific to the algorithm that was used in this case reinforcement learning (RL). If the temperature is above the desired setpoint and energy cost is high the reward is negative. While if the temperature is within the setpoint range and the energy price is low the reward is positive. This allows the RL-based method to learn the optimal behavior through continuous interaction with a building environment and without referring to any prior model knowledge. 
 
