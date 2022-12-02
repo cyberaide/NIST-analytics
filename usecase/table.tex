@@ -1,0 +1,54 @@
+
+\begin{table}[htb]
+
+\newcommand{\YES}{\checkmark}
+\newcommand{\NO}{--}
+
+\caption{Summary of selected AS requirements}
+\label{tab:summary-as-requirements}
+\begin{tiny}
+%\resizebox{.5\textwidth}{!}{%
+\begin{tabular}{|l|lll|l|}
+\hline
+\bf \cellcolor{blue!25} Attributes  & \bf \cellcolor{blue!25} HVAC & \bf \cellcolor{blue!25} Security & \cellcolor{blue!25} \bf Earthquake
+& \cellcolor{blue!25} \bf Requirements \\
+\hline
+\hline
+\multicolumn{5}{l}{\cellcolor{blue!10} \it Compute} \\
+\hline
+Cloud  &  \YES &  \YES &  \YES &  \YES \\
+Hybrid & \YES & \YES &  \YES &  \YES\\
+Multi-Cloud & \YES & \YES & \YES &  \YES\\
+Sensors & \YES & \YES  &  \YES &  \YES\\
+LCCF & * & \NO &  \YES &  \YES\\
+Microservices & * & \YES &  * &  \YES\\
+Vendor neutral & \YES & \YES &  \YES &  \YES\\
+REST & \YES & \YES &  \YES &  \YES\\
+\hline
+\multicolumn{5}{l}{\cellcolor{blue!10} \it Workflow} \\
+\hline
+Catalog & \YES & \YES &  \YES &  \YES\\
+Cooperation & \YES &  \YES &  \YES &  \YES\\
+Competition & * & \YES &  \YES &  \YES\\
+Orchestrator & * & \YES &  \YES &  \YES\\
+\hline
+\multicolumn{5}{l}{\cellcolor{blue!10} \it Calculation} \\
+\hline
+Modeling & \YES & \YES &  \YES &  \YES\\
+Calculation & \YES & \YES &  \YES &  \YES\\ 
+Deep Learning & \YES  & \YES &  \YES &  \YES\\
+Visualization & \YES & \YES &  \YES &  \YES\\
+\hline
+\multicolumn{5}{l}{\cellcolor{blue!10} \it Security} \\
+\hline
+Communication & \YES & \YES &  \NO &  \YES\\
+Data & \YES & \YES &  \NO  &  \YES\\
+Access & \YES & \YES &  \YES &  \YES\\
+Usage policies & \YES & \YES &  \NO &  \YES \\
+\hline
+\multicolumn{5}{l}{\cellcolor{white} * = Future} 
+\end{tabular}
+%}
+\end{tiny}
+\end {table}
+

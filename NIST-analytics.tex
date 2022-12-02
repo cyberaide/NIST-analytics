@@ -1,6 +1,8 @@
 \PassOptionsToPackage{table}{xcolor}
 
-\documentclass[sigconf]{acmart}
+\documentclass[sigconf,preprint]{acmart}
+
+\pagenumbering{arabic}
 
 \usepackage[colorlinks=true,
             linkcolor=blue,
@@ -76,7 +78,14 @@
 
 \begin{document}
 
+\newpage
+
 \title{Reusable Hybrid and Multi-Cloud Analytics Service Framework}
+
+\maketitle
+
+\tableofcontents
+\newpage
 
 \input{authors}
 
@@ -112,12 +121,14 @@
 
 \input{section/abstract}
 
+
+
+
+\newpage
+
 \maketitle
 
-
 %%%%% \input{section-production}
-
-
 
 \input{section/summary}
 
@@ -129,16 +140,23 @@
 
 \input{section/usecases}
 
-%\input{usecase/security}
+
 
 % \input{usecase/health}
 
 %\input{usecase/weather}
 
-%\input{usecase/hvac}
+\input{usecase/hvac}
 
+
+\input{usecase/security}
+\input{usecase/earthquake}
 
 \input{section/architecture}
+
+\input{section/security}
+
+\section{Implementation}
 
 \input{section/defining}
 
@@ -158,9 +176,10 @@
 
 \input{section/resources}
 
-\input{section/security}
 
-% \input{section/nlp}
+\section{Application}
+
+\input{section/nlp}
 
 % \input{section/conclusion}
 
