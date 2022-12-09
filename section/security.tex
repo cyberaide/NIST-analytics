@@ -3,34 +3,80 @@
 \subsection{Security}
 \label{sec:security}
 
-Analytics services have a variety of security needs. This includes authentication, authorization and audit (Section \ref{sec:aaa}). Data and use may also need to be secured and privacy concerns need to be addressed (Section \ref{sec:privacy}).
+Analytics services have a variety of security needs. This includes
+authentication, authorization and audit (Section \ref{sec:aaa}). Data
+and use may also need to be secured and privacy concerns need to be
+addressed (Section \ref{sec:privacy}).
 
 \subsubsection{Authentication, Authorization and Audit (AAA)}\label{sec:aaa}
 
-Authentication and Authorization functions would be needed across the Analytics Service Framework to authenticate and authorize human-to-machine (H2M) and machine-to-machine (M2M) communication between the interface layer and the service layer and between the service layer and the provider layer.
+Authentication and Authorization functions would be needed across the
+Analytics Service Framework to authenticate and authorize
+human-to-machine (H2M) and machine-to-machine (M2M) communication
+between the interface layer and the service layer and between the
+service layer and the provider layer.
 
-Communication to the services in the Service Layer would be via RESTful APIs. For authenticating to services in the Service Layer, Single-Sign on (SSO) using token-based access control schemes like OAuth, SAML, or Kerberos will be used. Most Web Service frameworks support these SSO mechanisms out-of-the-box. Once the client is authenticated, authorization checks are done to ensure the client is authorized for requested CRUD operation on the REST resource.
+Communication to the services in the Service Layer would be via
+RESTful APIs. For authenticating to services in the Service Layer,
+Single-Sign on (SSO) using token-based access control schemes like
+OAuth, SAML, or Kerberos will be used. Most Web Service frameworks
+support these SSO mechanisms out-of-the-box. Once the client is
+authenticated, authorization checks are done to ensure the client is
+authorized for requested CRUD operation on the REST resource.
 
-Authentication and authorization for machine-to-machine (M2M) access between the service layer and Private and Public Cloud in provider layer will be done using Cloud's Role-based Access Control (RBAC) and Attribute-based Access Control (ABAC) functions and Identity and Access Management (IAM) policies. Service accounts are provisioned in the cloud environment for service clients, and these service accounts are given appropriate roles based on Principles of least privilege (PoLP).
+Authentication and authorization for machine-to-machine (M2M) access
+between the service layer and Private and Public Cloud in provider
+layer will be done using Cloud's Role-based Access Control (RBAC) and
+Attribute-based Access Control (ABAC) functions and Identity and
+Access Management (IAM) policies. Service accounts are provisioned in
+the cloud environment for service clients, and these service accounts
+are given appropriate roles based on Principles of least privilege
+(PoLP).
 
-Client actions such as access to resources, changes to configuration and changes to roles and access policies should be continuously monitored and audited. Most web service frameworks have basic audit and logging functions which can create audit trails on files, databases, or remote logging services. Audit on cloud providers can be done by enabling cloud audit trails and cloud alerts.
+Client actions such as access to resources, changes to configuration
+and changes to roles and access policies should be continuously
+monitored and audited. Most web service frameworks have basic audit
+and logging functions which can create audit trails on files,
+databases, or remote logging services. Audit on cloud providers can be
+done by enabling cloud audit trails and cloud alerts.
 
 \subsubsection{Privacy}\label{sec:privacy}
 
-The Analytics Service Framework will have appropriate controls in place for ensuring data privacy. The framework will support encryption of data at rest and in transit, both intra-layer and inter-layer, to safeguard against unwanted access of data. Any data that is copied over for processing purposes by the framework will be deleted once the processing is done. The framework will also allow administrators to delete inactive users and service accounts and revoke accesses. Sensitive attributes in the data will be masked from users and services based on roles and policies. The framework will also audit and log any access to data which can then be monitored in a Security Incident Event Management System (SIEM) for unwanted or abnormal access. 
+The Analytics Service Framework will have appropriate controls in
+place for ensuring data privacy. The framework will support encryption
+of data at rest and in transit, both intra-layer and inter-layer, to
+safeguard against unwanted access of data. Any data that is copied
+over for processing purposes by the framework will be deleted once the
+processing is done. The framework will also allow administrators to
+delete inactive users and service accounts and revoke
+accesses. Sensitive attributes in the data will be masked from users
+and services based on roles and policies. The framework will also
+audit and log any access to data which can then be monitored in a
+Security Incident Event Management System (SIEM) for unwanted or
+abnormal access.
 
-There are some other privacy controls which the broader ecosystem should have which would be out of scope for the Analytics Service Framework because they don't belong there. Some of these include having a data inventory to map data storage, classification of all data and governance processes in place to ensure data literacy and manage data lifecycle within an organization. 
+There are some other privacy controls which the broader ecosystem
+should have which would be out of scope for the Analytics Service
+Framework because they don't belong there. Some of these include
+having a data inventory to map data storage, classification of all
+data and governance processes in place to ensure data literacy and
+manage data lifecycle within an organization.
 
 \subsubsection{Federation}
 
-As some services in the analytics framework may be distributed across a variety of services owned by different providers it is beneficial to allow the integration of a service federation. NIST has spearheaded an extensive document \cite{nist-Lee2020} addressing such federation that could be leveraged and federated services could be developed based on is. 
+As some services in the analytics framework may be distributed across
+a variety of services owned by different providers it is beneficial to
+allow the integration of a service federation. NIST has spearheaded an
+extensive document \cite{nist-Lee2020} addressing such federation that
+could be leveraged and federated services could be developed based on
+is.
 
 \begin{comment}
 \subsubsection{Artifacts}
 
 function
 data
-logs / audit
+logs and  audit
 
 \subsubsection{Privacy}
 
