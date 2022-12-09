@@ -22,7 +22,7 @@ To achieve this goal a primary execution pattern for this case is outlined as fo
 \end{enumerate}
 
 This logic is captured as part of the analytics paratmeter experiment  management and is implemented using the Cloudmesh-Sbatch utility specifically targeting execution pattern \cite{repo-cloudmesh-sbatch}.
-This utility provides the ability to specify configurable parameters that perform one-to-one substitutions and a special \textit{experiments} parameter set, which creates a \footnoote{permutation} cartesian product for all parameter values as distinct experiments.
+This utility provides the ability to specify configurable parameters that perform one-to-one substitutions and a special \textit{experiments} parameter set, which creates a permutation for all parameter values as distinct experiments.
 
 This allows the user to provide a single script with a configuration file containing multiple hyperparameter values and have them expand into hundreds of configurations without having to prepare each configuration manually.
 A typical workflow of development is illustated in Figure \ref{fig:sbatch} and Figure \ref{fig:sbatch-submit}.

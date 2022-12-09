@@ -80,12 +80,12 @@ services. The information provided includes the provider, [x], and
 
 \item[Federated Analytics Service Registry.] A user wants to make
   selection decisions regarding which service to use. Analytics
-  service brokers / providers therefore offer a federated analytics
+  service brokers and providers therefore offer a federated analytics
   service in which multiple services from multiple providers are
   included. Rather than having to visit multiple, separate providers'
   registries, the user can visit the federated registry of the
   analytics broker to lookup all potentially suitable services, via a
-  single interface / browser. It may be expected that federated
+  single interface and  browser. It may be expected that federated
   registries abstract the technical effort that casual users would
   experience during location and inspection of published analytics
   services.  Underlying analytics service registry technologies
@@ -121,10 +121,10 @@ contain a library that may be deployed.
 
 \begin{table}[htb]
 \caption{AS services Catalog and Registry attributes}\label{tab:reg}
-\resizebox{1.0\columnwidth}{!}{%
+% \resizebox{1.0\columnwidth}{!}{%
 \begin{tabular}{|p{3cm}|p{5cm}|p{0.25cm}|p{0.25cm}p{0.25}|}
 \hline
-&             & \rotatebox{90}{Catalog provider~} & \rotatebox{90}{Service provider} & \rotatebox{90}{Library provider} \\
+&             & \rotatebox{90}{Catalog provider} & \rotatebox{90}{Service provider} & \rotatebox{90}{Library provider} \\
 Name & Description & & \multicolumn{2}{l}{Register} \\
 \hline
 ID & 	UUID, globally unique &	\OK & \OK &	\OK \\
@@ -165,7 +165,7 @@ Authors	& contact details of the people or organization responsible for the serv
 \hline 
 \multicolumn{5}{l}{\OK = required; \OP = optional, \NA = not applicable}\\
 \end{tabular}
-}
+% }
 
 \end{table}
 
