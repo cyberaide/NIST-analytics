@@ -78,15 +78,20 @@ changelog:
 
 
 zip:
-	rm -rf *.zip
+	rm -rf $(FILE).tar.gz
 	rm -rf $(UPLOAD)
+	mkdir -p $(UPLOAD)/images
 	mkdir -p $(UPLOAD)/section
-	mkdir -p $(UPLOAD)/usecase
-	cp $(FILENAME).* $(UPLOAD)
+	cp $(FILE).tex $(UPLOAD)
+	cp $(FILE).bbl $(UPLOAD)
+	cp $(FILE).bib $(UPLOAD)
 	cp section/*.tex $(UPLOAD)/section
-	cp usecase/*.tex $(UPLOAD)/usecase
+	cp -r usecase $(UPLOAD)/usecase
 	cp *.tex $(UPLOAD)
-
-	cp -r images $(UPLOAD)
+	cp images/*.pdf $(UPLOAD)/images
+	cp images/*.png $(UPLOAD)/images
 	# cp *.pygtex $(UPLOAD)
-	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "vonLaszewski-cloudmesh-cc.pdf" -r ../$(FILENAME).zip .
+	# cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "vonLaszewski-cloudmesh-cc.pdf" -r ../$(FILE)-2.zip .
+	# cd upload; tar cvf cv . ../$(FILE).tar.gz
+
+	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "vonLaszewski-cloudmesh-cc.pdf" -r ../$(FILE)-4.zip .

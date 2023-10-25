@@ -1,6 +1,12 @@
 \PassOptionsToPackage{table}{xcolor}
 
 \documentclass[sigconf,preprint]{acmart}
+\pdfoutput=1
+%\usepackage[pdftex]{hyperref}
+\hypersetup{
+    pdftitle = {\@title},
+    pdfauthor = {\@author}
+}
 
 
 \pagenumbering{arabic}
@@ -42,6 +48,7 @@
 
 %enumeration subnumbers
 
+\graphicspath{.}
 
 \renewcommand{\labelenumi}{\arabic{enumi}.} 
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
@@ -69,7 +76,7 @@
 \acmDOI{}
 
 \acmConference[White Paper]{White paper produced by the NIST Public Working Group on Big Data}{White paper produced by the NIST Public Working Group on Big Data}{Washington, D.C.}
-\acmBooktitle{White paper produced by the NIST Public Working Group on Big Data, Washington, D.C.}
+\acmBooktitle{NIST Public Working Group on Big Data, Washington, D.C.}
 \acmPrice{}
 \acmISBN{}
 %%\citestyle{acmauthoryear}
