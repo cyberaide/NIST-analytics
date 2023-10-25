@@ -1,4 +1,5 @@
 FILE=NIST-analytics
+UPLOAD=upload
 
 OPTIONS=--shell-escape
 
@@ -17,6 +18,13 @@ publish:
 	git push
 
 pdf: ${FILE}.pdf
+
+regular:
+	pdflatex $(FILE)
+	bibtex $(FILE)
+	pdflatex $(FILE)
+	pdflatex $(FILE)
+
 
 d: clean
 	pdflatex  ${FILE}
@@ -67,3 +75,18 @@ changelog:
 	git log --pretty=format:'\item  \href{http://github.com/cyberaide/NIST-analytics/commit/%H}{%s}' >> changelog-donotchange.tex
 	@echo "\n\\\\end{enumerate}" >> changelog-donotchange.tex
 	cat changelog-donotchange.tex
+
+
+zip:
+	rm -rf *.zip
+	rm -rf $(UPLOAD)
+	mkdir -p $(UPLOAD)/section
+	mkdir -p $(UPLOAD)/usecase
+	cp $(FILENAME).* $(UPLOAD)
+	cp section/*.tex $(UPLOAD)/section
+	cp usecase/*.tex $(UPLOAD)/usecase
+	cp *.tex $(UPLOAD)
+
+	cp -r images $(UPLOAD)
+	# cp *.pygtex $(UPLOAD)
+	cd upload; zip -x "*/.DS*" "*/*.git*" "*/*bin*" "*/*zip" "*/*.md" "*/Makefile" "*/*.log" "*/*.aux" "*/*.blg" "vonLaszewski-cloudmesh-cc.pdf" -r ../$(FILENAME).zip .
