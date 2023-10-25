@@ -15,11 +15,11 @@ The algorithm deployment is on the cloud as a service, and every time it makes a
 \end{figure}
 
 \paragraph*{System model.}
-User comfort level is defined as the allowed temperature range in the house, the range can remain constant during the entire 24 hour cycle, or it can vary based on the time of the day or the day of the week. Since the temperature in the house is affected by the outdoor temperature our goal is to keep the internal temperature within the desired user comfort level. 
-Energy prices fluctuate through out the day, driven by market dynamics. We describe the pricing function as a sequence of values $Price = {P_{t_1}, P_{t_2}, . . . , P_{t_m}}$ where $P_{t_i}$ corresponds to the price at time slot ${t_i}$. At each time slot, the service provider determines the electricity price and charges the customer at the given rate. We determine the user cost based on the price and energy consumption during the time slot. At time $t_{k-1}$, we observe the set of all variables of the system which includes information about the outdoor temperature, the indoor temperature, and the pricing. Based on all this information, the  algorithm makes a dynamic decision to set the HVAC set point. This represents the HVAC state in the next time-interval $t_k$. After executing the HVAC setpoint action, we observe the system during time step $t_k$. These steps are executed in periodic intervals, as presented in Figure \ref{fig:hvac_general} and the setpoint recommendation process require advanced machine learning algorithm (e.g, reinforcement learning) \cite{kotevska2020rl}. %Accurate recommendations can save energy and reduce cost \TODO{3rd time mentioned}. 
+User comfort level is defined as the allowed temperature range in the house, the range can remain constant during the entire 24-hour cycle, or it can vary based on the time of the day or the day of the week. Since the temperature in the house is affected by the outdoor temperature our goal is to keep the internal temperature within the desired user comfort level. 
+Energy prices fluctuate throughout the day, driven by market dynamics. We describe the pricing function as a sequence of values $Price = {P_{t_1}, P_{t_2}, . . . , P_{t_m}}$ where $P_{t_i}$ corresponds to the price at time slot ${t_i}$. At each time slot, the service provider determines the electricity price and charges the customer at the given rate. We determine the user cost based on the price and energy consumption during the time slot. At time $t_{k-1}$, we observe the set of all variables of the system which includes information about the outdoor temperature, the indoor temperature, and the pricing. Based on all this information, the algorithm makes a dynamic decision to set the HVAC set point. This represents the HVAC state in the next time interval $t_k$. After executing the HVAC setpoint action, we observe the system during time step $t_k$. These steps are executed in periodic intervals, as presented in Figure \ref{fig:hvac_general} and the setpoint recommendation process requires an advanced machine learning algorithm (e.g, reinforcement learning) \cite{kotevska2020rl}. %Accurate recommendations can save energy and reduce cost \TODO{3rd time mentioned}. 
 
 
-We organized this functionality in three parts: Data input (DI), Functionality parts (FP), and RL agent (RLA). DI collects the data needed for the calculation, such as the following: %weather temperature, price, and historical data. 
+We organized this functionality into three parts: Data input (DI), Functionality parts (FP), and RL agent (RLA). DI collects the data needed for the calculation, such as the following: %weather temperature, price, and historical data. 
 \begin{itemize}
     \item Temperature -- Collects current weather temperature.
     \item Price -- Collects current electricity price.
@@ -38,7 +38,7 @@ FP prepares the inputs for RLA, they are the following:
 
 RLA model estimates the next set-point ${t_{i+1}}$ using the inputs from FP, such as: 
 \begin{itemize}
-    \item RL agent --  Interpolates the output from DI, FP, reward, and user preferences and generates action recommendation for the temperature.
+    \item RL agent --  Interpolates the output from DI, FP, reward, and user preferences and generates action recommendations for the temperature.
 \end{itemize}
 
 Figure \ref{fig:hvac_general} shows the general modeling system flow chart. 
@@ -83,16 +83,16 @@ This use case has the implicit requirements needing the following aspects to be 
 
 \begin{enumerate}
   \item {\bf AS in cloud.} The Analytics Services are on the cloud, and the user has Vendor Neural Access Interface to monitor the current and past behavior. The users can also manage their preferred HVAC behavior using the provided interface by the command line.
-  \item {\bf AS in LCCF.} This feature does not apply to the current use case. However an extension could be adressing larger scales of the application while integrating analysis on a much larger scale.
+  \item {\bf AS in LCCF.} This feature does not apply to the current use case. However, an extension could be addressing larger scales of the application while integrating analysis on a much larger scale.
   \item {\bf AS in microservices.} This feature does not apply to this use case. We anticipate that future services may use microservices in order to increase portability.
 \end{enumerate}
 
 \item{\bf AS architecture.} 
 
 \begin{enumerate}
-  \item{\bf AS vendor neutral interfaces.} The user has access to two interfaces: a) a web-based dashboard to monitor the current and past HVAC status changes and indoor temperature; b) an HVAC embedded home interface where the user can check and change the desired indoor temperature.
+  \item{\bf AS vendor neutral interfaces.} The user has access to two interfaces: a) a web-based dashboard to monitor the current and past HVAC status changes and indoor temperature; b) an HVAC-embedded home interface where the user can check and change the desired indoor temperature.
   \item{\bf AS REST.} The HVAC home interface accepts user preferences and sends them to the cloud using REST services. 
-  \item{\bf AS layers such as interface, service layer, and provider layer.} The vendor uses Privacy Cloud for the calculations and data storage, Analytics Services for decision-making analysis, Cooperation Service for external data inputs, and Command line for the user to send requests and make any service adjustments.
+  \item{\bf AS layers such as interface, service layer, and provider layer.} The vendor uses Privacy Cloud for the calculations and data storage, Analytics Services for decision-making analysis, Cooperation Service for external data inputs, and command line for the user to send requests and make any service adjustments.
 \end{enumerate}
 
 \item{\bf AS workflow.} 
@@ -100,8 +100,8 @@ This use case has the implicit requirements needing the following aspects to be 
 \begin{enumerate}
   \item{\bf AS catalog and registry.} For this use case, the catalog of services only supports a few operations they are i) temperature set-point adjustment based on outdoor temperature, price, user schedule, and preferences; ii) historical overview; iii) receiving user input for set-point adjustment.
   \item{\bf AS cooperation.} The cooperation is with external services used for decision-making analysis (e.g., weather forecast, utility energy price).
-  \item{\bf Competition.} This feature does not apply to this use case. In future alternative analysis algorithms could be integrated that allow collaborative results but also competition.
-  \item{\bf AS orchestrator.} This feature does not apply to this use case. However an extension could be envisioned that allows the execution of the analysis on different geographically distributed resources to circumvent outages of the center due to unforeseen challenges, such as extreme weather events or power outages.
+  \item{\bf Competition.} This feature does not apply to this use case. In the future alternative analysis algorithms could be integrated that allow collaborative results but also competition.
+  \item{\bf AS orchestrator.} This feature does not apply to this use case. However, an extension could be envisioned that allows the execution of the analysis on different geographically distributed resources to circumvent outages of the center due to unforeseen challenges, such as extreme weather events or power outages.
 \end{enumerate}
 
 

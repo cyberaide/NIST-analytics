@@ -6,14 +6,15 @@ executed directly on the host system but can simplify access for the user by pla
 services. This is a common compute pattern as part of parameter studies that explore a variety of 
 parameters producing analytics results that can then be explored either in collaboration or competition. 
 
-Cloudmesh Experiment Executor achieves this goal a primary execution pattern for this case is outlined as follows:
+For this purpose, we use two services. First, the Cloudmesh Compute Coordinator, that coordinates computational tasks onto hybrid heterogeneous resources, and second, the Cloudmesh Experiment Executor, that coordinates how to execute various parameter settings to achieve the desired results with these analytics settings.
 
+Together these services allow the following.
 
 \begin{enumerate}
     \item Provisioning one or multiple compute nodes on which the parameter experiment is conducted.
     \item Create hyperparameters for the analytics calculation suitable for the compute resources.
     \item Prepare the compute resources with the needed data and programs to conduct the analytics 
-          functions. This can be done by copying the source to the nodes, or using a GitHub repository to 
+          functions. This can be done by copying the source to the nodes or using a GitHub repository to 
           obtain the source.
     \item Configuring the system's software to prepare for a benchmark run by installing or compiling the code 
           in a way that is best suited for the resource).
@@ -30,15 +31,16 @@ A typical workflow of development is illustrated in Figure \ref{fig:ee} and Figu
 \begin{figure*}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{images/sbatch-template.png}
-    \caption{SBatch Generation Workflow}\label{fig:ee}
+    \caption{Compute Coordinator Generation Workflow}\label{fig:ee}
 
     \centering
     \includegraphics[width=0.8\textwidth]{images/sbatch-submit.png}
-    \caption{SBatch Submission Workflow}\label{fig:ee-submit}
+    \caption{Compute Coordinator Submission Workflow}\label{fig:ee-submit}
 
     \centering
     \includegraphics[width=0.8\textwidth]{images/sbatch.pdf}
-    \caption{SBatch Sumission Workflow}\label{fig:sbatch-2}
+    \caption{Compute Coordinator Sumission Workflow}\label{fig:sbatch-2}
 \end{figure*}
 
+A more in-depth presentation of these services is provided in \cite{las-2023-ai-workflow,las-2023-escience}.
 

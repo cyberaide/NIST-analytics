@@ -3,12 +3,12 @@
 \section{Architecture}
 
 To support the usecases we briefly described and analyzed their requirements, 
-we have developed a general architecture that can benefit most analytics services while leveraging and integrating hybrid and multi-cloud  analytics services.
+we have developed a general architecture that can benefit most analytics services while leveraging and integrating hybrid and multi-cloud analytics services.
 
 To support our goal to enable the use of hybrid and multi-cloud analytics
 services, we are exploring architectural patterns
 that are conducive to use cases such as the one we outlined
-previously. These patterns are be of general use as they can
+previously. These patterns are of general use as they can
 be applied to other use cases. In our case, we define an
 architecture as depicted in Figure~\ref{fig:arch}.
 
@@ -21,7 +21,7 @@ architecture as depicted in Figure~\ref{fig:arch}.
   \label{fig:arch}
 \end{figure}
 
-The architecture is organized in layers  and contains
+The architecture is organized in layers and contains
 multiple components in each layer. We distinguish the interface,
 service, and provider layer. Security and an orchestration service
 enable the integration of the various components into a coordinated
@@ -30,7 +30,7 @@ application pipeline.
 \subsection{Interface Layer}
 
 Today's analytics is invoked through a multitude of interfaces, making
-it possible to invoke them in different languages, but also high level
+it possible to invoke them in different languages, but also high-level
 frameworks. This is often achieved by an interface layer using REST
 to communicate with the other layers. For our work, we focus on
 the command line interface promoting reuse in shells, Jupyter notebooks
@@ -56,7 +56,7 @@ analytics tasks, it is even more critical that the framework can be
 integrated into interactive steering tasks conducted directly by the
 data scientists. For this, we leverage Jupyter notebooks and integrate
 service calls to the backend system into the notebooks just as we can
-in regular python programs. The difference here is that Jupyter
+in regular Python programs. The difference here is that Jupyter
 provides a rich set of interactive components and widgets that can be
 leveraged to prototype interactive services but also parameter
 studies. While our
@@ -72,7 +72,7 @@ the service pipeline.
 
 While we have focused previously on the automated generation of
 services using REST, we need to consider the other aspects of this
-architecture that is needed to support the data analyst. We have
+architecture that are needed to support the data analyst. We have
 shown that it is possible to create rest services from Python
 functions and classes while augmenting them with helper services such
 as data uploads. The development of such services is out of the
@@ -175,7 +175,7 @@ cooperating services
 directly compete with each other. This can be done by direct selection
 of services that are more suitable than others. This selection could
 be based on resource requirements such as time, availability, cost,
-and feature. However, the framework could take "observations" and
+and features. However, the framework could take "observations" and
 propose automated conclusions about which services to choose from. A
 possibility would even be to integrate deep-learning strategies into
 the selection process.
@@ -206,7 +206,7 @@ through the required authentication and authorization mechanisms. The
 latter we have demonstrated in {\em cloudmesh} where users can manage their
 own access to a multi-cloud environment ta access their activated
 analytics services. We will leverage from that effort but  also leverage from
-open source solutions that can be embedded in our vendor-neutral
+open-source solutions that can be embedded in our vendor-neutral
 service specification, such as basic and OAUTH security. In general, we
 abstract the security calls to be callouts to the appropriate
 authentication mechanisms.

@@ -22,30 +22,29 @@ Single-Sign on (SSO) using token-based access control schemes like
 OAuth, SAML, or Kerberos will be used. Most Web Service frameworks
 support these SSO mechanisms out-of-the-box. Once the client is
 authenticated, authorization checks are done to ensure the client is
-authorized for requested CRUD operation on the REST resource.
+authorized for the requested CRUD operation on the REST resource.
 
 Authentication and authorization for machine-to-machine (M2M) access
-between the service layer and Private and Public Cloud in provider
+between the service layer and Private and Public Cloud in the provider
 layer will be done using Cloud's Role-based Access Control (RBAC) and
 Attribute-based Access Control (ABAC) functions and Identity and
 Access Management (IAM) policies. Service accounts are provisioned in
 the cloud environment for service clients, and these service accounts
-are given appropriate roles based on Principles of least privilege
+are given appropriate roles based on the Principles of Least Privilege
 (PoLP).
 
-Client actions such as access to resources, changes to configuration
-and changes to roles and access policies should be continuously
+Client actions such as access to resources, changes to configuration, and changes to roles and access policies should be continuously
 monitored and audited. Most web service frameworks have basic audit
-and logging functions which can create audit trails on files,
+and logging functions that can create audit trails on files,
 databases, or remote logging services. Audit on cloud providers can be
 done by enabling cloud audit trails and cloud alerts.
 
 \subsubsection{Privacy}\label{sec:privacy}
 
 The Analytics Service Framework will have appropriate controls in
-place for ensuring data privacy. The framework will support encryption
+place to ensure data privacy. The framework will support encryption
 of data at rest and in transit, both intra-layer and inter-layer, to
-safeguard against unwanted access of data. Any data that is copied
+safeguard against unwanted access to data. Any data that is copied
 over for processing purposes by the framework will be deleted once the
 processing is done. The framework will also allow administrators to
 delete inactive users and service accounts and revoke
@@ -55,8 +54,8 @@ audit and log any access to data which can then be monitored in a
 Security Incident Event Management System (SIEM) for unwanted or
 abnormal access.
 
-There are some other privacy controls which the broader ecosystem
-should have which would be out of scope for the Analytics Service
+There are some other privacy controls that the broader ecosystem
+should have which would be out of the scope for the Analytics Service
 Framework because they don't belong there. Some of these include
 having a data inventory to map data storage, classification of all
 data and governance processes in place to ensure data literacy and

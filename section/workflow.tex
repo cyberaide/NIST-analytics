@@ -28,10 +28,10 @@ enable access buy users controlled by the service providers.
 
 \subsubsection{Workflow Controlled Computing}
 
-High-performance computing (HPC) is for decades a very important tool for science. Scientific tasks can be leveraging the processing power of a supercomputer so they can run at previously unobtainable high speeds or utilize specialized hardware for acceleration that otherwise are not available to the user. HPC can be used for analytic programs that leverage machine learning applied to large data sets to, for example, predict future values or to model current states. For such high-complexity projects, 
+High-performance computing (HPC) is for decades a very important tool for science. Scientific tasks can leverage the processing power of a supercomputer so they can run at previously unobtainable high speeds or utilize specialized hardware for acceleration that otherwise are not available to the user. HPC can be used for analytic programs that leverage machine learning applied to large data sets to, for example, predict future values or to model current states. For such high-complexity projects, 
 there are often multiple complex programs that may be running repeatedly in either competition or cooperation. This may include resources in the same or different data centers. We developed 
-a hybrid multi-cloud analytics service framework was created to manage heterogeneous and remote workflows, queues, and jobs. It can be used through an Python API, the command line, and a REST service. It is supported on multiple operating systems like macOS, Linux, and Windows 10 and 11. 
-The workflow is specified via an easy to define YAML file.
+a hybrid multi-cloud analytics service framework that was created to manage heterogeneous and remote workflows, queues, and jobs. It can be used through a Python API, the command line, and a REST service. It is supported on multiple operating systems like macOS, Linux, and Windows 10 and 11. 
+The workflow is specified via an easy-to-define YAML file.
 Specifically, we have developed a library called Cloudmesh Controlled Computing (cloudmesh-cc) that adds workflow features to control the execution of jobs on remote compute resources, while at the same time leveraging capabilities provided by the local compute environments to directly interface with graphical visualizations better suited for the desktop. The goal is to provide numerous workflows that in cooperation enhances the experience of the analytics tasks. This includes a REST service and command line tools to interact with it.
 
 
@@ -54,7 +54,7 @@ Specifically, we have developed a library called Cloudmesh Controlled Computing 
 \end{figure}
 
 We have tested the framework while running various MNIST application examples, including include Multilayer Perceptron, LSTM (Long short-term memory), Auto-Encoder, Convolutional, and Recurrent Neural Networks, Distributed Training, and PyTorch training. 
-A much lager application using earthquake prediction has also been used.
+A much larger application using earthquake prediction has also been used.
 
 Figure \ref{fig:fastapi-cc-arch} shows the REST specification and Figure \ref{fig:cc-2} shows the architecture. A user interface of the running application is shown in Figure \ref{fig:cc-3}.
 

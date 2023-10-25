@@ -3,52 +3,52 @@
 \label{sec:data}
 
 As data is to be integrated and analyzed as well as produced the
-framework must include a sufficintly broad ability to access data from
+framework must include a sufficiently broad ability to access data from
 a wide variety of sources and utilize many different services.  This
-includes files, object stors, and databases.  To address the access of
-file based data we have integrated into cloudmesh components to deal
+includes files, object stores, and databases.  To address the access of
+file-based data we have integrated into cloudmesh components to deal
 with transfers and copies from remote resources, as well as developed
-a component that deals with many file transfers through globus. The
+a component that deals with many file transfers through Globus. The
 later overcomes restrictions due to file numbers and improves transfer
-speed, access speed.
+speed, and access speed.
 
 Managing data in analytics services is an important implicit
 requirement. The data has to be readily accessible and may have to be
-prestaged to the resources where the computation is performed. ALso
+pre-staged to the resources where the computation is performed. Also
 one has to make sure that policy restrictions are appropriately dealt
 with in order to perform the analytics tasks. The policy restrictions
-typically include the total sze of the data for a particular user or
-group, but also could include the number of files.
+typically include the total size of the data for a particular user or
+group but also could include the number of files.
 
-For this reason it is advantageous to have aservice that can deal with
-such restrictions. Unfortunately such services are not readily
+For this reason, it is advantageous to have a service that can deal with
+such restrictions. Unfortunately, such services are not readily
 available based on our experience with different HPC centers offering
 compute resources for analytics tasks and jobs.
 
 Available services are typically restricted to filesystems that are
 accessible on the compute nodes as well as services that copy between
-local computers or between compute centers. The later is is frequently
+local computers or between compute centers. The later is frequently
 covered by `rsync` over SSH or UDP, or through
 Globus \cite{www-globus-transfer} as a service. However, when we tried
-using Globus we found that it is not usable when millions of iles are
+using Globus we found that it is not usable when millions of files are
 involved, but performs well when in such cases a tar file is produced
-over amny files and the tar fle is transfered in a single
+over many files and the tar file is transfered in a single
 operation. We also encountered frequent timeouts on the servers that
-were involved in a server-server transfer useing many file transfers.
+were involved in a server-server transfer using many file transfers.
 
 To simplify this we developed a program
 cloudmesh-globus \cite{cloudmesh-globus} that allows us to specify an
-entire directory with many files that first automatically packages the
+entire directory with many files that first automatically package the
 directory and transfers the compressed file to the remote machine
-where it than gets uncompressed and placed in the appropriate file
-ssytem. Hence such steps have not to be done by hand by the
+where it then gets uncompressed and placed in the appropriate file
+system. Hence such steps have not to be done by hand by the
 researcher, but are done automated providing a simplified
 filesystem-to-filesystem service via Globus without issues.
 
 Other alternatives could include
 cloudmesh-storage \cite{cloudmesh-storage} which include prototype
 transfer services even among cloud providers such as amazon, azure,
-and google, while leveraging a compute services conductiong file
+and Google, while leveraging a compute services conducting file
 copies between the involved parties.
 
 

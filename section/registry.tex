@@ -10,15 +10,15 @@ federated registries to locate and consume analytics services with
 persistent identifiers across organizations.
 
 A service registry can serve as a public, private, or federated
-registry. The first two properties define if the registry is public or
-private. In case of a private registry proper security measures need
+registry. The first two properties define whether the registry is public or
+private. In the case of a private registry, proper security measures need
 to be taken into account to govern access. Our framework does not make
 any recommendations about the security framework chosen and it is up
-to the implementer to specify it. In case of a federated registry,
+to the implementer to specify it. In the case of a federated registry,
 more than one registry can be joined, to provide the user the
 impression of a single registry.
 
-Within the analytics services we distinguish two classes. The first
+Within the analytics services, we distinguish two classes. The first
 class are instantiated (running) services that are offered by a
 service provider and allow direct reuse. The second class are library
 providers that distribute analytics activity not as an instantiated
@@ -29,7 +29,7 @@ service.
 A simple use case can be formulated as follows.
 A user wants to find an analytics service and needs to
 identify candidate services based on their descriptions and
-features. A user wants to find services quickly and therefor expects
+features. A user wants to find services quickly and therefore expects
 modern keyword search and taxonomy, faceted search, query
 functionalities; as well as descriptions that facilitate location and
 identification of relevant and appropriate analytics services, from the
@@ -41,12 +41,12 @@ but also how to use it.
 \paragraph*{Access Requirements.} 
 
 % \TODO{possibly change section to privacy requirements so that LoA
-% and Authentication can be moved to separate section ?}
+% and Authentication can be moved to a separate section ?}
 
 Public Analytics Service Registry. Public analytics discovery
 services are intended to allow users to find publicly hosted
 services. The information provided includes the provider, [x], and
-[y], and / thus reduce users' efforts in locating relevant services.
+[y], and / thus reduces users' efforts in locating relevant services.
 
 \begin{description}
 
@@ -55,7 +55,7 @@ services. The information provided includes the provider, [x], and
     Facebook} or something known to the user. In general identity
   management scenarios, this provision enables what is referred to as
   {\em guest identities}, which is useful for many users who are
-  interested in invoking low level activities or less sensitive
+  interested in invoking low-level activities or less sensitive
   operations. With respect to federated service authentication and
   authorization, OIDC guest identities meet a low level of
   assurance. In contrast, users with higher LoAs are afforded
@@ -76,8 +76,8 @@ services. The information provided includes the provider, [x], and
   services to its user community. In contrast to a public analytics
   registry, access controls in private registries are more
   restricted. In addition, different group privileges may restrict the
-  visible analytics service to the user. See related sub sections on
-  user identity and levels of user priveledge ...
+  visible analytics service to the user (see related sections on
+  user identity and levels of user privilege).
 
 \item[Federated Analytics Service Registry.] A user wants to make
   selection decisions regarding which service to use. Analytics
@@ -85,21 +85,21 @@ services. The information provided includes the provider, [x], and
   service in which multiple services from multiple providers are
   included. Rather than having to visit multiple, separate providers'
   registries, the user can visit the federated registry of the
-  analytics broker to lookup all potentially suitable services, via a
-  single interface and  browser. It may be expected that federated
+  analytics broker to look up all potentially suitable services, via a
+  single interface and browser. It may be expected that federated
   registries abstract the technical effort that casual users would
   experience during location and inspection of published analytics
   services.  Underlying analytics service registry technologies
-  leverage cross - organization persistent identifiers, enhanced with
+  leverage cross-organization persistent identifiers, enhanced with
   information that the original service provider may not have
-  available, and xyz. such "enrichment" may could include for example,
+  available, and xyz. such "enrichment" may could include, for example,
   cost comparisons, or (some type of) ratings from its user community.
 
 \item[Enhanced Analytics Service Registry.] Both public and private
-  registries my need to be enhanced by providing detailed information
+  registries may need to be enhanced by providing detailed information
   so the user has a better understanding of the offering and allows
-  comparison to similar artefacts maintained and published in the
-  registry. Information details may include for example, benchmark
+  comparison to similar artifacts maintained and published in the
+  registry. Information details may include, for example, benchmark
   information, service level agreements, or cost measures such as
   carbon cost, or technical limitations such as storage access and
   availability for big data.
@@ -116,7 +116,7 @@ instantiated analytics service endpoints that define a running
 instance of an analytics service.
 
 The attributes are listed in Table \ref{tab:reg}. Some attributes may
-be optional and may be dependent on if they are deployed services, or
+be optional and may be dependent on whether they are deployed services, or
 contain a library that may be deployed.
 
 
@@ -136,13 +136,13 @@ Public	& True if Public
 Description	& Human readable short Description of the Service	& \OK & \OK & 	\OK \\
 Endpoint &	The endpoint of the service	& \OK & \OK	&  \NA \\
 List of Input Parameters &
-	A list of parameters to the service. The parameters have each the form of name, function, type, value, access. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, event.
+	A list of parameters to the service. The parameters have each the form of name, function, type, value, and access. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, or event.
 The function responds to a different function in case multiple are provided by the service.	& \OP & \OK	& \OK \\ 
 List of Output Parameters 
   style (event, stream, data)
   value
   timestamp & 
-	List of responses cast by the service. The responses have the form of function, name, type, value, access, timestamp. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, event.
+	List of responses cast by the service. The responses have the form of function, name, type, value, access, and timestamp. The type indicates the data type. The access indicates if the parameter is a data stream, database, single value/function, or event.
 The function responds to a different function in case multiple are provided by the service. &  \OP &  	\OK  & \OK \\
 Version	& The version number or tag of the service	& \OK & \OK	& \OK \\
 License	& The license description	& \OK & \OK	& \OK \\
@@ -155,7 +155,7 @@ Tags &	Human readable common tags that are used to identify the service that are
 Categories &	A category that this service belongs to (NLB, Finance, ...)	& \OK & \OP & \OP \\
 Created	& date and time on which the analytics service was instantiated or created	instantiated	& \OK & \OK & \OK \\
 Heartbeat &	State and timestamp of the last check when the service was active	& \NA & \OP & 	\NA \\
-Documentation &	Link to a URL with detailed description of the service
+Documentation &	Link to a URL with a detailed description of the service
 Source	Link to the source code if available	& \OK & \OP & \OP \\
 Specification/Schema &	Pointer to where specification schema is located	& o & \OK &  \OK \\
 AdditionalMetadata	& Pointer to where additional is located including the one here.	& \OP & \OP &	\OP \\
@@ -172,12 +172,12 @@ Authors	& contact details of the people or organization responsible for the serv
 
 \paragraph*{Benefits of a federated analytics service registry}
 
-A service registry can publicize and improve end user access to data
+A service registry can publicize and improve end-user access to data
 from different sources, by overcoming some of the challenges inherent
 in describing and surfacing document content and format. Publication,
 and discovery of information resources are enriched with metadata
 enabling the findability and reusability of a service supporting the
-FAIR principle. While describing the interfaces and allow for the
+FAIR principle. While describing the interfaces and allowing for the
 instantiation or the reuse of already instantiated services we address
 the accessibility and interoperability. With respect to analytics as a
 service, end users should be able to find various analytic services
@@ -190,7 +190,7 @@ to be addressed. Furthermore, such analytics services could provide
 significant security implications such as the protection of a database
 while only exposing a subset of approved analytics functions that are
 executed on the data sets. This includes partial and controlled
-sharing of data mashup that can be made available to the community and
+sharing of data mashups that can be made available to the community and
 registered to make reuse easier without everyone having to replicate
 the service.
 
