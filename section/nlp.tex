@@ -1,4 +1,4 @@
-\FILE{section-nlp.tex}
+\FILE{section/nlp.tex}
 
 \subsection{NLP}
 
@@ -54,12 +54,13 @@ local translation program such as offered from ... and easily make
 this example a hybrid service that also integrates with a local
 implementation.
 
-
+%\resizebox{1.0\columnwidth}{!}{
 \begin{Verbatim}[fontsize=\small]
 cms nlp translate --provider=google --from=en --to=de hello world
 cms nlp translate --provider=aws --from=en --to=de hello world
 cms nlp translate --provider=local --from=en --to=de hello world
 \end{Verbatim}
+%}
 
 
 As eachof the services returns natively a different outout, it is
@@ -89,14 +90,19 @@ The result of the translation that simply translates a text from
 German ``Hallo Welt'' to English ``Hello World'' is showcased for 100
 invocations in Figure~\ref{fig:translate}. 
 
+
 \begin{figure}[htb]
-  \begin{center}
-    \includegraphics[width=1.0\columnwidth]{images/nlp-helloworldbenchmark.pdf}
-    \end{center}
-  \caption {Architecture of the hybrid multi-analytics service
-    framework}
-  \label{fig:translate}
+
+\centering
+%\includegraphics{images/nlp-benchmark.pdf}
+\includegraphics[width=1.0\columnwidth]{images/nlp-benchmark.pdf}
+
+\caption{Natural Languge processing performance for a single
+         word translation.}
+\label{fig:nlp-performance}
+
 \end{figure}
+
 
 Such a performance analysis could be performed based on customer needs
 and could indicate factors for preferential service choices. THis may
@@ -127,3 +133,4 @@ max & 2.266000 & 1.520000 & 4.170000 & 0.374000 & 0.497000 & 0.280000 & 4.481000
 \hline
 \end{tabular}
 \end{table*}
+

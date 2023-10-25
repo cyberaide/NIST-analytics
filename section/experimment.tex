@@ -22,29 +22,23 @@ To achieve this goal a primary execution pattern for this case is outlined as fo
 \end{enumerate}
 
 This logic is captured as part of the analytics paratmeter experiment  management and is implemented using the Cloudmesh-Sbatch utility specifically targeting execution pattern \cite{repo-cloudmesh-sbatch}.
-This utility provides the ability to specify configurable parameters that perform one-to-one substitutions and a special \textit{experiments} parameter set, which creates a \footnoote{permutation} cartesian product for all parameter values as distinct experiments.
+This utility provides the ability to specify configurable parameters that perform one-to-one substitutions and a special \textit{experiments} parameter set, which creates a permutation for all parameter values as distinct experiments.
 
 This allows the user to provide a single script with a configuration file containing multiple hyperparameter values and have them expand into hundreds of configurations without having to prepare each configuration manually.
 A typical workflow of development is illustated in Figure \ref{fig:sbatch} and Figure \ref{fig:sbatch-submit}.
 
-\begin{figure*}[p]
+\begin{figure*}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{images/sbatch-template.png}
     \caption{SBatch Generation Workflow}\label{fig:sbatch}
-\end{figure*}
 
-\begin{figure*}[p]
     \centering
     \includegraphics[width=0.8\textwidth]{images/sbatch-submit.png}
-    \caption{SBatch Sumission Workflow}\label{fig:sbatch-submit}
-\end{figure*}
+    \caption{SBatch Submission Workflow}\label{fig:sbatch-submit}
 
-
-
-\begin{figure}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{images/sbatch.pdf}
     \caption{SBatch Sumission Workflow}\label{fig:sbatch-2}
-\end{figure}
+\end{figure*}
 
 
